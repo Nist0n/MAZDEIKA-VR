@@ -1282,7 +1282,7 @@ AnimatorStateMachine:
     m_Position: {x: 290, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3829012006604374399}
-    m_Position: {x: 520, y: -140, z: 0}
+    m_Position: {x: 510, y: -140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1528326330454911510}
     m_Position: {x: 270, y: -140, z: 0}
@@ -1540,4 +1540,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.083333336
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
