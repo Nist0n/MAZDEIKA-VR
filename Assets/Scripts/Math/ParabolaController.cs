@@ -5,32 +5,12 @@ using UnityEngine;
 public class ParabolaController : MonoBehaviour
 {
     public float Speed = 1;
-
-    /// <summary>
-    /// Start of Parabola
-    /// </summary>
     public GameObject ParabolaRoot;
-
-    /// <summary>
-    /// Autostart Animation
-    /// </summary>
     public bool Autostart = true;
-
-    /// <summary>
-    /// Animate
-    /// </summary>
     public bool Animation = true;
-
-    //next parabola event
     internal bool nextParbola = false;
-
-    //animation time
     protected float animationTime = float.MaxValue;
-
-    //gizmo
     protected ParabolaFly gizmo;
-
-    //draw
     protected ParabolaFly parabolaFly;
 
     void OnDrawGizmos()
@@ -156,7 +136,6 @@ public class ParabolaController : MonoBehaviour
 
     public class ParabolaFly
     {
-
         public Transform[] Points;
         protected Parabola3D[] parabolas;
         protected float[] partDuration;
