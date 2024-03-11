@@ -24,6 +24,6 @@ public class VRActivation : MonoBehaviour
 
     private void Enable()
     {
-        transform.LeanScale(Vector3.one, 0.8f);
+        transform.LeanScale(Vector3.one, 0.3f);
     }
 }
