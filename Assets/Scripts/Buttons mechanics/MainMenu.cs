@@ -1,15 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    private GameObject _mainMenu;
     private CanvasGroup _canvasGroup;
     private RectTransform _rectTransform;
     private ParabolaController _parabolaController;
-    
+
     private float _fadeTime = 2f;
     private bool _isFirst = true;
     
@@ -18,14 +16,21 @@ public class MainMenu : MonoBehaviour
         _parabolaController = FindObjectOfType<ParabolaController>();
         _canvasGroup = GameObject.FindWithTag("MainMenu").GetComponent<CanvasGroup>();
         _rectTransform = GameObject.FindWithTag("MainMenu").GetComponent<RectTransform>();
+        _mainMenu = GameObject.FindWithTag("MainMenu");
     }
 
     private void Update()
     {
         if (!_parabolaController.Animation && _isFirst)
         {
+            _mainMenu.SetActive(true);
             PanelFadeIn();
             _isFirst = false;
+        }
+        
+        else if (_isFirst)
+        {
+            _mainMenu.SetActive(false);
         }
     }
 
