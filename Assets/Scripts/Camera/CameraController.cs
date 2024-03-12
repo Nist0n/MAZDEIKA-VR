@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private int _minAngle = -30;
-    [SerializeField] private int _maxAngle = 45;
     [SerializeField] private int _sensitivity = 200;
 
     private void Start()
