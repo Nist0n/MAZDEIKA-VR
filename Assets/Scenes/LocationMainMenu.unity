@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.63958573, g: 0.5079428, b: 0.7689174, a: 1}
+  m_IndirectSpecularColor: {r: 0.6294833, g: 0.49682295, b: 0.7571158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4788,8 +4788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43853058b0b6ce64aa47025b7c7f6cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minAngle: -30
-  _maxAngle: 45
   _sensitivity: 2
 --- !u!1001 &287274914
 PrefabInstance:
@@ -22867,7 +22865,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1572589812
 Canvas:
   m_ObjectHideFlags: 0
@@ -22877,7 +22875,7 @@ Canvas:
   m_GameObject: {fileID: 1572589809}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -22898,22 +22896,22 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572589809}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0.030153684, y: 0.9698463, z: 0.17101014, w: -0.17100997}
+  m_LocalPosition: {x: 0, y: 0, z: 66.52}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2011950850}
   - {fileID: 802623875}
   - {fileID: 1159582221}
   - {fileID: 1695360203}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -20, y: 200, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 55.93, y: 6.29}
+  m_SizeDelta: {x: 1920.0001, y: 1204.9268}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1572589814
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -22922,7 +22920,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572589809}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
