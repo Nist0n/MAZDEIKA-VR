@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
     {
         _canvasGroup.alpha = 0f;
         _rectTransform.transform.localPosition = new Vector3(0f, -1000f, 0f);
-        _rectTransform.DOAnchorPos(new Vector2(0f, 0f), _fadeTime, false).SetEase(Ease.OutElastic);
+        _rectTransform.DOAnchorPos(new Vector3(53.07f, 9f, 58.87f), _fadeTime, false).SetEase(Ease.OutElastic);
         _canvasGroup.DOFade(1, _fadeTime);
     }
     
