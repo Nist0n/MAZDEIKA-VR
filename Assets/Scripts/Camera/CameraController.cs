@@ -6,9 +6,6 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private int _sensitivity = 200;
 
-    private void Start()
-    {
-    }
     void Update()
     {
         Rotate();
