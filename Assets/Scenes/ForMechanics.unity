@@ -8446,7 +8446,7 @@ MonoBehaviour:
   LicenseName: 
   LicenseKey: 
   LicenseFilePath: 
-  GestureDatabaseFile: GestureRecognition/Samples/SamplesDatabase/myGesture.dat
+  GestureDatabaseFile: GestureRecognition/
   unityXrPlugin: 0
   mivryCoordinateSystem: 0
   LeftHand: {fileID: 316093422}
