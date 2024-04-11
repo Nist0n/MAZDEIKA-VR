@@ -8446,7 +8446,7 @@ MonoBehaviour:
   LicenseName: 
   LicenseKey: 
   LicenseFilePath: 
-  GestureDatabaseFile: GestureRecognition/
+  GestureDatabaseFile: GestureRecognition/Samples/Sample_One Handed_Gestures_
   unityXrPlugin: 0
   mivryCoordinateSystem: 0
   LeftHand: {fileID: 316093422}
@@ -17327,6 +17327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1031188524}
   - component: {fileID: 1031188523}
+  - component: {fileID: 1031188525}
   m_Layer: 0
   m_Name: Gesture
   m_TagString: Untagged
@@ -17361,6 +17362,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1031188525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031188522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead00d81e07c86d4a84ac72a78fa472a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  license_id: 
+  license_key: 
+  license_file_path: 
+  unityXrPlugin: 0
+  mivryCoordinateSystem: 0
+  file_load_combinations: Samples/Sample_TwoHanded_Gestures.dat
+  file_import_combinations: Samples/Sample_Military_Gestures.dat
+  file_load_subgestures: Samples/Sample_OneHanded_Gestures.dat
+  file_load_subgestures_i: 0
+  file_load_gestures: Samples/Sample_OneHanded_Gestures.dat
+  file_import_gestures: Samples/Sample_Pixie_Gestures.dat
+  file_save_combinations: Samples/Sample_TwoHanded_MyGestures.dat
+  file_save_gestures: Samples/Sample_OneHanded_MyGestures.dat
+  create_combination_name: (new gesture combination name)
+  create_gesture_name: (new gesture name)
+  create_gesture_names: []
+  record_gesture_id: -1
+  record_combination_id: -1
+  lefthand_combination_part: 0
+  righthand_combination_part: 1
+  copy_gesture_from_part: 0
+  copy_gesture_to_part: 1
+  copy_gesture_from_id: 0
+  copy_gesture_to_id: 0
+  copy_gesture_mirror: 1
 --- !u!1 &1037714844
 GameObject:
   m_ObjectHideFlags: 0
@@ -20500,6 +20538,10 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_Name
       value: XR Device Simulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
