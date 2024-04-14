@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.63958573, g: 0.5079428, b: 0.7689174, a: 1}
+  m_IndirectSpecularColor: {r: 0.6294833, g: 0.49682295, b: 0.7571158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8446,7 +8446,7 @@ MonoBehaviour:
   LicenseName: 
   LicenseKey: 
   LicenseFilePath: 
-  GestureDatabaseFile: GestureRecognition/Samples/Sample_One Handed_Gestures_
+  GestureDatabaseFile: GestureRecognition/Samples/Sample_OneHanded_Gestures.dat
   unityXrPlugin: 0
   mivryCoordinateSystem: 0
   LeftHand: {fileID: 316093422}
@@ -20503,7 +20503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

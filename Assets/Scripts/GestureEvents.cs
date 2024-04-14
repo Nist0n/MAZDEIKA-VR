@@ -8,12 +8,12 @@ public class GestureEvents : MonoBehaviour
     {
         if (gestureCompletionData.gestureID < 0) 
         {
-            string errorMessage = GestureRecognition.getErrorMessage(gestureCompletionData.gestureID);
+            Debug.Log("LOX");
             return;
         }
         if (gestureCompletionData.similarity >= 0.5)
         {
-            ///
+            Debug.Log("gg");
         }
     }
 }
