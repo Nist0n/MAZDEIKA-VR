@@ -32,7 +32,7 @@ public class BaseAttackSkill : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
         isAttacking = false;
         Destroy(gameObject);
     }
