@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
@@ -18,8 +17,6 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private float _stopTargetFollowingRange;
 
-    [SerializeField] private AIDestinationSetter _aiDestionationSetter;
-
     private PlayerController _player;
 
     private EnemyStates _currentStates;
@@ -30,8 +27,8 @@ public class EnemyAI : MonoBehaviour
 
         _player = FindObjectOfType<PlayerController>();
 
-        _currentStates = EnemyStates.Roaming;
+        //_currentStates = EnemyStates.Roaming;
 
-        _roamPosition = GenerateRoamPosition;
+        //_roamPosition = GenerateRoamPosition;
     }
 }
