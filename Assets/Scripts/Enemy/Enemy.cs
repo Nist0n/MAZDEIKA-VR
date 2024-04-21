@@ -14,10 +14,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Image backHealthBar;
     [SerializeField] private TextMeshProUGUI currentHpText;
     [SerializeField] private GameObject floatingPoints;
+    [SerializeField] private GameObject shieldSkill;
     
     private float _lerpTimer;
     private float _chipSpeed = 2f;
     private int _gottenDamageTimes = 0;
+
+    private GameObject _shield;
 
     public bool CanTakeDamage = true;
 
@@ -32,7 +35,7 @@ public class Enemy : MonoBehaviour
         
         UpdateHpBar();
 
-        if (_gottenDamageTimes >= 5)
+        if (_gottenDamageTimes >= 5 && CanTakeDamage)
         {
             ActivateShield();
         }
@@ -87,11 +90,16 @@ public class Enemy : MonoBehaviour
     private void ActivateShield()
     {
         CanTakeDamage = false;
+        _shield = Instantiate(shieldSkill, transform) as GameObject;
     }
 
     public void DeActivateShield()
     {
         CanTakeDamage = true;
         _gottenDamageTimes = 0;
+        if (_shield != null)
+        {
+            Destroy(_shield);
+        }
     }
 }
