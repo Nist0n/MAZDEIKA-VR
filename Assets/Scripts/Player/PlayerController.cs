@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -15,6 +16,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentHpText;
     [SerializeField] private GameObject floatingPoints;
     [SerializeField] private GameObject canvas;
+    [SerializeField] private PostProcessVolume postProcessVolume;
+
+    private Vignette _vignette;
 
     private float _lerpTimer;
     private float _chipSpeed = 2f;
@@ -23,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         currentHealth = _health;
+        postProcessVolume.profile.TryGetSettings<Vignette>(out _vignette);
     }
 
     private void Update()
@@ -47,6 +52,8 @@ public class PlayerController : MonoBehaviour
         float fillFrontBar = frontHealthBar.fillAmount;
         float fillBackBar = backHealthBar.fillAmount;
         float hFraction = currentHealth / _health;
+
+        _vignette.smoothness.value = 1 - hFraction;
 
         currentHpText.text = $"{currentHealth}";
 
