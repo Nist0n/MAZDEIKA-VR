@@ -9,15 +9,27 @@ public class BaseAttackSkill : MonoBehaviour
     [SerializeField] private GameObject hit;
 
     private bool isAttacking = false;
+    private float _damage = 5;
     
     private GameObject _enemy;
+    private Enemy _enemyClass;
     void Start()
     {
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
+        _enemyClass = _enemy.GetComponent<Enemy>();
     }
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, _enemy.transform.position, speed);
+
+        if (!_enemyClass.CanTakeDamage)
+        {
+            _damage = 0;
+        }
+        else
+        {
+            _damage = 5;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,7 +44,7 @@ public class BaseAttackSkill : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
-        _enemy.GetComponent<Enemy>().TakeDamage(10);
+        _enemyClass.TakeDamage(_damage);
         yield return new WaitForSeconds(0.8f);
         isAttacking = false;
         Destroy(gameObject);

@@ -17,6 +17,9 @@ public class Enemy : MonoBehaviour
     
     private float _lerpTimer;
     private float _chipSpeed = 2f;
+    private int _gottenDamageTimes = 0;
+
+    public bool CanTakeDamage = true;
 
     private void Start()
     {
@@ -28,6 +31,11 @@ public class Enemy : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, health);
         
         UpdateHpBar();
+
+        if (_gottenDamageTimes >= 5)
+        {
+            ActivateShield();
+        }
     }
     
     private void UpdateHpBar()
@@ -72,5 +80,18 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("СМЭРТЬ");
         }
+
+        _gottenDamageTimes++;
+    }
+
+    private void ActivateShield()
+    {
+        CanTakeDamage = false;
+    }
+
+    public void DeActivateShield()
+    {
+        CanTakeDamage = true;
+        _gottenDamageTimes = 0;
     }
 }
