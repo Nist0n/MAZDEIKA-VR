@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentHpText;
     [SerializeField] private GameObject floatingPoints;
     [SerializeField] private GameObject shieldSkill;
-    
+
     private float _lerpTimer;
     private float _chipSpeed = 2f;
     private int _gottenDamageTimes = 0;
@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     private GameObject _shield;
 
     public bool CanTakeDamage = true;
+    public float Damage = 5;
 
     private void Start()
     {

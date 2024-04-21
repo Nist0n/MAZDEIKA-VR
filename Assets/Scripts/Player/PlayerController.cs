@@ -9,25 +9,30 @@ using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float playerDamage;
     [SerializeField] private Image frontHealthBar;
     [SerializeField] private Image backHealthBar;
     [SerializeField] private float currentHealth;
     [SerializeField] private TextMeshProUGUI currentHpText;
     [SerializeField] private GameObject floatingPoints;
     [SerializeField] private GameObject canvas;
-    [SerializeField] private PostProcessVolume postProcessVolume;
+    [SerializeField] private PostProcessVolume postProcessVolumeDeath;
+    [SerializeField] private PostProcessVolume postProcessVolumeShield;
 
-    private Vignette _vignette;
+    public bool CanTakeDamage = true;
+    public float Damage = 5f;
+
+    private Vignette _vignetteDeath;
+    private Vignette _vignetteShield;
 
     private float _lerpTimer;
     private float _chipSpeed = 2f;
-    private float _health = 100;
+    private float _health = 100f;
 
     private void Start()
     {
         currentHealth = _health;
-        postProcessVolume.profile.TryGetSettings<Vignette>(out _vignette);
+        postProcessVolumeDeath.profile.TryGetSettings<Vignette>(out _vignetteDeath);
+        postProcessVolumeShield.profile.TryGetSettings<Vignette>(out _vignetteShield);
     }
 
     private void Update()
@@ -53,7 +58,7 @@ public class PlayerController : MonoBehaviour
         float fillBackBar = backHealthBar.fillAmount;
         float hFraction = currentHealth / _health;
 
-        _vignette.smoothness.value = 1 - hFraction;
+        _vignetteDeath.smoothness.value = 1 - hFraction;
 
         currentHpText.text = $"{currentHealth}";
 
@@ -101,5 +106,16 @@ public class PlayerController : MonoBehaviour
         
         _lerpTimer = 0f;
         currentHealth += healAmount;
+    }
+
+    public IEnumerator ActivateShield()
+    {
+        CanTakeDamage = false;
+        postProcessVolumeShield.priority = 2;
+        _vignetteShield.smoothness.value = 0.9f;
+        yield return new WaitForSeconds(1f);
+        CanTakeDamage = true;
+        _vignetteShield.smoothness.value = 0f;
+        postProcessVolumeShield.priority = 0;
     }
 }

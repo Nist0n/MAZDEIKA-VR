@@ -8,6 +8,13 @@ public class Skills : MonoBehaviour
     [SerializeField] private GameObject baseAttackSpell;
     [SerializeField] private GameObject breakShieldSkill;
 
+    private PlayerController _player;
+
+    private void Start()
+    {
+        _player = FindObjectOfType<PlayerController>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -18,6 +25,11 @@ public class Skills : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             BreakShield();
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            StartCoroutine(_player.ActivateShield());
         }
     }
 
