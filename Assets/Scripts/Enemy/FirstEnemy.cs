@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class FirstEnemy : MonoBehaviour
 {
     [SerializeField] private float health;
     [SerializeField] private GameObject canvas;

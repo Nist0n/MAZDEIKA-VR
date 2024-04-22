@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class EnemyShieldDestroyer : MonoBehaviour
 {
-    private Enemy _enemy;
+    private FirstEnemy _enemy;
 
     private void Start()
     {
-        _enemy = GetComponentInParent<Enemy>();
+        _enemy = GetComponentInParent<FirstEnemy>();
     }
 
     private void Update()

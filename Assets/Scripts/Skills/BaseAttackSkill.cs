@@ -12,13 +12,13 @@ public class BaseAttackSkill : MonoBehaviour
     private float _damage;
     
     private GameObject _enemy;
-    private Enemy _enemyClass;
+    private FirstEnemy _enemyClass;
     private PlayerController _player;
     void Start()
     {
         _player = FindObjectOfType<PlayerController>();
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
-        _enemyClass = _enemy.GetComponent<Enemy>();
+        _enemyClass = _enemy.GetComponent<FirstEnemy>();
     }
     void Update()
     {

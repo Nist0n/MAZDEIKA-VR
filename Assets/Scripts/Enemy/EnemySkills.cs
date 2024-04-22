@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class EnemySkills : MonoBehaviour
@@ -9,8 +10,9 @@ public class EnemySkills : MonoBehaviour
     [SerializeField] private GameObject baseAttackSkill;
     [SerializeField] private GameObject ultimateSkill;
     [SerializeField] private GameObject ultimateCharge;
+    [SerializeField] private Image skillImage;
 
-    private Enemy _enemy;
+    private FirstEnemy _enemy;
 
     private bool _isAttacking = false;
     private float _time;
@@ -20,7 +22,7 @@ public class EnemySkills : MonoBehaviour
 
     private void Start()
     {
-        _enemy = FindObjectOfType<Enemy>();
+        _enemy = FindObjectOfType<FirstEnemy>();
         _randomNumOfSkill = 0;
         _time = Random.Range(2, 4);
     }
@@ -58,22 +60,26 @@ public class EnemySkills : MonoBehaviour
 
     IEnumerator BaseAttack()
     {
-        Debug.Log("Warning");
+        skillImage.sprite = baseAttackSkill.GetComponent<Image>().sprite;
+        skillImage.color = new Color(255f, 255f, 255f, 255f);
         yield return new WaitForSeconds(1.5f);
         Instantiate(baseAttackSkill, gameObject.transform);
         _timer = 0;
         _time = Random.Range(2, 4);
         _isAttacking = false;
+        skillImage.color = new Color(255f, 255f, 255f, 0f);
     }
     
     IEnumerator UltimateAttack()
     {
-        Debug.Log("ULT");
+        skillImage.sprite = ultimateCharge.GetComponent<Image>().sprite;
+        skillImage.color = new Color(255f, 255f, 255f, 255f);
         Instantiate(ultimateCharge, gameObject.transform);
         yield return new WaitForSeconds(3f);
         Instantiate(ultimateSkill, gameObject.transform);
         _timer = 0;
         _time = Random.Range(2, 4);
         _isAttacking = true;
+        skillImage.color = new Color(255f, 255f, 255f, 0f);
     }
 }

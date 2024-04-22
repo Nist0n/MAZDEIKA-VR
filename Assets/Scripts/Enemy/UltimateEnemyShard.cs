@@ -11,10 +11,10 @@ public class UltimateEnemyShard : MonoBehaviour
 
     private GameObject _player;
     private PlayerController _playerController;
-    private Enemy _enemy;
+    private FirstEnemy _enemy;
     void Start()
     {
-        _enemy = FindObjectOfType<Enemy>();
+        _enemy = FindObjectOfType<FirstEnemy>();
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerController = _player.GetComponent<PlayerController>();
         _damage = _enemy.Damage;

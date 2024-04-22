@@ -10,11 +10,11 @@ public class BreakShieldSkill : MonoBehaviour
     private bool _isAttacking = false;
 
     private GameObject _enemy;
-    private Enemy _enemyClass;
+    private FirstEnemy _enemyClass;
     void Start()
     {
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
-        _enemyClass = _enemy.GetComponent<Enemy>();
+        _enemyClass = _enemy.GetComponent<FirstEnemy>();
     }
     void Update()
     {
