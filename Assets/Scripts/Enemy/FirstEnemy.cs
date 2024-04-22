@@ -14,6 +14,7 @@ public class FirstEnemy : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentHpText;
     [SerializeField] private GameObject floatingPoints;
     [SerializeField] private GameObject shieldSkill;
+    [SerializeField] private GameObject stunAura;
 
     private PlayerController _player;
 
@@ -27,6 +28,7 @@ public class FirstEnemy : MonoBehaviour
     public bool CanTakeDamage = true;
     public float Damage;
     public float CurrentHealth;
+    public bool IsStunned = false;
 
     private void Start()
     {
@@ -48,7 +50,7 @@ public class FirstEnemy : MonoBehaviour
         if (_player.CurrentHealth == 0 && !_gameOver)
         {
             _gameOver = true;
-            gameObject.GetComponent<EnemySkills>().enabled = false;
+            gameObject.GetComponent<FirstEnemySkills>().enabled = false;
         }
 
         if (CurrentHealth <= 300)
@@ -117,5 +119,16 @@ public class FirstEnemy : MonoBehaviour
         {
             Destroy(_shield);
         }
+    }
+
+    public IEnumerator ActivateStunEffect()
+    {
+        IsStunned = true;
+        GameObject aura = Instantiate(stunAura, transform) as GameObject;
+        Debug.Log("Activated");
+        yield return new WaitForSeconds(3f);
+        Debug.Log("DeActivated");
+        Destroy(aura);
+        IsStunned = false;
     }
 }

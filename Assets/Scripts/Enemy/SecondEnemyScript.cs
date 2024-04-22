@@ -1,11 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
-public class EnemySkills : MonoBehaviour
+public class SecondEnemyScript : MonoBehaviour
 {
     [SerializeField] private GameObject baseAttackSkill;
     [SerializeField] private GameObject ultimateSkill;
@@ -29,7 +27,15 @@ public class EnemySkills : MonoBehaviour
 
     void Update()
     {
-        _timer += Time.deltaTime;
+        if (!_enemy.IsStunned)
+        {
+            _timer += Time.deltaTime;
+        }
+        else
+        {
+            _timer = 0;
+        }
+
         if (_time - _timer <= 1.5f && !_isAttacking)
         {
             _isAttacking = true;
@@ -44,7 +50,7 @@ public class EnemySkills : MonoBehaviour
 
     private void CastSkill()
     {
-        if (!_ultimateIsReady)
+        //if (!_ultimateIsReady)
         {
             List<IEnumerator> functions = new List<IEnumerator>();
             functions.Add(BaseAttack());
@@ -52,9 +58,9 @@ public class EnemySkills : MonoBehaviour
             if (functions[_randomNumOfSkill].ToString().Contains("BaseAttack")) Debug.Log("BaseAttack");
             _randomNumOfSkill = Random.Range(0, functions.Count);
         }
-        else
+        //else
         {
-            StartCoroutine(UltimateAttack());
+            //StartCoroutine(UltimateAttack());
         }
     }
 
@@ -63,14 +69,17 @@ public class EnemySkills : MonoBehaviour
         skillImage.sprite = baseAttackSkill.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
         yield return new WaitForSeconds(1.5f);
-        Instantiate(baseAttackSkill, gameObject.transform);
+        if (!_enemy.IsStunned)
+        {
+            Instantiate(baseAttackSkill, gameObject.transform);
+        }
         _timer = 0;
         _time = Random.Range(2, 4);
         _isAttacking = false;
         skillImage.color = new Color(255f, 255f, 255f, 0f);
     }
     
-    IEnumerator UltimateAttack()
+    /*IEnumerator UltimateAttack()
     {
         skillImage.sprite = ultimateCharge.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
@@ -81,5 +90,5 @@ public class EnemySkills : MonoBehaviour
         _time = Random.Range(2, 4);
         _isAttacking = true;
         skillImage.color = new Color(255f, 255f, 255f, 0f);
-    }
+    }*/
 }

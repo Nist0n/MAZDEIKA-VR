@@ -7,6 +7,7 @@ public class Skills : MonoBehaviour
 {
     [SerializeField] private GameObject baseAttackSpell;
     [SerializeField] private GameObject breakShieldSkill;
+    [SerializeField] private GameObject stunningAttackSkill;
 
     private PlayerController _player;
 
@@ -29,7 +30,12 @@ public class Skills : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            StartCoroutine(_player.ActivateShield());
+            ActivateShield();
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            StunningAttack();
         }
     }
 
@@ -41,6 +47,16 @@ public class Skills : MonoBehaviour
     public void BreakShield()
     {
         Instantiate(breakShieldSkill, transform);
+    }
+
+    public void ActivateShield()
+    {
+        StartCoroutine(_player.ActivateShield());
+    }
+
+    public void StunningAttack()
+    {
+        Instantiate(stunningAttackSkill, transform);
     }
 
 }
