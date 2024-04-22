@@ -50,6 +50,11 @@ public class Enemy : MonoBehaviour
             _gameOver = true;
             gameObject.GetComponent<EnemySkills>().enabled = false;
         }
+
+        if (CurrentHealth <= 300)
+        {
+            CanTakeDamage = false;
+        }
     }
     
     private void UpdateHpBar()
