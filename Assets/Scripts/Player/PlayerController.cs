@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Image frontHealthBar;
     [SerializeField] private Image backHealthBar;
-    [SerializeField] private float currentHealth;
     [SerializeField] private TextMeshProUGUI currentHpText;
     [SerializeField] private GameObject floatingPoints;
     [SerializeField] private GameObject canvas;
@@ -19,25 +18,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PostProcessVolume postProcessVolumeShield;
 
     public bool CanTakeDamage = true;
-    public float Damage = 5f;
+    public float Damage;
+    public float CurrentHealth;
 
     private Vignette _vignetteDeath;
     private Vignette _vignetteShield;
 
     private float _lerpTimer;
     private float _chipSpeed = 2f;
-    private float _health = 100f;
+    private float _health = 1000f;
+    private bool _gameOver = false;
 
     private void Start()
     {
-        currentHealth = _health;
+        CurrentHealth = _health;
         postProcessVolumeDeath.profile.TryGetSettings<Vignette>(out _vignetteDeath);
         postProcessVolumeShield.profile.TryGetSettings<Vignette>(out _vignetteShield);
     }
 
     private void Update()
     {
-        currentHealth = Mathf.Clamp(currentHealth, 0, _health);
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, _health);
 
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -48,6 +49,12 @@ public class PlayerController : MonoBehaviour
         {
             RestoreHealth(Random.Range(5, 10));
         }
+
+        if (CurrentHealth == 0 && !_gameOver)
+        {
+            _gameOver = true;
+            gameObject.GetComponent<Skills>().enabled = false;
+        }
         
         UpdateHpBar();
     }
@@ -56,11 +63,11 @@ public class PlayerController : MonoBehaviour
     {
         float fillFrontBar = frontHealthBar.fillAmount;
         float fillBackBar = backHealthBar.fillAmount;
-        float hFraction = currentHealth / _health;
+        float hFraction = CurrentHealth / _health;
 
         _vignetteDeath.smoothness.value = 1 - hFraction;
 
-        currentHpText.text = $"{currentHealth}";
+        currentHpText.text = $"{CurrentHealth}";
 
         if (fillBackBar > hFraction)
         {
@@ -89,12 +96,12 @@ public class PlayerController : MonoBehaviour
         point.GetComponentInChildren<TextMeshProUGUI>().text = $"{damage}";
         point.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
         
-        currentHealth -= damage;
+        CurrentHealth -= damage;
         _lerpTimer = 0f;
 
-        if (currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
-            Destroy(gameObject);
+            CurrentHealth = 0;
         }
     }
 
@@ -105,7 +112,7 @@ public class PlayerController : MonoBehaviour
         point.GetComponentInChildren<TextMeshProUGUI>().color = Color.green;
         
         _lerpTimer = 0f;
-        currentHealth += healAmount;
+        CurrentHealth += healAmount;
     }
 
     public IEnumerator ActivateShield()

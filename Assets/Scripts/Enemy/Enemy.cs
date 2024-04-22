@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float currentHealth;
     [SerializeField] private float health;
     [SerializeField] private GameObject canvas;
     [SerializeField] private Image frontHealthBar;
@@ -16,23 +15,28 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject floatingPoints;
     [SerializeField] private GameObject shieldSkill;
 
+    private PlayerController _player;
+
     private float _lerpTimer;
     private float _chipSpeed = 2f;
     private int _gottenDamageTimes = 0;
+    private bool _gameOver = false;
 
     private GameObject _shield;
 
     public bool CanTakeDamage = true;
-    public float Damage = 5;
+    public float Damage;
+    public float CurrentHealth;
 
     private void Start()
     {
-        currentHealth = health;
+        _player = FindObjectOfType<PlayerController>();
+        CurrentHealth = health;
     }
 
     private void Update()
     {
-        currentHealth = Mathf.Clamp(currentHealth, 0, health);
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, health);
         
         UpdateHpBar();
 
@@ -40,15 +44,21 @@ public class Enemy : MonoBehaviour
         {
             ActivateShield();
         }
+
+        if (_player.CurrentHealth == 0 && !_gameOver)
+        {
+            _gameOver = true;
+            gameObject.GetComponent<EnemySkills>().enabled = false;
+        }
     }
     
     private void UpdateHpBar()
     {
         float fillFrontBar = frontHealthBar.fillAmount;
         float fillBackBar = backHealthBar.fillAmount;
-        float hFraction = currentHealth / health;
+        float hFraction = CurrentHealth / health;
 
-        currentHpText.text = $"{currentHealth}";
+        currentHpText.text = $"{CurrentHealth}";
 
         if (fillBackBar > hFraction)
         {
@@ -77,10 +87,10 @@ public class Enemy : MonoBehaviour
         point.GetComponentInChildren<TextMeshProUGUI>().text = $"{damage}";
         point.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
         
-        currentHealth -= damage;
+        CurrentHealth -= damage;
         _lerpTimer = 0f;
 
-        if (currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             Debug.Log("СМЭРТЬ");
         }

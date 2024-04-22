@@ -209,13 +209,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7168131}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0076048914, y: -0.73386186, z: 0.008216854, w: -0.67920643}
+  m_LocalRotation: {x: -0.09293929, y: -0.7385304, z: 0.10405655, w: -0.6596268}
   m_LocalPosition: {x: 0, y: 1.0500001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 833400827}
-  m_LocalEulerAnglesHint: {x: 1.283, y: -265.57, z: 0}
+  m_LocalEulerAnglesHint: {x: 16.04, y: -263.54, z: 0}
 --- !u!114 &7168135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,7 +473,7 @@ Transform:
   m_GameObject: {fileID: 331470778}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 1.465, z: -0.9112727}
+  m_LocalPosition: {x: 6.298, y: 0.508, z: -0.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -561,8 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb854aa4f36f954419c94b143031fbac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  health: 100
+  health: 1000
   canvas: {fileID: 942292395}
   frontHealthBar: {fileID: 1078819843}
   backHealthBar: {fileID: 1198855429}
@@ -570,7 +569,8 @@ MonoBehaviour:
   floatingPoints: {fileID: 2225582702274166984, guid: 02425c7c757d5d949a6b7ef6d42934a5, type: 3}
   shieldSkill: {fileID: 7453348711148038379, guid: 444feeaff2e07bc4083673b94c9efa47, type: 3}
   CanTakeDamage: 1
-  Damage: 5
+  Damage: 90
+  CurrentHealth: 0
 --- !u!114 &331470787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +584,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseAttackSkill: {fileID: 8530190436417469060, guid: c2fad0329de0b6842b4489517cf5b19f, type: 3}
+  ultimateSkill: {fileID: 4278302707248308850, guid: 771bce4f9a76d1040a746ff4dfc9dc4e, type: 3}
+  ultimateCharge: {fileID: 2308230655231070061, guid: 968857f06681d6547a345f00d11ea8d9, type: 3}
 --- !u!1 &512355886
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff7f6d3cba8e32f45bfe5c760611c6d9, type: 2}
   m_sharedMaterial: {fileID: -5673756148445412311, guid: ff7f6d3cba8e32f45bfe5c760611c6d9, type: 2}
@@ -884,7 +886,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -59.485626, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1232,14 +1234,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frontHealthBar: {fileID: 512355888}
   backHealthBar: {fileID: 1834153499}
-  currentHealth: 0
   currentHpText: {fileID: 983902504}
   floatingPoints: {fileID: 2225582702274166984, guid: 02425c7c757d5d949a6b7ef6d42934a5, type: 3}
   canvas: {fileID: 821988944}
   postProcessVolumeDeath: {fileID: 570188417}
   postProcessVolumeShield: {fileID: 2076419353}
   CanTakeDamage: 1
-  Damage: 5
+  Damage: 30
+  CurrentHealth: 0
 --- !u!1 &942292395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,8 +1378,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -338, y: 519}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -311.81973, y: 519}
+  m_SizeDelta: {x: 259.4675, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &983902504
 MonoBehaviour:
@@ -1399,7 +1401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff7f6d3cba8e32f45bfe5c760611c6d9, type: 2}
   m_sharedMaterial: {fileID: -5673756148445412311, guid: ff7f6d3cba8e32f45bfe5c760611c6d9, type: 2}
@@ -2038,7 +2040,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a996fc5be192b61489e0549bad138ff4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
