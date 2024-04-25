@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class ButtonsManager : MonoBehaviour
 {
     [SerializeField] GameObject _mainMenu;
-    [SerializeField] GameObject _settingsButtons;
+    [SerializeField] GameObject _canvasSettings;
+    [SerializeField] GameObject _canvasGameDifficulty;
     public Image _imageSetttingsButton;
     public void QuitGame()
     {
@@ -19,12 +20,12 @@ public class ButtonsManager : MonoBehaviour
         Debug.Log("Settings");
         _imageSetttingsButton.enabled = false;
         _mainMenu.SetActive(false);
-        _settingsButtons.SetActive(true);
+        _canvasSettings.SetActive(true);
     }
     public void QuitSoundSettings()
     {
         _imageSetttingsButton.enabled=true;
         _mainMenu.SetActive(true);
-        _settingsButtons.SetActive(false);
+        _canvasSettings.SetActive(false);
     }
 }
