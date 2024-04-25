@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class GestureEvents : MonoBehaviour
 {
-    GestureRecognition gesture = new GestureRecognition();
+    private Skills _skills;
 
     private void Start()
     {
-        //gesture.contdIdentify(GestureRecognition.UpdateHeadPositionPolicy.UseInitial, GestureRecognition.UpdateHeadPositionPolicy.UseInitial, ref );
+        _skills = FindObjectOfType<Skills>();
     }
 
     private void Update()
@@ -26,16 +26,20 @@ public class GestureEvents : MonoBehaviour
             return;
         }
 
-        if (gestureCompletionData.gestureName == "vlad")
+        if (gestureCompletionData.gestureName == "BaseAttack")
         {
-            Debug.Log("vlad");
+            _skills.BaseAttack();
         }
 
-        if (gestureCompletionData.gestureName == "oleg")
+        if (gestureCompletionData.gestureName == "shield")
         {
-            Debug.Log("oleg");
+            _skills.ActivateShield();
         }
 
-        
+        if (gestureCompletionData.gestureName == "BreakShieldAttack")
+        {
+            _skills.BreakShield();
+        }
+
     }
 }

@@ -46,7 +46,7 @@ public class BaseAttackEnemySkill : MonoBehaviour
         isAttacking = true;
         hit.SetActive(true);
         _playerController.TakeDamage(_damage);
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.2f);
         isAttacking = false;
         Destroy(gameObject);
     }

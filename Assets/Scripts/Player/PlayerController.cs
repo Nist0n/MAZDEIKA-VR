@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        GameObject point = Instantiate(floatingPoints, new Vector3(435f, 617f, 0f), Quaternion.identity, canvas.transform) as GameObject;
+        GameObject point = Instantiate(floatingPoints, new Vector3(435f, 617f, 0f), new Quaternion(0f, 0f, 0f, 0f), canvas.transform) as GameObject;
         point.GetComponentInChildren<TextMeshProUGUI>().text = $"{damage}";
         point.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
         

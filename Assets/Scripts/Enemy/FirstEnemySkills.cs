@@ -13,6 +13,7 @@ public class FirstEnemySkills : MonoBehaviour
     [SerializeField] private Image skillImage;
 
     private FirstEnemy _enemy;
+    private PlayerController _player;
 
     private bool _isAttacking = false;
     private float _time;
@@ -22,6 +23,7 @@ public class FirstEnemySkills : MonoBehaviour
 
     private void Start()
     {
+        _player = FindObjectOfType<PlayerController>();
         _enemy = FindObjectOfType<FirstEnemy>();
         _randomNumOfSkill = 0;
         _time = Random.Range(2, 4);
@@ -36,7 +38,7 @@ public class FirstEnemySkills : MonoBehaviour
             CastSkill();
         }
 
-        if (_enemy.CurrentHealth <= 300 && !_ultimateIsReady)
+        if ((_enemy.CurrentHealth <= 300 || _player.CurrentHealth <= 300) && !_ultimateIsReady)
         {
             _ultimateIsReady = true;
         }
