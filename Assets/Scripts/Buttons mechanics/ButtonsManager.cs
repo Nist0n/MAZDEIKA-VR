@@ -22,10 +22,17 @@ public class ButtonsManager : MonoBehaviour
         _mainMenu.SetActive(false);
         _canvasSettings.SetActive(true);
     }
-    public void QuitSoundSettings()
+    public void BackButton()
     {
         _imageSetttingsButton.enabled=true;
         _mainMenu.SetActive(true);
         _canvasSettings.SetActive(false);
+        _canvasGameDifficulty.SetActive(false);
+    }
+    public void ChooseDifficulty()
+    {
+        _canvasGameDifficulty.SetActive(true);
+        _imageSetttingsButton.enabled = false;
+        _mainMenu.SetActive(false);
     }
 }
