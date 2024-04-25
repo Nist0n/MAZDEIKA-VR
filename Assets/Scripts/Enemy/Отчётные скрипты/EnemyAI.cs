@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
@@ -33,7 +33,7 @@ public class EnemyAI : MonoBehaviour
 
         _currentState = EnemyStates.Roaming;
 
-        _roamPosition = GenerateRoamPosition;
+        _roamPosition = GenerateRoamPosition();
     }
 
     private void Update()
@@ -43,7 +43,7 @@ public class EnemyAI : MonoBehaviour
             case EnemyStates.Roaming:
                 _roamTarget.transform.position = _roamPosition;
 
-                if (Vector3.Distance(gameObject.transform.position, _player.transform.position) <= _reachedPointDistance)
+                if (Vector3.Distance(gameObject.transform.position, _roamPosition) <= _reachedPointDistance)
                 {
                     _roamPosition = GenerateRoamPosition();
                 }
@@ -73,7 +73,7 @@ public class EnemyAI : MonoBehaviour
 
     private void TryFindTarget()
     {
-        if (Vector3.Distance(gameObject.transform.position, _player.transform.position) <=_targetFollowRange)
+        if (Vector3.Distance(gameObject.transform.position, _player.transform.position) <= _targetFollowRange)
         {
             _currentState = EnemyStates.Following;
         }
@@ -86,7 +86,7 @@ public class EnemyAI : MonoBehaviour
         return roamPosition;
     }
 
-    private Vector3 GenerateRandomWalkableDistance()
+    private float GenerateRandomWalkableDistance()
     {
         var randomDistance = Random.Range(_minWalkableDistance, _maxWalkableDistance);
 
@@ -106,4 +106,3 @@ public enum EnemyStates
     Roaming,
     Following
 }
-*/
