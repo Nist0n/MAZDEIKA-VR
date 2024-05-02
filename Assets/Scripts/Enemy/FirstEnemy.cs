@@ -22,6 +22,7 @@ public class FirstEnemy : MonoBehaviour
     private float _chipSpeed = 2f;
     private int _gottenDamageTimes = 0;
     private bool _gameOver = false;
+    private float _defence;
 
     private GameObject _shield;
 
@@ -90,6 +91,8 @@ public class FirstEnemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        damage -= _defence;
+
         GameObject point = Instantiate(floatingPoints, transform.position, new Quaternion(0f, 0f, 0f, 0f), canvas.transform) as GameObject;
         point.GetComponentInChildren<TextMeshProUGUI>().text = $"{damage}";
         point.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
@@ -130,5 +133,10 @@ public class FirstEnemy : MonoBehaviour
         Debug.Log("DeActivated");
         Destroy(aura);
         IsStunned = false;
+    }
+
+    public void UpdateDefence(float defence)
+    {
+        _defence = defence;
     }
 }

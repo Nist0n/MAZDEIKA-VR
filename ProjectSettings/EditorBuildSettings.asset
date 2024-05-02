@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainScenes/LocationMainMenu.unity
     guid: 8dc67afdb3052ff45b0b725be038492b
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/For mechanics and \u043E\u0442\u0447\u0435\u0442\u044B/TestBattleScene.unity"
     guid: fc8f30b9d7c80e74f9be87e3047aa828
+  - enabled: 1
+    path: Assets/GestureRecognition/GestureManager/GestureManager.unity
+    guid: 8d91ff346d965b042b02e8f26de1e499
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5e5e26684cc6aed4f80a943d9ee32c92, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c03f00a0073930b40a5824bc5cdf445b, type: 2}

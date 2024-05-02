@@ -9,6 +9,7 @@ public class SecondEnemyScript : MonoBehaviour
     [SerializeField] private GameObject ultimateSkill;
     [SerializeField] private GameObject ultimateCharge;
     [SerializeField] private Image skillImage;
+    [SerializeField] private float defence;
 
     private FirstEnemy _enemy;
 
@@ -23,6 +24,7 @@ public class SecondEnemyScript : MonoBehaviour
         _enemy = FindObjectOfType<FirstEnemy>();
         _randomNumOfSkill = 0;
         _time = Random.Range(2, 4);
+        _enemy.UpdateDefence(defence);
     }
 
     void Update()
