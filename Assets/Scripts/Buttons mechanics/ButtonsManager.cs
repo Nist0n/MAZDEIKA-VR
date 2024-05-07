@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class ButtonsManager : MonoBehaviour
 {
-    [SerializeField] GameObject _mainMenu;
-    [SerializeField] GameObject _canvasSettings;
-    [SerializeField] GameObject _canvasGameDifficulty;
-    public Image _imageSetttingsButton;
+    [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject settings;
+    [SerializeField] GameObject chooseGameDifficulty;
+    [SerializeField] GameObject achivmentsMenu;
     public void QuitGame()
     {
         Application.Quit();
@@ -18,21 +18,24 @@ public class ButtonsManager : MonoBehaviour
     public void SoundSettings()
     {
         Debug.Log("Settings");
-        _imageSetttingsButton.enabled = false;
-        _mainMenu.SetActive(false);
-        _canvasSettings.SetActive(true);
+        mainMenu.SetActive(false);
+        settings.SetActive(true);
     }
     public void BackButton()
     {
-        _imageSetttingsButton.enabled=true;
-        _mainMenu.SetActive(true);
-        _canvasSettings.SetActive(false);
-        _canvasGameDifficulty.SetActive(false);
+        mainMenu.SetActive(true);
+        settings.SetActive(false);
+        chooseGameDifficulty.SetActive(false);
+        achivmentsMenu.SetActive(false);
     }
     public void ChooseDifficulty()
     {
-        _canvasGameDifficulty.SetActive(true);
-        _imageSetttingsButton.enabled = false;
-        _mainMenu.SetActive(false);
+        chooseGameDifficulty.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+    public void OpenAchivmentsMenu()
+    {
+        mainMenu.SetActive(false);
+        achivmentsMenu.SetActive(true);
     }
 }
