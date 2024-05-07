@@ -770,6 +770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 766948342}
   - component: {fileID: 766948341}
+  - component: {fileID: 766948343}
   m_Layer: 0
   m_Name: Gesture
   m_TagString: Untagged
@@ -804,6 +805,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &766948343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766948340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60638da6697aead488bc406c0af5ce24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show_output: 1
+  show_stack: 1
+  view_rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 400
+    height: 60000
+  show: 1
 --- !u!1001 &811881476
 PrefabInstance:
   m_ObjectHideFlags: 0
