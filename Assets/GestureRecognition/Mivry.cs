@@ -542,7 +542,7 @@ public class Mivry : MonoBehaviour
 #if UNITY_EDITOR
         // When running the scene inside the Unity editor,
         // we can just load the file from the Assets/ folder:
-        string GesturesFilePath = "Assets";
+        string GesturesFilePath = "";
 #elif UNITY_ANDROID
         // On android, the file is in the .apk,
         // so we need to first "download" it to the apps' cache folder.
@@ -575,7 +575,7 @@ public class Mivry : MonoBehaviour
         // In this case, we can load the gesture database file from the streamingAssets folder.
         string GesturesFilePath = Application.streamingAssetsPath;
 #endif
-        GesturesFilePath = GesturesFilePath + "/" + GestureDatabaseFile;
+        GesturesFilePath = GestureDatabaseFile;
         // try to figure out if this is a gesture recognition or gesture combinations file
         gr = new GestureRecognition();
         gr.contdIdentificationPeriod = this.ContinuousGesturePeriod;
