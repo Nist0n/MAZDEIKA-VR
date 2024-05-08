@@ -9,18 +9,17 @@ using UnityEngine.Serialization;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
-
-    [SerializeField] public AudioSource musicSource;
-    [SerializeField] public AudioSource sfxSource;
-
-    public List<Sound> music, sounds;
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private List<Sound> music, sounds;
+    
+    private static AudioManager _instance;
 
     private void Awake()
     {
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = this;
+            _instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else

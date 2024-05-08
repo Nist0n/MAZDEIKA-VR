@@ -98,11 +98,6 @@ public class PlayerController : MonoBehaviour
         
         CurrentHealth -= damage;
         _lerpTimer = 0f;
-
-        if (CurrentHealth <= 0)
-        {
-            CurrentHealth = 0;
-        }
     }
 
     public void RestoreHealth(float healAmount)
