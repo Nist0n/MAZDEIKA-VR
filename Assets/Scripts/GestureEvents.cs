@@ -10,6 +10,7 @@ public class GestureEvents : MonoBehaviour
     private void Start()
     {
         _skills = FindObjectOfType<Skills>();
+        Debug.Log(Application.streamingAssetsPath);
     }
 
     private void Update()

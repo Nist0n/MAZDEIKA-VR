@@ -459,9 +459,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2567945135236346518, guid: c6fc006ce10cd8e48b08b66301005b38, type: 3}
+      propertyPath: defence
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3456312972383790507, guid: c6fc006ce10cd8e48b08b66301005b38, type: 3}
       propertyPath: m_Name
       value: SecondEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702051551457324513, guid: c6fc006ce10cd8e48b08b66301005b38, type: 3}
+      propertyPath: Damage
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702051551457324513, guid: c6fc006ce10cd8e48b08b66301005b38, type: 3}
+      propertyPath: health
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 3954980326996475627, guid: c6fc006ce10cd8e48b08b66301005b38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -589,7 +601,7 @@ MonoBehaviour:
   LicenseName: vadimpavlov@bk.ru_3P9plVA3zQ9VQUlW0N4DMtH0
   LicenseKey: 5b477d9afa99d877407e4ee50bbe1b553dd257fb580ade57b34929cd283fb972
   LicenseFilePath: 
-  GestureDatabaseFile: C:\Users\Admin\Documents\Github\MAZDEIKA-VR\Assets\GestureRecognition\Samples/myGestures.dat
+  GestureDatabaseFile: myGestures.dat
   unityXrPlugin: 0
   mivryCoordinateSystem: 0
   LeftHand: {fileID: 1817117736}
@@ -695,6 +707,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1591944864}
   m_SourcePrefab: {fileID: 100100000, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+--- !u!1001 &723130422
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3751631613869302896, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.9908612
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751631613869302896, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.022787094
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751631613869302896, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0754488
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751631613869302896, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751631613869302896, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751631613869302896, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751631613869302896, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751631613869302896, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751631613869302896, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751631613869302896, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641725915175656327, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 01d0b0535f081e74f8e99d058d790572, type: 3}
 --- !u!1 &766948340
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,7 +781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &766948341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2718,7 +2787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2057766359
 Transform:
   m_ObjectHideFlags: 0
@@ -4432,3 +4501,4 @@ SceneRoots:
   - {fileID: 1267570425}
   - {fileID: 403272183}
   - {fileID: 2057766359}
+  - {fileID: 723130422}

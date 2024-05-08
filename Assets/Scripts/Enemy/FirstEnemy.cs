@@ -30,6 +30,7 @@ public class FirstEnemy : MonoBehaviour
     public float Damage;
     public float CurrentHealth;
     public bool IsStunned = false;
+    public bool IsBurning = false;
 
     private void Start()
     {
@@ -138,5 +139,15 @@ public class FirstEnemy : MonoBehaviour
     public void UpdateDefence(float defence)
     {
         _defence = defence;
+    }
+
+    public IEnumerator ActivateTickDamage(float damage)
+    {
+        if (IsBurning)
+        {
+            TakeDamage(damage + _defence);
+            yield return new WaitForSeconds(1f);
+            StartCoroutine(ActivateTickDamage(damage));
+        }
     }
 }

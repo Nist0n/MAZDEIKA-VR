@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class SecondEnemyScript : MonoBehaviour
 {
     [SerializeField] private GameObject baseAttackSkill;
-    [SerializeField] private GameObject ultimateSkill;
-    [SerializeField] private GameObject ultimateCharge;
     [SerializeField] private Image skillImage;
     [SerializeField] private float defence;
 
@@ -23,7 +21,7 @@ public class SecondEnemyScript : MonoBehaviour
     {
         _enemy = FindObjectOfType<FirstEnemy>();
         _randomNumOfSkill = 0;
-        _time = Random.Range(2, 4);
+        _time = Random.Range(1.5f, 3);
         _enemy.UpdateDefence(defence);
     }
 
@@ -52,17 +50,12 @@ public class SecondEnemyScript : MonoBehaviour
 
     private void CastSkill()
     {
-        //if (!_ultimateIsReady)
         {
             List<IEnumerator> functions = new List<IEnumerator>();
             functions.Add(BaseAttack());
             StartCoroutine(functions[_randomNumOfSkill]);
             if (functions[_randomNumOfSkill].ToString().Contains("BaseAttack")) Debug.Log("BaseAttack");
             _randomNumOfSkill = Random.Range(0, functions.Count);
-        }
-        //else
-        {
-            //StartCoroutine(UltimateAttack());
         }
     }
 
@@ -80,17 +73,4 @@ public class SecondEnemyScript : MonoBehaviour
         _isAttacking = false;
         skillImage.color = new Color(255f, 255f, 255f, 0f);
     }
-    
-    /*IEnumerator UltimateAttack()
-    {
-        skillImage.sprite = ultimateCharge.GetComponent<Image>().sprite;
-        skillImage.color = new Color(255f, 255f, 255f, 255f);
-        Instantiate(ultimateCharge, gameObject.transform);
-        yield return new WaitForSeconds(3f);
-        Instantiate(ultimateSkill, gameObject.transform);
-        _timer = 0;
-        _time = Random.Range(2, 4);
-        _isAttacking = true;
-        skillImage.color = new Color(255f, 255f, 255f, 0f);
-    }*/
 }
