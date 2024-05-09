@@ -46,6 +46,7 @@ public class BaseAttackSkill : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
+        _player.GivenDamageToEnemyTimes++;
         _enemyClass.TakeDamage(_damage);
         yield return new WaitForSeconds(0.8f);
         isAttacking = false;

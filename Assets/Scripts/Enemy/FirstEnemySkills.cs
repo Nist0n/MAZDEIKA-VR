@@ -41,6 +41,8 @@ public class FirstEnemySkills : MonoBehaviour
         if ((_enemy.CurrentHealth <= 300 || _player.CurrentHealth <= 300) && !_ultimateIsReady)
         {
             _ultimateIsReady = true;
+            _enemy.CanTakeDamage = false;
+            gameObject.GetComponent<FirstEnemySkills>().enabled = false;
         }
     }
 

@@ -11,21 +11,28 @@ public class BreakShieldSkill : MonoBehaviour
 
     private GameObject _enemy;
     private FirstEnemy _enemyClass;
-    void Start()
+    private void Start()
     {
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
         _enemyClass = _enemy.GetComponent<FirstEnemy>();
     }
-    void Update()
+    private void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, _enemy.transform.position, speed);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy") && !_isAttacking)
+        if (other.gameObject.CompareTag("Enemy") && !_isAttacking && !_enemyClass.CanTakeDamage)
         {
             StartCoroutine(Attack());
+        }
+        else
+        {
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                StartCoroutine(CantAttack());
+            }
         }
     }
 
@@ -34,6 +41,15 @@ public class BreakShieldSkill : MonoBehaviour
         _isAttacking = true;
         hit.SetActive(true);
         _enemyClass.DeActivateShield();
+        yield return new WaitForSeconds(0.8f);
+        _isAttacking = false;
+        Destroy(gameObject);
+    }
+    
+    IEnumerator CantAttack()
+    {
+        _isAttacking = true;
+        hit.SetActive(true);
         yield return new WaitForSeconds(0.8f);
         _isAttacking = false;
         Destroy(gameObject);

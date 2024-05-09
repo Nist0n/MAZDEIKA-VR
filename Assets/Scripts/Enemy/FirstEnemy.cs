@@ -15,14 +15,16 @@ public class FirstEnemy : MonoBehaviour
     [SerializeField] private GameObject floatingPoints;
     [SerializeField] private GameObject shieldSkill;
     [SerializeField] private GameObject stunAura;
+    [SerializeField] private GameObject igniteAura;
 
     private PlayerController _player;
 
     private float _lerpTimer;
     private float _chipSpeed = 2f;
-    private int _gottenDamageTimes = 0;
     private bool _gameOver = false;
     private float _defence;
+    private float _isBurningTime;
+    private float _igniteTimer = 5f;
 
     private GameObject _shield;
 
@@ -44,20 +46,24 @@ public class FirstEnemy : MonoBehaviour
         
         UpdateHpBar();
 
-        if (_gottenDamageTimes >= 5 && CanTakeDamage)
+        if (_player.GivenDamageToEnemyTimes >= 5 && CanTakeDamage)
         {
             ActivateShield();
         }
 
-        if (_player.CurrentHealth == 0 && !_gameOver)
+        if ((_player.CurrentHealth == 0 && !_gameOver) || (CurrentHealth == 0 && !_gameOver))
         {
             _gameOver = true;
-            gameObject.GetComponent<FirstEnemySkills>().enabled = false;
         }
 
-        if (CurrentHealth <= 300)
+        if (IsBurning)
         {
-            CanTakeDamage = false;
+            _isBurningTime += Time.deltaTime;
+            if (_isBurningTime >= _igniteTimer)
+            {
+                IsBurning = false;
+                _isBurningTime = 0;
+            }
         }
     }
     
@@ -94,6 +100,8 @@ public class FirstEnemy : MonoBehaviour
     {
         damage -= _defence;
 
+        damage = Mathf.Clamp(damage, 0, Single.PositiveInfinity);
+
         GameObject point = Instantiate(floatingPoints, transform.position, new Quaternion(0f, 0f, 0f, 0f), canvas.transform) as GameObject;
         point.GetComponentInChildren<TextMeshProUGUI>().text = $"{damage}";
         point.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
@@ -105,8 +113,6 @@ public class FirstEnemy : MonoBehaviour
         {
             Debug.Log("СМЭРТЬ");
         }
-
-        _gottenDamageTimes++;
     }
 
     private void ActivateShield()
@@ -118,7 +124,7 @@ public class FirstEnemy : MonoBehaviour
     public void DeActivateShield()
     {
         CanTakeDamage = true;
-        _gottenDamageTimes = 0;
+        _player.GivenDamageToEnemyTimes = 0;
         if (_shield != null)
         {
             Destroy(_shield);
@@ -128,11 +134,9 @@ public class FirstEnemy : MonoBehaviour
     public IEnumerator ActivateStunEffect()
     {
         IsStunned = true;
-        GameObject aura = Instantiate(stunAura, transform) as GameObject;
-        Debug.Log("Activated");
+        GameObject tempStunAura = Instantiate(stunAura, transform) as GameObject;
         yield return new WaitForSeconds(3f);
-        Debug.Log("DeActivated");
-        Destroy(aura);
+        Destroy(tempStunAura);
         IsStunned = false;
     }
 
@@ -149,5 +153,14 @@ public class FirstEnemy : MonoBehaviour
             yield return new WaitForSeconds(1f);
             StartCoroutine(ActivateTickDamage(damage));
         }
+    }
+
+    public IEnumerator ActivateIgniteAura()
+    {
+        GameObject tempIgniteAura = Instantiate(igniteAura, transform) as GameObject;
+        Debug.Log("funny");
+        yield return new WaitForSeconds(_igniteTimer);
+        Debug.Log("Destroyed");
+        Destroy(tempIgniteAura);
     }
 }

@@ -15,7 +15,6 @@ public class SecondEnemyScript : MonoBehaviour
     private float _time;
     private float _timer;
     private int _randomNumOfSkill;
-    private bool _ultimateIsReady = false;
 
     private void Start()
     {
@@ -42,9 +41,10 @@ public class SecondEnemyScript : MonoBehaviour
             CastSkill();
         }
 
-        if (_enemy.CurrentHealth <= 300 && !_ultimateIsReady)
+        if (_enemy.CurrentHealth <= 0)
         {
-            _ultimateIsReady = true;
+            _enemy.CanTakeDamage = false;
+            gameObject.GetComponent<SecondEnemyScript>().enabled = false;
         }
     }
 

@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public bool CanTakeDamage = true;
     public float Damage;
     public float CurrentHealth;
+    public float IgniteDamage;
+    public int GivenDamageToEnemyTimes = 0;
 
     private Vignette _vignetteDeath;
     private Vignette _vignetteShield;
