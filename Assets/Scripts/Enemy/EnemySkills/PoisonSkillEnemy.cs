@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseAttackEnemySkill : MonoBehaviour
+public class PoisonSkillEnemy : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private GameObject hit;
 
     private bool isAttacking = false;
-    private float _damage;
 
     private GameObject _player;
     private PlayerController _playerController;
@@ -22,29 +21,20 @@ public class BaseAttackEnemySkill : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, speed);
-
-        if (!_playerController.CanTakeDamage)
-        {
-            _damage = 0;
-        }
-        else
-        {
-            if (_enemy.GetComponent<ThirdEnemySkills>().IsIncreasedAttack)
-            {
-                _damage = _enemy.Damage * 2;
-            }
-            else
-            {
-                _damage = _enemy.Damage;
-            }
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && !isAttacking)
         {
-            StartCoroutine(Attack());
+            if (_playerController.CanTakeDamage)
+            {
+                StartCoroutine(Attack());
+            }
+            else
+            {
+                StartCoroutine(ShieldAttack());
+            }
         }
     }
 
@@ -52,10 +42,17 @@ public class BaseAttackEnemySkill : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
-        _playerController.TakeDamage(_damage);
+        _playerController.PoisonPlayer(_enemy.PoisonDamage);
         yield return new WaitForSeconds(0.2f);
-        if (_enemy.GetComponent<ThirdEnemySkills>().IsIncreasedAttack)
-            _enemy.GetComponent<ThirdEnemySkills>().IsIncreasedAttack = false;
+        isAttacking = false;
+        Destroy(gameObject);
+    }
+    
+    IEnumerator ShieldAttack()
+    {
+        isAttacking = true;
+        hit.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
         isAttacking = false;
         Destroy(gameObject);
     }

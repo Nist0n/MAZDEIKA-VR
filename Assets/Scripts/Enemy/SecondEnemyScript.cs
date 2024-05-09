@@ -69,7 +69,7 @@ public class SecondEnemyScript : MonoBehaviour
             Instantiate(baseAttackSkill, gameObject.transform);
         }
         _timer = 0;
-        _time = Random.Range(2, 4);
+        _time = Random.Range(1.5f, 3);
         _isAttacking = false;
         skillImage.color = new Color(255f, 255f, 255f, 0f);
     }

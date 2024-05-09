@@ -33,6 +33,7 @@ public class FirstEnemy : MonoBehaviour
     public float CurrentHealth;
     public bool IsStunned = false;
     public bool IsBurning = false;
+    public float PoisonDamage;
 
     private void Start()
     {

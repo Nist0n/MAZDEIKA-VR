@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public float CurrentHealth;
     public float IgniteDamage;
     public int GivenDamageToEnemyTimes = 0;
+    public bool IsPoisoned = false;
+    public bool IsStunned = false;
 
     private Vignette _vignetteDeath;
     private Vignette _vignetteShield;
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private float _chipSpeed = 2f;
     private float _health = 1000f;
     private bool _gameOver = false;
+    private float _defence;
 
     private void Start()
     {
@@ -56,6 +59,18 @@ public class PlayerController : MonoBehaviour
         {
             _gameOver = true;
             gameObject.GetComponent<Skills>().enabled = false;
+        }
+
+        if (IsStunned)
+        {
+            gameObject.GetComponent<Skills>().enabled = false;
+        }
+        else
+        {
+            if (!_gameOver)
+            {
+                gameObject.GetComponent<Skills>().enabled = true;
+            }
         }
         
         UpdateHpBar();
@@ -121,5 +136,33 @@ public class PlayerController : MonoBehaviour
         CanTakeDamage = true;
         _vignetteShield.smoothness.value = 0f;
         postProcessVolumeShield.priority = 0;
+    }
+
+    public void PoisonPlayer(float damage)
+    {
+        IsPoisoned = true;
+        StartCoroutine(ActivateTickDamage(damage));
+    }
+
+    public void StunPlayer()
+    {
+        StartCoroutine(ActivateStun());
+    }
+    
+    private IEnumerator ActivateTickDamage(float damage)
+    {
+        if (IsPoisoned)
+        {
+            TakeDamage(damage + _defence);
+            yield return new WaitForSeconds(1f);
+            StartCoroutine(ActivateTickDamage(damage));
+        }
+    }
+
+    private IEnumerator ActivateStun()
+    {
+        IsStunned = true;
+        yield return new WaitForSeconds(5f);
+        IsStunned = false;
     }
 }
