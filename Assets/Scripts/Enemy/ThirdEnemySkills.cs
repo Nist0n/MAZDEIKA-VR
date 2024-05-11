@@ -10,6 +10,8 @@ public class ThirdEnemySkills : MonoBehaviour
     [SerializeField] private GameObject stunSkill;
     [SerializeField] private Image skillImage;
     [SerializeField] private float defence;
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject hand;
 
     private FirstEnemy _enemy;
     private PlayerController _player;
@@ -57,7 +59,7 @@ public class ThirdEnemySkills : MonoBehaviour
             _timer = 0;
         }
 
-        if (_time - _timer <= 1.5f && !_isAttacking)
+        if (_time - _timer <= 1f && !_isAttacking)
         {
             _isAttacking = true;
             CastSkill();
@@ -141,12 +143,13 @@ public class ThirdEnemySkills : MonoBehaviour
 
     IEnumerator BaseAttack()
     {
+        animator.SetTrigger("baseAttack");
         skillImage.sprite = baseAttackSkill.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         if (!_enemy.IsStunned)
         {
-            Instantiate(baseAttackSkill, gameObject.transform);
+            Instantiate(baseAttackSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
         }
         _timer = 0;
         _time = Random.Range(2, 3.5f);
@@ -156,12 +159,13 @@ public class ThirdEnemySkills : MonoBehaviour
 
     IEnumerator PoisonAttack()
     {
+        animator.SetTrigger("baseAttack");
         skillImage.sprite = poisonSkill.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         if (!_enemy.IsStunned)
         {
-            Instantiate(poisonSkill, gameObject.transform);
+            Instantiate(poisonSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
             _canUsePoisonSkill = false;
         }
         _timer = 0;
@@ -172,12 +176,13 @@ public class ThirdEnemySkills : MonoBehaviour
     
     IEnumerator StunAttack()
     {
+        animator.SetTrigger("baseAttack");
         skillImage.sprite = poisonSkill.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         if (!_enemy.IsStunned)
         {
-            Instantiate(stunSkill, gameObject.transform);
+            Instantiate(stunSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
             _canUseStunSkill = false;
             _timer = 0;
             _time = Random.Range(2, 3.5f);
@@ -191,5 +196,25 @@ public class ThirdEnemySkills : MonoBehaviour
             _isAttacking = false;
             skillImage.color = new Color(255f, 255f, 255f, 0f);
         }
+    }
+
+    public void InstantinateBaseAttack()
+    {
+        Instantiate(baseAttackSkill, gameObject.transform);
+    }
+
+    public void InstantinatePoisonAttack()
+    {
+        Instantiate(poisonSkill, gameObject.transform);
+        _canUsePoisonSkill = false;
+    }
+
+    public void InstantinateStunAttack()
+    {
+        Instantiate(stunSkill, gameObject.transform);
+        _canUseStunSkill = false;
+        _timer = 0;
+        _time = Random.Range(2, 3.5f);
+        _isAttacking = false;
     }
 }

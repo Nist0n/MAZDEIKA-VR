@@ -9,7 +9,7 @@ public class EnemyShieldDestroyer : MonoBehaviour
 
     private void Start()
     {
-        _enemy = GetComponentInParent<FirstEnemy>();
+        _enemy = FindObjectOfType<FirstEnemy>();
     }
 
     private void Update()

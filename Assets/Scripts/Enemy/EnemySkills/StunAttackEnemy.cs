@@ -43,8 +43,8 @@ public class StunAttackEnemy : MonoBehaviour
         isAttacking = true;
         hit.SetActive(true);
         _playerController.StunPlayer();
-        _enemy.GetComponent<ThirdEnemySkills>().IsIncreasedAttack = true;
-        yield return new WaitForSeconds(0.2f);
+        FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack = true;
+        yield return new WaitForSeconds(0.4f);
         isAttacking = false;
         Destroy(gameObject);
     }
@@ -53,7 +53,7 @@ public class StunAttackEnemy : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         isAttacking = false;
         Destroy(gameObject);
     }

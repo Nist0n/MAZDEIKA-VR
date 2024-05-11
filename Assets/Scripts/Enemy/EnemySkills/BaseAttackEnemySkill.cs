@@ -29,7 +29,7 @@ public class BaseAttackEnemySkill : MonoBehaviour
         }
         else
         {
-            if (_enemy.GetComponent<ThirdEnemySkills>().IsIncreasedAttack)
+            if (FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack)
             {
                 _damage = _enemy.Damage * 2;
             }
@@ -53,9 +53,9 @@ public class BaseAttackEnemySkill : MonoBehaviour
         isAttacking = true;
         hit.SetActive(true);
         _playerController.TakeDamage(_damage);
-        yield return new WaitForSeconds(0.2f);
-        if (_enemy.GetComponent<ThirdEnemySkills>().IsIncreasedAttack)
-            _enemy.GetComponent<ThirdEnemySkills>().IsIncreasedAttack = false;
+        yield return new WaitForSeconds(0.4f);
+        if (FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack)
+            FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack = false;
         isAttacking = false;
         Destroy(gameObject);
     }

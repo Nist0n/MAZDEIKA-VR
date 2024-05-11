@@ -43,7 +43,7 @@ public class PoisonSkillEnemy : MonoBehaviour
         isAttacking = true;
         hit.SetActive(true);
         _playerController.PoisonPlayer(_enemy.PoisonDamage);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         isAttacking = false;
         Destroy(gameObject);
     }
@@ -52,7 +52,7 @@ public class PoisonSkillEnemy : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         isAttacking = false;
         Destroy(gameObject);
     }

@@ -16,6 +16,7 @@ public class FirstEnemy : MonoBehaviour
     [SerializeField] private GameObject shieldSkill;
     [SerializeField] private GameObject stunAura;
     [SerializeField] private GameObject igniteAura;
+    [SerializeField] private Animator animator;
 
     private PlayerController _player;
 
@@ -25,6 +26,7 @@ public class FirstEnemy : MonoBehaviour
     private float _defence;
     private float _isBurningTime;
     private float _igniteTimer = 5f;
+    private bool _isAttacking = false;
 
     private GameObject _shield;
 
@@ -100,6 +102,7 @@ public class FirstEnemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         damage -= _defence;
+        if (!animator.GetBool("isAttacking")) animator.SetTrigger("takeDamage");
 
         damage = Mathf.Clamp(damage, 0, Single.PositiveInfinity);
 
