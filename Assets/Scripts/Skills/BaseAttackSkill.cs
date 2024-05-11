@@ -18,7 +18,7 @@ public class BaseAttackSkill : MonoBehaviour
     {
         _player = FindObjectOfType<PlayerController>();
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
-        _enemyClass = _enemy.GetComponent<FirstEnemy>();
+        _enemyClass = FindObjectOfType<FirstEnemy>();
     }
     void Update()
     {

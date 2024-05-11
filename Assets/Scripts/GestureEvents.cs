@@ -56,7 +56,7 @@ public class GestureEvents : MonoBehaviour
 
         if (gestureCompletionData.gestureName == "BaseAttack")
         {
-            if(gestureCompletionData.similarity >= 0.3f)
+            if(gestureCompletionData.similarity >= 0.5f)
             {
                 _skills.BaseAttack();
                 Debug.Log("EEEEEEEE");
@@ -65,12 +65,12 @@ public class GestureEvents : MonoBehaviour
 
         if (gestureCompletionData.gestureName == "shield")
         {
-            if (gestureCompletionData.similarity >= 0.3f) _skills.ActivateShield();
+            if (gestureCompletionData.similarity >= 0.5f) _skills.ActivateShield();
         }
 
         if (gestureCompletionData.gestureName == "BreakShieldAttack")
         {
-            if (gestureCompletionData.similarity >= 0.3f) _skills.BreakShield();
+            if (gestureCompletionData.similarity >= 0.5f) _skills.BreakShield();
         }
 
     }
