@@ -42,7 +42,6 @@ public class FirstEnemySkills : MonoBehaviour
         {
             _ultimateIsReady = true;
             _enemy.CanTakeDamage = false;
-            gameObject.GetComponent<FirstEnemySkills>().enabled = false;
         }
     }
 

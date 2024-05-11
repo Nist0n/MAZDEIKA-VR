@@ -102,7 +102,7 @@ public class FirstEnemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         damage -= _defence;
-        if (!animator.GetBool("isAttacking")) animator.SetTrigger("takeDamage");
+        //if (!animator.GetBool("isAttacking")) animator.SetTrigger("takeDamage");
 
         damage = Mathf.Clamp(damage, 0, Single.PositiveInfinity);
 

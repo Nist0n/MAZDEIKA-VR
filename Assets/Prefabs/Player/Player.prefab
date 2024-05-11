@@ -530,7 +530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3751631613869302896
 Transform:
   m_ObjectHideFlags: 0
@@ -636,6 +636,7 @@ MonoBehaviour:
   baseAttackSpell: {fileID: 982778631250529469, guid: a245887b3ff3cf04ca4871eda9188de1, type: 3}
   breakShieldSkill: {fileID: 6678871872237799919, guid: 70276c68bea66524582f789ce82a0b40, type: 3}
   stunningAttackSkill: {fileID: 4471872716426723547, guid: 8c72f266209ec404491be5dc4a7c4ffa, type: 3}
+  igniteSkill: {fileID: 3388547718251322554, guid: a5b49d9b25f98ad46b1b8700c7ac80bf, type: 3}
 --- !u!114 &172570677423008897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,6 +659,10 @@ MonoBehaviour:
   CanTakeDamage: 1
   Damage: 30
   CurrentHealth: 0
+  IgniteDamage: 15
+  GivenDamageToEnemyTimes: 0
+  IsPoisoned: 0
+  IsStunned: 0
 --- !u!1 &6619932170339829797
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +855,7 @@ Transform:
   m_GameObject: {fileID: 8583579024076311837}
   serializedVersion: 2
   m_LocalRotation: {x: -0.09293929, y: -0.7385304, z: 0.10405655, w: -0.6596268}
-  m_LocalPosition: {x: 0, y: 1.0500001, z: 0}
+  m_LocalPosition: {x: 0, y: 2.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
