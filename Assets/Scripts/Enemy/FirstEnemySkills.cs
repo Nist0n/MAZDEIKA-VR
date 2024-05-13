@@ -11,6 +11,8 @@ public class FirstEnemySkills : MonoBehaviour
     [SerializeField] private GameObject ultimateSkill;
     [SerializeField] private GameObject ultimateCharge;
     [SerializeField] private Image skillImage;
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject hand;
 
     private FirstEnemy _enemy;
     private PlayerController _player;
@@ -32,7 +34,7 @@ public class FirstEnemySkills : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-        if (_time - _timer <= 1.5f && !_isAttacking)
+        if (_time - _timer <= 1f && !_isAttacking)
         {
             _isAttacking = true;
             CastSkill();
@@ -63,10 +65,11 @@ public class FirstEnemySkills : MonoBehaviour
 
     IEnumerator BaseAttack()
     {
+        animator.SetTrigger("baseAttack");
         skillImage.sprite = baseAttackSkill.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
         yield return new WaitForSeconds(1.5f);
-        Instantiate(baseAttackSkill, gameObject.transform);
+        Instantiate(baseAttackSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
         _timer = 0;
         _time = Random.Range(2, 4);
         _isAttacking = false;
@@ -75,11 +78,12 @@ public class FirstEnemySkills : MonoBehaviour
     
     IEnumerator UltimateAttack()
     {
+        animator.SetTrigger("secondAttack");
         skillImage.sprite = ultimateCharge.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
         Instantiate(ultimateCharge, gameObject.transform);
         yield return new WaitForSeconds(3f);
-        Instantiate(ultimateSkill, gameObject.transform);
+        Instantiate(ultimateSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
         _timer = 0;
         _time = Random.Range(2, 4);
         _isAttacking = true;

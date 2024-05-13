@@ -14,4 +14,9 @@ public class AnimManager : MonoBehaviour
     {
         animator.SetBool("isAttacking", false);
     }
+
+    public void GameOver()
+    {
+        animator.SetBool("gameOver", true);
+    }
 }

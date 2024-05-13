@@ -65,7 +65,7 @@ public class ThirdEnemySkills : MonoBehaviour
             CastSkill();
         }
 
-        if (_enemy.CurrentHealth <= 0)
+        if (_enemy.CurrentHealth <= 0 || _player.CurrentHealth <= 0)
         {
             _enemy.CanTakeDamage = false;
             gameObject.GetComponent<ThirdEnemySkills>().enabled = false;
@@ -196,25 +196,5 @@ public class ThirdEnemySkills : MonoBehaviour
             _isAttacking = false;
             skillImage.color = new Color(255f, 255f, 255f, 0f);
         }
-    }
-
-    public void InstantinateBaseAttack()
-    {
-        Instantiate(baseAttackSkill, gameObject.transform);
-    }
-
-    public void InstantinatePoisonAttack()
-    {
-        Instantiate(poisonSkill, gameObject.transform);
-        _canUsePoisonSkill = false;
-    }
-
-    public void InstantinateStunAttack()
-    {
-        Instantiate(stunSkill, gameObject.transform);
-        _canUseStunSkill = false;
-        _timer = 0;
-        _time = Random.Range(2, 3.5f);
-        _isAttacking = false;
     }
 }

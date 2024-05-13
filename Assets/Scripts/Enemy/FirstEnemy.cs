@@ -54,8 +54,15 @@ public class FirstEnemy : MonoBehaviour
             ActivateShield();
         }
 
-        if ((_player.CurrentHealth == 0 && !_gameOver) || (CurrentHealth == 0 && !_gameOver))
+        if (_player.CurrentHealth == 0 && !_gameOver)
         {
+            animator.SetTrigger("isWin");
+            _gameOver = true;
+        }
+        
+        if (CurrentHealth == 0 && !_gameOver)
+        {
+            animator.SetTrigger("isDead");
             _gameOver = true;
         }
 
@@ -102,7 +109,7 @@ public class FirstEnemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         damage -= _defence;
-        //if (!animator.GetBool("isAttacking")) animator.SetTrigger("takeDamage");
+        if (!animator.GetBool("isAttacking")) animator.SetTrigger("takeDamage");
 
         damage = Mathf.Clamp(damage, 0, Single.PositiveInfinity);
 

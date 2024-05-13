@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.6
+      scalar: 0.79
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5137,8 +5137,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.8
-      minScalar: 0.3
+      scalar: 0.4
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9863,7 +9863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5699109782342382754, guid: bef1e15926c7d6e45b6e9bf082409454, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6508414372743547800, guid: bef1e15926c7d6e45b6e9bf082409454, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.b
