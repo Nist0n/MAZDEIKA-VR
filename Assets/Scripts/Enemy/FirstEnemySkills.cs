@@ -68,10 +68,10 @@ public class FirstEnemySkills : MonoBehaviour
         animator.SetTrigger("baseAttack");
         skillImage.sprite = baseAttackSkill.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         Instantiate(baseAttackSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
         _timer = 0;
-        _time = Random.Range(2, 4);
+        _time = Random.Range(3, 4);
         _isAttacking = false;
         skillImage.color = new Color(255f, 255f, 255f, 0f);
     }

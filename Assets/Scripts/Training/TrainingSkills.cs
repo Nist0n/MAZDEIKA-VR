@@ -9,6 +9,8 @@ public class TrainingSkills : MonoBehaviour
 
     private PlayerController _player;
     private FirstEnemy _enemy;
+    
+    
 
     private void Start()
     {

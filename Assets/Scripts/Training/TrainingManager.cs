@@ -1,18 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DialogueEditor;
 using UnityEngine;
 
 public class TrainingManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private NPCConversation startingDialog;
+
+    private void Start()
     {
-        
+        StartDialog(startingDialog);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void StartDialog(NPCConversation dialog)
     {
-        
+        ConversationManager.Instance.StartConversation(dialog);
     }
 }
