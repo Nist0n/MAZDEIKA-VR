@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,21 @@ using UnityEngine.UI;
 
 public class ButtonsManager : MonoBehaviour
 {
-    [SerializeField] GameObject mainMenu;
-    [SerializeField] GameObject settings;
-    [SerializeField] GameObject chooseGameDifficulty;
-    [SerializeField] GameObject achivmentsMenu;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject settings;
+    [SerializeField] private GameObject chooseGameDifficulty;
+    [SerializeField] private GameObject achivmentsMenu;
+    [SerializeField] private GameObject continueButton;
+
+    private void Start()
+    {
+        if (SaveSystem.instance.firstEnemyDefeated == true || SaveSystem.instance.secondEnemyDefeated == true ||
+            SaveSystem.instance.thirdEnemyDefeated == true)
+        {
+            continueButton.SetActive(true);
+        }
+    }
+
     public void QuitGame()
     {
         Application.Quit();

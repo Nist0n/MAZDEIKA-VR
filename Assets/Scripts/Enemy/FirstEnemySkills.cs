@@ -44,6 +44,8 @@ public class FirstEnemySkills : MonoBehaviour
         {
             _ultimateIsReady = true;
             _enemy.CanTakeDamage = false;
+            SaveSystem.instance.firstEnemyDefeated = true;
+            SaveSystem.instance.Save();
         }
     }
 

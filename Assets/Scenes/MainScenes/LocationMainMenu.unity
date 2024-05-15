@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.63172466, g: 0.4998877, b: 0.7594762, a: 1}
+  m_IndirectSpecularColor: {r: 0.6294833, g: 0.49682295, b: 0.7571158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5269,6 +5269,8 @@ GameObject:
   m_Component:
   - component: {fileID: 312876137}
   - component: {fileID: 312876136}
+  - component: {fileID: 312876139}
+  - component: {fileID: 312876138}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5303,6 +5305,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &312876138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312876135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9207f9d973918cc44b4320e87e1a8bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &312876139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312876135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202ebe14783c47548b9bf673aedae0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &313333454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7878,7 +7904,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 488088590}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 312876139}
+        m_TargetAssemblyTypeName: SetDIfficulty, Assembly-CSharp
+        m_MethodName: SetDifficultyMage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 312876138}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: LoadPrologScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &488088590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12556,6 +12606,7 @@ MonoBehaviour:
   settings: {fileID: 0}
   chooseGameDifficulty: {fileID: 0}
   achivmentsMenu: {fileID: 0}
+  continueButton: {fileID: 0}
 --- !u!1 &805579295
 GameObject:
   m_ObjectHideFlags: 0
@@ -24352,6 +24403,7 @@ MonoBehaviour:
   settings: {fileID: 1102215888}
   chooseGameDifficulty: {fileID: 1975395737}
   achivmentsMenu: {fileID: 697009875}
+  continueButton: {fileID: 1159582220}
 --- !u!4 &1428574296
 Transform:
   m_ObjectHideFlags: 0
@@ -28936,6 +28988,7 @@ MonoBehaviour:
   settings: {fileID: 0}
   chooseGameDifficulty: {fileID: 0}
   achivmentsMenu: {fileID: 0}
+  continueButton: {fileID: 0}
 --- !u!1001 &1695564354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31748,6 +31801,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7741064036283222904, guid: 0c65b348240f23e48965dadd31d94a41, type: 3}
   m_PrefabInstance: {fileID: 1869941868}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1873005354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1873005356}
+  - component: {fileID: 1873005357}
+  m_Layer: 0
+  m_Name: DataBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1873005356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873005354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.7993898, y: 2.8411684, z: 30.669165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1873005357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873005354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c315c54c000fb4589e7c7a7c452bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isArchimage: 0
+  firstEnemyDefeated: 0
+  secondEnemyDefeated: 0
+  thirdEnemyDefeated: 0
+  fourthEnemyDefeated: 0
 --- !u!1001 &1873528442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32317,8 +32419,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 802623875}
-  - {fileID: 1159582221}
   - {fileID: 335131791}
+  - {fileID: 1159582221}
   - {fileID: 1695360203}
   m_Father: {fileID: 1572589813}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35116,7 +35218,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2125769670}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 312876139}
+        m_TargetAssemblyTypeName: SetDIfficulty, Assembly-CSharp
+        m_MethodName: SetDifficultyArchemage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 312876138}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: LoadPrologScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2125769670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36389,3 +36515,4 @@ SceneRoots:
   - {fileID: 1428574296}
   - {fileID: 1625139033}
   - {fileID: 1844348131}
+  - {fileID: 1873005356}

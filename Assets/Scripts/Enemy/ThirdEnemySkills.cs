@@ -70,6 +70,12 @@ public class ThirdEnemySkills : MonoBehaviour
             _enemy.CanTakeDamage = false;
             gameObject.GetComponent<ThirdEnemySkills>().enabled = false;
         }
+        
+        if (_enemy.CurrentHealth <= 0)
+        {
+            SaveSystem.instance.thirdEnemyDefeated = true;
+            SaveSystem.instance.Save();
+        }
     }
 
     private void CastSkill()

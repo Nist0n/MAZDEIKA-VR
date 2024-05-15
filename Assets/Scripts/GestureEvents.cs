@@ -59,10 +59,9 @@ public class GestureEvents : MonoBehaviour
             if(gestureCompletionData.similarity >= 0.5f)
             {
                 _skills.BaseAttack();
-                Debug.Log("EEEEEEEE");
             }
         }
-
+        
         if (gestureCompletionData.gestureName == "shield")
         {
             if (gestureCompletionData.similarity >= 0.5f) _skills.ActivateShield();
@@ -72,7 +71,54 @@ public class GestureEvents : MonoBehaviour
         {
             if (gestureCompletionData.similarity >= 0.5f) _skills.BreakShield();
         }
-
+        
+        if (gestureCompletionData.gestureName == "defence")
+        {
+            if (SaveSystem.instance.secondEnemyDefeated)
+            {
+                if (gestureCompletionData.similarity >= 0.5f) ;
+            }
+        }
+        
+        if (gestureCompletionData.gestureName == "ignite")
+        {
+            if (SaveSystem.instance.firstEnemyDefeated)
+            {
+                if (gestureCompletionData.similarity >= 0.5f) ;
+            }
+        }
+        
+        if (gestureCompletionData.gestureName == "heal")
+        {
+            if (SaveSystem.instance.thirdEnemyDefeated)
+            {
+                if (gestureCompletionData.similarity >= 0.5f) ;
+            }
+        }
+        
+        if (gestureCompletionData.gestureName == "stunAttack")
+        {
+            if (SaveSystem.instance.firstEnemyDefeated)
+            {
+                if (gestureCompletionData.similarity >= 0.5f) ;
+            }
+        }
+        
+        if (gestureCompletionData.gestureName == "clean")
+        {
+            if (SaveSystem.instance.secondEnemyDefeated)
+            {
+                if (gestureCompletionData.similarity >= 0.5f) ;
+            }
+        }
+        
+        if (gestureCompletionData.gestureName == "increaseDamage")
+        {
+            if (SaveSystem.instance.thirdEnemyDefeated)
+            {
+                if (gestureCompletionData.similarity >= 0.5f) ;
+            }
+        }
     }
 
     public void addToStrokeTrail(Vector3 p)

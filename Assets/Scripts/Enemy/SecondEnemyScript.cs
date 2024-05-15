@@ -50,6 +50,12 @@ public class SecondEnemyScript : MonoBehaviour
             _enemy.CanTakeDamage = false;
             gameObject.GetComponent<SecondEnemyScript>().enabled = false;
         }
+
+        if (_enemy.CurrentHealth <= 0)
+        {
+            SaveSystem.instance.secondEnemyDefeated = true;
+            SaveSystem.instance.Save();
+        }
     }
 
     private void CastSkill()
