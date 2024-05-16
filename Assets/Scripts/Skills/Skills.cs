@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skills : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Skills : MonoBehaviour
     [SerializeField] private GameObject breakShieldSkill;
     [SerializeField] private GameObject stunningAttackSkill;
     [SerializeField] private GameObject igniteSkill;
+    [SerializeField] private Image igniteCd;
+    [SerializeField] private Image stunCd;
 
     private PlayerController _player;
     private FirstEnemy _enemy;
