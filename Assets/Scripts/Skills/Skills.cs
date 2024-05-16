@@ -67,19 +67,25 @@ public class Skills : MonoBehaviour
 
     public void StunningAttack()
     {
-        if (_canUseStun)
+        if (SaveSystem.instance.firstEnemyDefeated)
         {
-            Instantiate(stunningAttackSkill, transform);
-            StartCoroutine(ActivateStunCD());
+            if (_canUseStun)
+            {
+                Instantiate(stunningAttackSkill, transform);
+                StartCoroutine(ActivateStunCD());
+            }
         }
     }
 
     public void IgniteSkill()
     {
-        if (_canUseIgnite)
+        if (SaveSystem.instance.firstEnemyDefeated)
         {
-            Instantiate(igniteSkill, _enemy.gameObject.transform);
-            StartCoroutine(ActivateIgniteCD());
+            if (_canUseIgnite)
+            {
+                Instantiate(igniteSkill, _enemy.gameObject.transform);
+                StartCoroutine(ActivateIgniteCD());
+            }
         }
     }
 
@@ -97,4 +103,35 @@ public class Skills : MonoBehaviour
         _canUseIgnite = true;
     }
 
+    public void IncreaseDamageSkill()
+    {
+        if (SaveSystem.instance.thirdEnemyDefeated)
+        {
+            StartCoroutine(_player.IncreaseDamage());
+        }
+    }
+
+    public void HealSkill()
+    {
+        if (SaveSystem.instance.thirdEnemyDefeated)
+        {
+            _player.RestoreHealth(100);
+        }
+    }
+
+    public void CleanSkill()
+    {
+        if (SaveSystem.instance.secondEnemyDefeated)
+        {
+            _player.ActivateCleanSkill();
+        }
+    }
+
+    public void DefenceSkill()
+    {
+        if (SaveSystem.instance.secondEnemyDefeated)
+        {
+            StartCoroutine(_player.ActivateDefence());
+        }
+    }
 }

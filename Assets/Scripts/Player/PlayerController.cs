@@ -165,4 +165,19 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(5f);
         IsStunned = false;
     }
+
+    public IEnumerator IncreaseDamage()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+
+    public void ActivateCleanSkill()
+    {
+        
+    }
+
+    public IEnumerator ActivateDefence()
+    {
+        yield return new WaitForSeconds(1f);
+    }
 }
