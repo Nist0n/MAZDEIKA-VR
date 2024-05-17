@@ -21,6 +21,10 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private AIDestinationSetter _aiDestinationSetter;
 
+    [SerializeField] private EnemeAnimatorOtchet _enemyAnimator;
+
+    [SerializeField] private AIPath _aiPath;
+
     private Player _player;
 
     private EnemyStates _currentState;
@@ -28,7 +32,6 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-
         _player = FindObjectOfType<Player>();
 
         _currentState = EnemyStates.Roaming;
@@ -52,14 +55,33 @@ public class EnemyAI : MonoBehaviour
 
                 TryFindTarget();
 
+                _enemyAnimator.IsWalking(true);
+                _enemyAnimator.IsRunning(false);
+
+                _aiPath.maxSpeed = 0.2f;
+
                 break;
 
             case EnemyStates.Following:
                 _aiDestinationSetter.target = _player.transform;
 
+                _enemyAnimator.IsWalking(false);
+                _enemyAnimator.IsRunning(true);
+                _aiPath.maxSpeed = 5;
+
                 if (Vector3.Distance(gameObject.transform.position, _player.transform.position) < _enemyAttack.AttackRange)
                 {
-                    _enemyAttack.TryAttackPlayer();
+                    _enemyAnimator.IsWalking(false);
+                    _enemyAnimator.IsRunning(false);
+                    
+
+                    if (_enemyAttack.CanAttack)
+                    {
+                        _aiPath.canMove = false;
+                        _enemyAttack.TryAttackPlayer();
+
+                        _enemyAnimator.PlayAttack();
+                    }
                 }
                 if (Vector3.Distance(gameObject.transform.position, _player.transform.position) >= _stopTargetFollowingRange)
                 {
@@ -69,6 +91,12 @@ public class EnemyAI : MonoBehaviour
                 break;
         }
         
+    }
+
+    public void ActivateMovement()
+
+    {
+        _aiPath.canMove = true;
     }
 
     private void TryFindTarget()
