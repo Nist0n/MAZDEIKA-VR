@@ -76,7 +76,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.secondEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) ;
+                if (gestureCompletionData.similarity >= 0.5f) _skills.DefenceSkill();
             }
         }
         
@@ -84,7 +84,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.firstEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) ;
+                if (gestureCompletionData.similarity >= 0.5f) _skills.IgniteSkill();
             }
         }
         
@@ -92,7 +92,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.thirdEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) ;
+                if (gestureCompletionData.similarity >= 0.5f) _skills.HealSkill();
             }
         }
         
@@ -100,7 +100,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.firstEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) ;
+                if (gestureCompletionData.similarity >= 0.5f) _skills.StunningAttack();
             }
         }
         
@@ -108,7 +108,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.secondEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) ;
+                if (gestureCompletionData.similarity >= 0.5f) _skills.CleanSkill();
             }
         }
         
@@ -116,7 +116,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.thirdEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) ;
+                if (gestureCompletionData.similarity >= 0.5f) _skills.IncreaseDamageSkill();
             }
         }
     }
