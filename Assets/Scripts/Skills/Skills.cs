@@ -67,6 +67,26 @@ public class Skills : MonoBehaviour
         {
             IgniteSkill();
         }
+        
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            IncreaseDamageSkill();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            HealSkill();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            CleanSkill();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            DefenceSkill();
+        }
 
         if (!_canUseIgnite)
         {
@@ -99,24 +119,24 @@ public class Skills : MonoBehaviour
 
     public void BaseAttack()
     {
-        Instantiate(baseAttackSpell, transform);
+        if (!_player.IsStunned) Instantiate(baseAttackSpell, transform);
     }
 
     public void BreakShield()
     {
-        Instantiate(breakShieldSkill, transform);
+        if (!_player.IsStunned) Instantiate(breakShieldSkill, transform);
     }
 
     public void ActivateShield()
     {
-        StartCoroutine(_player.ActivateShield());
+        if (!_player.IsStunned) StartCoroutine(_player.ActivateShield());
     }
 
     public void StunningAttack()
     {
         if (SaveSystem.instance.firstEnemyDefeated)
         {
-            if (_canUseStun)
+            if (_canUseStun && !_player.IsStunned)
             {
                 Instantiate(stunningAttackSkill, transform);
                 StartCoroutine(ActivateStunCD());
@@ -128,7 +148,7 @@ public class Skills : MonoBehaviour
     {
         if (SaveSystem.instance.firstEnemyDefeated)
         {
-            if (_canUseIgnite)
+            if (_canUseIgnite && !_player.IsStunned)
             {
                 Instantiate(igniteSkill, _enemy.gameObject.transform);
                 StartCoroutine(ActivateIgniteCD());
@@ -140,7 +160,7 @@ public class Skills : MonoBehaviour
     {
         if (SaveSystem.instance.thirdEnemyDefeated)
         {
-            if (_canUseIncreaseDamage)
+            if (_canUseIncreaseDamage && !_player.IsStunned)
             {
                 StartCoroutine(_player.IncreaseDamage());
                 StartCoroutine(ActivateIncreaseDamageCD());
@@ -152,7 +172,7 @@ public class Skills : MonoBehaviour
     {
         if (SaveSystem.instance.thirdEnemyDefeated)
         {
-            if (_canUseHeal)
+            if (_canUseHeal && !_player.IsStunned)
             {
                 _player.RestoreHealth(100);
                 StartCoroutine(ActivateHealCD());
@@ -162,7 +182,7 @@ public class Skills : MonoBehaviour
 
     public void CleanSkill()
     {
-        if (SaveSystem.instance.secondEnemyDefeated)
+        if (SaveSystem.instance.secondEnemyDefeated && !_player.IsStunned)
         {
             _player.ActivateCleanSkill();
         }
@@ -172,7 +192,7 @@ public class Skills : MonoBehaviour
     {
         if (SaveSystem.instance.secondEnemyDefeated)
         {
-            if (_canUseDefence)
+            if (_canUseDefence && !_player.IsStunned)
             {
                 StartCoroutine(_player.ActivateDefence());
                 StartCoroutine(ActivateDefenceCD());

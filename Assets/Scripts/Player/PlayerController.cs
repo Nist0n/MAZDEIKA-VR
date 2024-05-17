@@ -16,7 +16,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject canvas;
     [SerializeField] private PostProcessVolume postProcessVolumeDeath;
     [SerializeField] private PostProcessVolume postProcessVolumeShield;
-    //[SerializeField] private GameObject - объект картинки и позиции их расстановки
+    [SerializeField] private List<GameObject> effectPoses;
+    [SerializeField] private GameObject defenceSkill;
+    [SerializeField] private GameObject increaseSkill;
+    [SerializeField] private GameObject stunSkill;
+    [SerializeField] private GameObject poisonSkill;
 
     public bool CanTakeDamage = true;
     public float Damage;
@@ -47,26 +51,12 @@ public class PlayerController : MonoBehaviour
     {
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, _health);
 
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            TakeDamage(Random.Range(5, 10));
-        }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            RestoreHealth(Random.Range(5, 10));
-        }
-
         if (CurrentHealth == 0 && !_gameOver)
         {
             _gameOver = true;
             gameObject.GetComponent<Skills>().enabled = false;
         }
 
-        if (IsStunned)
-        {
-            gameObject.GetComponent<Skills>().enabled = false;
-        }
         else
         {
             if (!_gameOver)
@@ -143,6 +133,7 @@ public class PlayerController : MonoBehaviour
     public void PoisonPlayer(float damage)
     {
         IsPoisoned = true;
+        VisualiseEffects(poisonSkill);
         StartCoroutine(ActivateTickDamage(damage));
     }
 
@@ -164,22 +155,55 @@ public class PlayerController : MonoBehaviour
     private IEnumerator ActivateStun()
     {
         IsStunned = true;
+        VisualiseEffects(stunSkill);
         yield return new WaitForSeconds(5f);
+        DeleteEffect(stunSkill.name);
         IsStunned = false;
     }
 
     public IEnumerator IncreaseDamage()
     {
+        VisualiseEffects(increaseSkill);
         yield return new WaitForSeconds(1f);
+        DeleteEffect(increaseSkill.name);
     }
 
     public void ActivateCleanSkill()
     {
-        
+        IsPoisoned = false;
+        DeleteEffect(poisonSkill.name);
     }
 
     public IEnumerator ActivateDefence()
     {
-        yield return new WaitForSeconds(1f);
+        VisualiseEffects(defenceSkill);
+        yield return new WaitForSeconds(7f);
+        DeleteEffect(defenceSkill.name);
+    }
+
+    private void VisualiseEffects(GameObject effect)
+    {
+        for (int i = 0; i < effectPoses.Count; i++)
+        {
+            if (effectPoses[i].GetComponentInChildren<SkillEffects>() == null)
+            {
+                Instantiate(effect, effectPoses[i].transform);
+                break;
+            }
+        }
+    }
+
+    private void DeleteEffect(string name)
+    {
+        for (int i = 0; i < effectPoses.Count; i++)
+        {
+            if (effectPoses[i].GetComponentInChildren<SkillEffects>() != null)
+            {
+                if (effectPoses[i].GetComponentInChildren<SkillEffects>().gameObject.name.Contains(name))
+                {
+                    Destroy(effectPoses[i].GetComponentInChildren<SkillEffects>().gameObject);
+                }
+            }
+        }
     }
 }
