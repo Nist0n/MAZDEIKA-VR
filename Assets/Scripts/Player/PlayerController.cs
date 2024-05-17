@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject canvas;
     [SerializeField] private PostProcessVolume postProcessVolumeDeath;
     [SerializeField] private PostProcessVolume postProcessVolumeShield;
+    //[SerializeField] private GameObject - объект картинки и позиции их расстановки
 
     public bool CanTakeDamage = true;
     public float Damage;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private float _health = 1000f;
     private bool _gameOver = false;
     private float _defence;
+    private List<GameObject> _effects;
 
     private void Start()
     {
