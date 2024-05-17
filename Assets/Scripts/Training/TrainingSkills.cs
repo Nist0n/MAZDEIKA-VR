@@ -9,6 +9,7 @@ public class TrainingSkills : MonoBehaviour
 
     private PlayerController _player;
     private FirstEnemy _enemy;
+    private TrainingManager _trainingManager;
     
     
 
@@ -16,6 +17,7 @@ public class TrainingSkills : MonoBehaviour
     {
         _player = FindObjectOfType<PlayerController>();
         _enemy = FindObjectOfType<FirstEnemy>();
+        _trainingManager = FindObjectOfType<TrainingManager>();
     }
 
     private void Update()
@@ -38,16 +40,16 @@ public class TrainingSkills : MonoBehaviour
 
     public void BaseAttack()
     {
-        Instantiate(baseAttackSpell, transform);
+        if (_trainingManager.FirstSkillTraining) Instantiate(baseAttackSpell, transform);
     }
 
     public void BreakShield()
     {
-        Instantiate(breakShieldSkill, transform);
+        if (_trainingManager.ThirdSkillTraining) Instantiate(breakShieldSkill, transform);
     }
 
     public void ActivateShield()
     {
-        StartCoroutine(_player.ActivateShield());
+        if (_trainingManager.SecondSkillTraining) StartCoroutine(_player.ActivateShield());
     }
 }

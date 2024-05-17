@@ -96,8 +96,7 @@ namespace DialogueEditor
             Instance = this;
 
             m_uiOptions = new List<UIConversationButton>();
-
-            NpcIcon.sprite = BlankSprite;
+            
             DialogueText.text = "";
             TurnOffUI();
         }
@@ -470,14 +469,6 @@ namespace DialogueEditor
             m_currentSelectedIndex = 0;
 
             // Set sprite
-            if (speech.Icon == null)
-            {
-                NpcIcon.sprite = BlankSprite;
-            }
-            else
-            {
-                NpcIcon.sprite = speech.Icon;
-            }
 
             // Set font
             if (speech.TMPFont != null)
@@ -490,7 +481,6 @@ namespace DialogueEditor
             }
 
             // Set name
-            NameText.text = speech.Name;
 
             // Set text
             if (string.IsNullOrEmpty(speech.Text))

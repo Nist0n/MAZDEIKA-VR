@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!_gameOver)
             {
-                gameObject.GetComponent<Skills>().enabled = true;
+                if (gameObject.GetComponent<Skills>() != null) gameObject.GetComponent<Skills>().enabled = true;
             }
         }
         
