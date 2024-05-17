@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private float _health = 1000f;
     private bool _gameOver = false;
     private float _defence;
+    private float _increaseDamage = 35f;
     private List<GameObject> _effects;
 
     private void Start()
@@ -101,7 +102,9 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        GameObject point = Instantiate(floatingPoints, new Vector3(435f, 617f, 0f), new Quaternion(0f, 0f, 0f, 0f), canvas.transform) as GameObject;
+        damage -= _defence;
+        
+        GameObject point = Instantiate(floatingPoints, new Vector3(0f, 0f, 0f), new Quaternion(0f, 0f, 0f, 0f), canvas.transform) as GameObject;
         point.GetComponentInChildren<TextMeshProUGUI>().text = $"{damage}";
         point.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
         
@@ -164,7 +167,9 @@ public class PlayerController : MonoBehaviour
     public IEnumerator IncreaseDamage()
     {
         VisualiseEffects(increaseSkill);
-        yield return new WaitForSeconds(1f);
+        Damage += _increaseDamage;
+        yield return new WaitForSeconds(10f);
+        Damage -= _increaseDamage;
         DeleteEffect(increaseSkill.name);
     }
 
@@ -177,7 +182,9 @@ public class PlayerController : MonoBehaviour
     public IEnumerator ActivateDefence()
     {
         VisualiseEffects(defenceSkill);
+        _defence = 25f;
         yield return new WaitForSeconds(7f);
+        _defence = 0f;
         DeleteEffect(defenceSkill.name);
     }
 
