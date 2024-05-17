@@ -12,11 +12,13 @@ public class BaseAttackTraining : MonoBehaviour
     
     private GameObject _enemy;
     private TrainingManager _trainingManager;
+    private PlayerController _player;
     
     void Start()
     {
         _trainingManager = FindObjectOfType<TrainingManager>();
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
+        _player = FindObjectOfType<PlayerController>();
     }
     void Update()
     {
@@ -35,6 +37,7 @@ public class BaseAttackTraining : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
+        if (_trainingManager.ThirdSkillTraining) _player.GivenDamageToEnemyTimes++;
         _trainingManager.BaseAttackCompletedTimes++;
         yield return new WaitForSeconds(0.8f);
         isAttacking = false;

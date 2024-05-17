@@ -1912,6 +1912,7 @@ GameObject:
   - component: {fileID: 4048789603105838972}
   - component: {fileID: 1343158841809882877}
   - component: {fileID: 1300650323643986782}
+  - component: {fileID: 8532040473186285589}
   m_Layer: 0
   m_Name: Witch
   m_TagString: Untagged
@@ -1980,7 +1981,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5001648528197039303}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34f80336e0a32f24bb16be08ac66c380, type: 3}
   m_Name: 
@@ -1988,6 +1989,22 @@ MonoBehaviour:
   baseAttackSkill: {fileID: 8530190436417469060, guid: c2fad0329de0b6842b4489517cf5b19f, type: 3}
   ultimateSkill: {fileID: 4278302707248308850, guid: 771bce4f9a76d1040a746ff4dfc9dc4e, type: 3}
   ultimateCharge: {fileID: 2308230655231070061, guid: 968857f06681d6547a345f00d11ea8d9, type: 3}
+  skillImage: {fileID: 7584449875494797687}
+  animator: {fileID: 4048789603105838972}
+  hand: {fileID: 5155915843763011292}
+--- !u!114 &8532040473186285589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5001648528197039303}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3daa7029e12c294c856887702426c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAttackSkill: {fileID: 8530190436417469060, guid: d110168355886d4429ea2bfe814bb586, type: 3}
   skillImage: {fileID: 7584449875494797687}
   animator: {fileID: 4048789603105838972}
   hand: {fileID: 5155915843763011292}

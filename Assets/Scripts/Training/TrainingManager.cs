@@ -10,6 +10,7 @@ public class TrainingManager : MonoBehaviour
     [SerializeField] private NPCConversation startingDialog;
     [SerializeField] private NPCConversation secondDialog;
     [SerializeField] private NPCConversation thirdDialog;
+    [SerializeField] private NPCConversation fourthDialog;
     [SerializeField] private TextMeshProUGUI baseAttackTrainingText;
     [SerializeField] private Animator textAnim;
     [SerializeField] private Animator baseAttackVideoAnimator;
@@ -21,9 +22,12 @@ public class TrainingManager : MonoBehaviour
     public bool ThirdSkillTraining = false;
     public int BaseAttackCompletedTimes;
     public int ShieldCompletedTimes;
+    public int BreakShieldCompletedTimes;
+    public bool TrainingIsOver = false;
 
     private bool _training1Completed = false;
     private bool _training2Completed = false;
+    private bool _training3Completed = false;
 
     private TrainingEnemySkills _trainingEnemySkills;
 
@@ -37,8 +41,10 @@ public class TrainingManager : MonoBehaviour
     {
         BaseAttackCompletedTimes = Mathf.Clamp(BaseAttackCompletedTimes, 0, 5);
         ShieldCompletedTimes = Mathf.Clamp(ShieldCompletedTimes, 0, 5);
+        BreakShieldCompletedTimes = Mathf.Clamp(BreakShieldCompletedTimes, 0, 3);
         if (!_training1Completed) CheckProgressCompletionBaseAttackTraining();
         if (!_training2Completed && _training1Completed) CheckProgressCompletionShieldTraining();
+        if (!_training3Completed && _training1Completed && _training2Completed) CheckProgressCompletionBreakShieldTraining();
     }
 
     private void StartDialog(NPCConversation dialog)
@@ -74,6 +80,20 @@ public class TrainingManager : MonoBehaviour
             StartDialog(thirdDialog);
         }
     }
+    
+    private void CheckProgressCompletionBreakShieldTraining()
+    {
+        baseAttackTrainingText.color = Color.red;
+        baseAttackTrainingText.text = $"Успешно пробит щит: {BreakShieldCompletedTimes}/3";
+        if (BreakShieldCompletedTimes >= 3)
+        {
+            baseAttackTrainingText.color = Color.green;
+            _training3Completed = true;
+            textAnim.SetTrigger("hideText");
+            breakShieldVideoAnimator.SetTrigger("hideVideo");
+            StartDialog(fourthDialog);
+        }
+    }
 
     public void StartTraining1()
     {
@@ -86,5 +106,19 @@ public class TrainingManager : MonoBehaviour
         baseAttackTrainingText.gameObject.SetActive(true);
         SecondSkillTraining = true;
         _trainingEnemySkills.enabled = true;
+    }
+    
+    public void StartTraining3()
+    {
+        baseAttackTrainingText.gameObject.SetActive(true);
+        ThirdSkillTraining = true;
+    }
+
+    public void StartBattle()
+    {
+        TrainingIsOver = true;
+        FindObjectOfType<FirstEnemySkills>().enabled = true;
+        FindObjectOfType<TrainingSkills>().enabled = false;
+        FindObjectOfType<Skills>().enabled = true;
     }
 }

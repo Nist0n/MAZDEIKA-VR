@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private Vignette _vignetteDeath;
     private Vignette _vignetteShield;
+    private TrainingManager _trainingManager;
 
     private float _lerpTimer;
     private float _chipSpeed = 2f;
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        _trainingManager = FindObjectOfType<TrainingManager>();
         CurrentHealth = _health;
         postProcessVolumeDeath.profile.TryGetSettings<Vignette>(out _vignetteDeath);
         postProcessVolumeShield.profile.TryGetSettings<Vignette>(out _vignetteShield);
@@ -62,7 +64,14 @@ public class PlayerController : MonoBehaviour
         {
             if (!_gameOver)
             {
-                if (gameObject.GetComponent<Skills>() != null) gameObject.GetComponent<Skills>().enabled = true;
+                if (_trainingManager != null)
+                {
+                    if (_trainingManager.TrainingIsOver) gameObject.GetComponent<Skills>().enabled = true;
+                }
+                else
+                {
+                    gameObject.GetComponent<Skills>().enabled = true;
+                }
             }
         }
         
