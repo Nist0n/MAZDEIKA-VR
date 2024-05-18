@@ -43,9 +43,13 @@ public class FirstEnemySkills : MonoBehaviour
         if ((_enemy.CurrentHealth <= 300 || _player.CurrentHealth <= 300) && !_ultimateIsReady)
         {
             _ultimateIsReady = true;
-            _enemy.CanTakeDamage = false;
             SaveSystem.instance.firstEnemyDefeated = true;
             SaveSystem.instance.Save();
+        }
+
+        if (_ultimateIsReady)
+        {
+            _enemy.CanTakeDamage = false;
         }
     }
 
