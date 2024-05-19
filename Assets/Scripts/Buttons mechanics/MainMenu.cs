@@ -19,8 +19,6 @@ public class MainMenu : MonoBehaviour
         _mainMenu = GameObject.FindWithTag("MainMenu");
         
         SaveSystem.instance.Load();
-        
-        Debug.Log(SaveSystem.instance.isArchimage);
     }
 
     private void Update()
