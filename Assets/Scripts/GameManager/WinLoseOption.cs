@@ -10,6 +10,8 @@ public class WinLoseOption : MonoBehaviour
     [SerializeField] private GameObject winCanvas;
     [SerializeField] private Animator animator;
 
+    private bool _gameOver = false;
+
     private PlayerController _player;
     private FirstEnemy _enemy;
     private TrainingManager _trainingManager;
@@ -25,22 +27,36 @@ public class WinLoseOption : MonoBehaviour
     {
         if (_trainingManager != null)
         {
-            if (_player.CurrentHealth <= 0) StartCoroutine(OnTrainingOver());
+            if (_player.CurrentHealth <= 0 && !_gameOver)
+            {
+                StartCoroutine(OnTrainingOver());
+                _gameOver = true;
+            }
         }
         else
         {
-            if  (_player.CurrentHealth <= 0) OnLoseCanvas();
-            if (_enemy.CurrentHealth <= 0) OnWinCanvas();
+            if (_player.CurrentHealth <= 0 && !_gameOver)
+            {
+                OnLoseCanvas();
+                _gameOver = true;
+            }
+            if (_enemy.CurrentHealth <= 0 && !_gameOver)
+            {
+                OnWinCanvas();
+                _gameOver = true;
+            }
         }
     }
 
     private void OnWinCanvas()
     {
+        FadeIn();
         winCanvas.SetActive(true);
     }
     
     private void OnLoseCanvas()
     {
+        FadeIn();
         loseCanvas.SetActive(true);
     }
     
