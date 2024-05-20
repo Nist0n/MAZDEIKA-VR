@@ -10,8 +10,8 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private int _minX;
     [SerializeField] private int _maxX;
-    [SerializeField] private int _minY;
-    [SerializeField] private int _maxY;
+    [SerializeField] private int _minZ;
+    [SerializeField] private int _maxZ;
 
     [SerializeField] private float _height;
 
@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector3 GenerateStartPosition()
     {
-        var startPos = new Vector3(Random.Range(_minX, _maxX), _height, Random.Range(_minY,_maxY));
+        var startPos = new Vector3(Random.Range(_minX, _maxX), _height, Random.Range(_minZ,_maxZ));
 
         return startPos;
     }
