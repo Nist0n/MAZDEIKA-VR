@@ -50,4 +50,16 @@ public class ButtonsManager : MonoBehaviour
         mainMenu.SetActive(false);
         achivmentsMenu.SetActive(true);
     }
+
+    public void ContinueGame()
+    {
+        StartCoroutine(LocationHome());
+    }
+
+    private IEnumerator LocationHome()
+    {
+        FindObjectOfType<WinLoseOption>().FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("LocationHome");
+    }
 }

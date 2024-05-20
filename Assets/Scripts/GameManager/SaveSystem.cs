@@ -13,7 +13,7 @@ public class SaveSystem : MonoBehaviour
     public bool secondEnemyDefeated;
     public bool thirdEnemyDefeated;
     public bool fourthEnemyDefeated;
-    
+
     private void Awake()
     {
         if (instance == null)

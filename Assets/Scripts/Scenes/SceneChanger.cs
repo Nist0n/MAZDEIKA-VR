@@ -7,26 +7,61 @@ public class SceneChanger : MonoBehaviour
 {
     public void LoadMainMenuScene()
     {
-        SceneManager.LoadScene("LocationMainMenu");
+        StartCoroutine(MainMenuScene());
     }
     
     public void LoadPrologScene()
     {
-        SceneManager.LoadScene("LocationProlog");
+        StartCoroutine(PrologScene());
     }
     
     public void LoadVillageScene()
     {
-        SceneManager.LoadScene("LocationVillage");
+        StartCoroutine(VillageScene());
     }
     
     public void LoadCastleScene()
     {
-        SceneManager.LoadScene("LocationCastle");
+        StartCoroutine(CastleScene());
     }
     
     public void LoadHomeScene()
     {
+        StartCoroutine(HomeScene());
+    }
+
+    private IEnumerator HomeScene()
+    {
+        FindObjectOfType<WinLoseOption>().FadeIn();
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("LocationHome");
+    }
+    
+    private IEnumerator MainMenuScene()
+    {
+        FindObjectOfType<WinLoseOption>().FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("LocationMainMenu");
+    }
+    
+    private IEnumerator PrologScene()
+    {
+        FindObjectOfType<WinLoseOption>().FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("LocationProlog");
+    }
+    
+    private IEnumerator CastleScene()
+    {
+        FindObjectOfType<WinLoseOption>().FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("LocationCastle");
+    }
+    
+    private IEnumerator VillageScene()
+    {
+        FindObjectOfType<WinLoseOption>().FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("LocationVillage");
     }
 }
