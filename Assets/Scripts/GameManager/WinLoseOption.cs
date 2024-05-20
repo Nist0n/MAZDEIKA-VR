@@ -35,28 +35,31 @@ public class WinLoseOption : MonoBehaviour
         }
         else
         {
-            if (_player.CurrentHealth <= 0 && !_gameOver)
+            if (SceneManager.GetActiveScene().name != "LocationHome" &&
+                SceneManager.GetActiveScene().name != "LocationMainMenu")
             {
-                OnLoseCanvas();
-                _gameOver = true;
-            }
-            if (_enemy.CurrentHealth <= 0 && !_gameOver)
-            {
-                OnWinCanvas();
-                _gameOver = true;
+                if (_player.CurrentHealth <= 0 && !_gameOver)
+                {
+                    OnLoseCanvas();
+                    _gameOver = true;
+                }
+
+                if (_enemy.CurrentHealth <= 0 && !_gameOver)
+                {
+                    OnWinCanvas();
+                    _gameOver = true;
+                }
             }
         }
     }
 
     private void OnWinCanvas()
     {
-        FadeIn();
         winCanvas.SetActive(true);
     }
     
     private void OnLoseCanvas()
     {
-        FadeIn();
         loseCanvas.SetActive(true);
     }
     

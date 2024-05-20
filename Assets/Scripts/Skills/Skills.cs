@@ -15,6 +15,7 @@ public class Skills : MonoBehaviour
     [SerializeField] private Image increaseDamageCd;
     [SerializeField] private Image healCd;
     [SerializeField] private Image defenceCd;
+    [SerializeField] private GameObject handPos;
 
     private PlayerController _player;
     private FirstEnemy _enemy;
@@ -119,12 +120,12 @@ public class Skills : MonoBehaviour
 
     public void BaseAttack()
     {
-        if (!_player.IsStunned) Instantiate(baseAttackSpell, transform);
+        if (!_player.IsStunned) Instantiate(baseAttackSpell, handPos.transform.position, Quaternion.identity, _player.transform);
     }
 
     public void BreakShield()
     {
-        if (!_player.IsStunned) Instantiate(breakShieldSkill, transform);
+        if (!_player.IsStunned) Instantiate(breakShieldSkill, handPos.transform.position, Quaternion.identity, _player.transform);
     }
 
     public void ActivateShield()
@@ -138,7 +139,7 @@ public class Skills : MonoBehaviour
         {
             if (_canUseStun && !_player.IsStunned)
             {
-                Instantiate(stunningAttackSkill, transform);
+                Instantiate(stunningAttackSkill, handPos.transform.position, Quaternion.identity, _player.transform);
                 StartCoroutine(ActivateStunCD());
             }
         }

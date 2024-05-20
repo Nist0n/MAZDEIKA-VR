@@ -880,6 +880,7 @@ MonoBehaviour:
   increaseDamageCd: {fileID: 1554719658350221480}
   healCd: {fileID: 3654401235564220355}
   defenceCd: {fileID: 7638804857513916353}
+  handPos: {fileID: 4412818421055855966}
 --- !u!136 &8491841017061181981
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -917,6 +918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseAttackSpell: {fileID: 982778631250529469, guid: d0797fe35316cf04dbe0f9d8e7014323, type: 3}
   breakShieldSkill: {fileID: 6678871872237799919, guid: ea597eca8c2ba674ea63ec1cca05b14b, type: 3}
+  handPos: {fileID: 4412818421055855966}
 --- !u!114 &1419062501949466809
 MonoBehaviour:
   m_ObjectHideFlags: 0

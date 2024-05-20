@@ -55,11 +55,30 @@ public class ButtonsManager : MonoBehaviour
     {
         StartCoroutine(LocationHome());
     }
+    
+    public void LoseGame()
+    {
+        StartCoroutine(LocationHomeOnLose());
+    }
 
     private IEnumerator LocationHome()
     {
         FindObjectOfType<WinLoseOption>().FadeIn();
         yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("LocationHome");
+    }
+    
+    private IEnumerator LocationHomeOnLose()
+    {
+        FindObjectOfType<WinLoseOption>().FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        if (SaveSystem.instance.isArchimage)
+        {
+            SaveSystem.instance.secondEnemyDefeated = false;
+            SaveSystem.instance.thirdEnemyDefeated = false;
+            SaveSystem.instance.fourthEnemyDefeated = false;
+            SaveSystem.instance.Save();
+        }
         SceneManager.LoadScene("LocationHome");
     }
 }

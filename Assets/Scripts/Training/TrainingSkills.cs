@@ -6,12 +6,11 @@ public class TrainingSkills : MonoBehaviour
 {
     [SerializeField] private GameObject baseAttackSpell;
     [SerializeField] private GameObject breakShieldSkill;
+    [SerializeField] private GameObject handPos;
 
     private PlayerController _player;
     private FirstEnemy _enemy;
     private TrainingManager _trainingManager;
-    
-    
 
     private void Start()
     {
@@ -40,12 +39,12 @@ public class TrainingSkills : MonoBehaviour
 
     public void BaseAttack()
     {
-        if (_trainingManager.FirstSkillTraining) Instantiate(baseAttackSpell, transform);
+        if (_trainingManager.FirstSkillTraining) Instantiate(baseAttackSpell, handPos.transform.position, Quaternion.identity, _player.transform);
     }
 
     public void BreakShield()
     {
-        if (_trainingManager.ThirdSkillTraining) Instantiate(breakShieldSkill, transform);
+        if (_trainingManager.ThirdSkillTraining) Instantiate(breakShieldSkill, handPos.transform.position, Quaternion.identity, _player.transform);
     }
 
     public void ActivateShield()
