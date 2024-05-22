@@ -22,7 +22,7 @@ public class ButtonsManager : MonoBehaviour
         if (SaveSystem.instance.firstEnemyDefeated == true || SaveSystem.instance.secondEnemyDefeated == true ||
             SaveSystem.instance.thirdEnemyDefeated == true)
         {
-            continueButton.SetActive(true);
+            if (continueButton != null) continueButton.SetActive(true);
         }
 
         foreach (var VARIABLE in AchievementButton)

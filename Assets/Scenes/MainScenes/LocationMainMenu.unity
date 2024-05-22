@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 23468407}
   - component: {fileID: 23468406}
   - component: {fileID: 23468405}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Scrollbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,7 +730,7 @@ GameObject:
   - component: {fileID: 38607388}
   - component: {fileID: 38607390}
   - component: {fileID: 38607389}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2779,7 +2779,7 @@ GameObject:
   - component: {fileID: 155751301}
   - component: {fileID: 155751300}
   - component: {fileID: 155751299}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SecondPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5492,7 +5492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9207f9d973918cc44b4320e87e1a8bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 1364846989}
 --- !u!114 &312876139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5821,7 +5821,7 @@ GameObject:
   - component: {fileID: 335131794}
   - component: {fileID: 335131793}
   - component: {fileID: 335131792}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Continue Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6359,7 +6359,7 @@ GameObject:
   - component: {fileID: 395322554}
   - component: {fileID: 395322556}
   - component: {fileID: 395322555}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Difficulty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6511,7 +6511,7 @@ GameObject:
   - component: {fileID: 399387107}
   - component: {fileID: 399387106}
   - component: {fileID: 399387105}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FinalWin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8029,7 +8029,7 @@ GameObject:
   - component: {fileID: 487473814}
   - component: {fileID: 487473813}
   - component: {fileID: 487473812}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PrologComplited
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8170,7 +8170,7 @@ GameObject:
   - component: {fileID: 488088590}
   - component: {fileID: 488088589}
   - component: {fileID: 488088592}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Mage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8472,7 +8472,7 @@ GameObject:
   - component: {fileID: 495818794}
   - component: {fileID: 495818796}
   - component: {fileID: 495818795}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8545,7 +8545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 503082606}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8864,7 +8864,7 @@ GameObject:
   - component: {fileID: 529619904}
   - component: {fileID: 529619903}
   - component: {fileID: 529619902}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10640,7 +10640,7 @@ GameObject:
   - component: {fileID: 649957958}
   - component: {fileID: 649957960}
   - component: {fileID: 649957959}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10894,7 +10894,7 @@ GameObject:
   - component: {fileID: 666118252}
   - component: {fileID: 666118254}
   - component: {fileID: 666118253}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11400,7 +11400,7 @@ GameObject:
   - component: {fileID: 697009878}
   - component: {fileID: 697009877}
   - component: {fileID: 697009876}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CanvasAchivmentsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11521,7 +11521,7 @@ GameObject:
   - component: {fileID: 703063087}
   - component: {fileID: 703063089}
   - component: {fileID: 703063088}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11598,7 +11598,7 @@ GameObject:
   - component: {fileID: 704049087}
   - component: {fileID: 704049086}
   - component: {fileID: 704049085}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FirstPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11993,7 +11993,7 @@ GameObject:
   - component: {fileID: 730578810}
   - component: {fileID: 730578812}
   - component: {fileID: 730578811}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12272,7 +12272,7 @@ GameObject:
   - component: {fileID: 750334257}
   - component: {fileID: 750334256}
   - component: {fileID: 750334255}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Cast100Spells
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12810,7 +12810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 798385674}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12997,7 +12997,7 @@ GameObject:
   - component: {fileID: 801890429}
   - component: {fileID: 801890428}
   - component: {fileID: 801890427}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FinalWinBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13096,7 +13096,7 @@ GameObject:
   - component: {fileID: 802623877}
   - component: {fileID: 802623876}
   - component: {fileID: 802623880}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: New Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13795,7 +13795,7 @@ GameObject:
   - component: {fileID: 844169235}
   - component: {fileID: 844169237}
   - component: {fileID: 844169236}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: MageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14139,7 +14139,7 @@ GameObject:
   - component: {fileID: 872161740}
   - component: {fileID: 872161742}
   - component: {fileID: 872161741}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15085,7 +15085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 925577562}
   - component: {fileID: 925577563}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: MusicSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15737,7 +15737,7 @@ GameObject:
   - component: {fileID: 951989883}
   - component: {fileID: 951989882}
   - component: {fileID: 951989881}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15890,7 +15890,7 @@ GameObject:
   - component: {fileID: 959806805}
   - component: {fileID: 959806807}
   - component: {fileID: 959806806}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16153,7 +16153,7 @@ GameObject:
   - component: {fileID: 977848940}
   - component: {fileID: 977848939}
   - component: {fileID: 977848938}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FirstDefeat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16911,7 +16911,7 @@ GameObject:
   - component: {fileID: 1025115305}
   - component: {fileID: 1025115307}
   - component: {fileID: 1025115306}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18090,7 +18090,7 @@ GameObject:
   - component: {fileID: 1096898079}
   - component: {fileID: 1096898081}
   - component: {fileID: 1096898080}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18315,7 +18315,7 @@ GameObject:
   - component: {fileID: 1102215890}
   - component: {fileID: 1102215889}
   - component: {fileID: 1102215894}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CanvasSettings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19269,7 +19269,7 @@ GameObject:
   - component: {fileID: 1159582224}
   - component: {fileID: 1159582223}
   - component: {fileID: 1159582222}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19497,7 +19497,7 @@ GameObject:
   - component: {fileID: 1163996195}
   - component: {fileID: 1163996197}
   - component: {fileID: 1163996196}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20136,7 +20136,7 @@ GameObject:
   - component: {fileID: 1183675471}
   - component: {fileID: 1183675470}
   - component: {fileID: 1183675469}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FirstPlayBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20403,7 +20403,7 @@ GameObject:
   - component: {fileID: 1197282017}
   - component: {fileID: 1197282019}
   - component: {fileID: 1197282018}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ArchMageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21021,7 +21021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1230466539}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21332,7 +21332,7 @@ GameObject:
   - component: {fileID: 1265131375}
   - component: {fileID: 1265131377}
   - component: {fileID: 1265131376}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: MageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23209,7 +23209,7 @@ GameObject:
   - component: {fileID: 1361940079}
   - component: {fileID: 1361940078}
   - component: {fileID: 1361940077}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SecondPlayBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24059,7 +24059,7 @@ GameObject:
   - component: {fileID: 1403806822}
   - component: {fileID: 1403806821}
   - component: {fileID: 1403806820}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FirstWin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24336,7 +24336,7 @@ GameObject:
   - component: {fileID: 1415029275}
   - component: {fileID: 1415029277}
   - component: {fileID: 1415029278}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ListOfAchivments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24848,7 +24848,7 @@ GameObject:
   - component: {fileID: 1442427363}
   - component: {fileID: 1442427365}
   - component: {fileID: 1442427364}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25618,7 +25618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1502579309}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26182,7 +26182,7 @@ GameObject:
   - component: {fileID: 1529035608}
   - component: {fileID: 1529035610}
   - component: {fileID: 1529035609}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26331,7 +26331,7 @@ GameObject:
   - component: {fileID: 1530199059}
   - component: {fileID: 1530199061}
   - component: {fileID: 1530199060}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26649,7 +26649,7 @@ GameObject:
   - component: {fileID: 1560889302}
   - component: {fileID: 1560889301}
   - component: {fileID: 1560889300}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ThirdPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26989,7 +26989,7 @@ GameObject:
   - component: {fileID: 1572589810}
   - component: {fileID: 1572589814}
   - component: {fileID: 1572589815}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CanvasMenu
   m_TagString: MainMenu
   m_Icon: {fileID: 0}
@@ -27123,7 +27123,7 @@ GameObject:
   - component: {fileID: 1576411932}
   - component: {fileID: 1576411934}
   - component: {fileID: 1576411933}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27198,7 +27198,7 @@ GameObject:
   - component: {fileID: 1577335104}
   - component: {fileID: 1577335106}
   - component: {fileID: 1577335105}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28592,7 +28592,7 @@ GameObject:
   - component: {fileID: 1656287564}
   - component: {fileID: 1656287563}
   - component: {fileID: 1656287567}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29338,7 +29338,7 @@ GameObject:
   - component: {fileID: 1695360205}
   - component: {fileID: 1695360204}
   - component: {fileID: 1695360208}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30225,7 +30225,7 @@ GameObject:
   - component: {fileID: 1723680538}
   - component: {fileID: 1723680537}
   - component: {fileID: 1723680536}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ThirdPlayBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30395,7 +30395,7 @@ GameObject:
   - component: {fileID: 1730176930}
   - component: {fileID: 1730176932}
   - component: {fileID: 1730176931}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30534,7 +30534,7 @@ GameObject:
   - component: {fileID: 1746017244}
   - component: {fileID: 1746017246}
   - component: {fileID: 1746017245}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ContinueText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31126,7 +31126,7 @@ GameObject:
   - component: {fileID: 1791192523}
   - component: {fileID: 1791192525}
   - component: {fileID: 1791192524}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31707,7 +31707,7 @@ GameObject:
   - component: {fileID: 1827398454}
   - component: {fileID: 1827398456}
   - component: {fileID: 1827398455}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DiffText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31916,7 +31916,7 @@ GameObject:
   - component: {fileID: 1832300902}
   - component: {fileID: 1832300901}
   - component: {fileID: 1832300900}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PrologComplitedBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32221,7 +32221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842458671}
   - component: {fileID: 1842458672}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SFXSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32931,7 +32931,7 @@ GameObject:
   - component: {fileID: 1904684091}
   - component: {fileID: 1904684093}
   - component: {fileID: 1904684092}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: MageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33065,7 +33065,7 @@ GameObject:
   - component: {fileID: 1909370235}
   - component: {fileID: 1909370237}
   - component: {fileID: 1909370236}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: NewGameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33197,7 +33197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1913577001}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33239,7 +33239,7 @@ GameObject:
   - component: {fileID: 1914392300}
   - component: {fileID: 1914392299}
   - component: {fileID: 1914392298}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FirstDefeatBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33586,7 +33586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1955271423}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33805,7 +33805,7 @@ GameObject:
   - component: {fileID: 1975395739}
   - component: {fileID: 1975395738}
   - component: {fileID: 1975395742}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CanvasGameDifficulty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34198,7 +34198,7 @@ GameObject:
   - component: {fileID: 2011950853}
   - component: {fileID: 2011950852}
   - component: {fileID: 2011950851}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SettingsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34499,7 +34499,7 @@ GameObject:
   - component: {fileID: 2034773693}
   - component: {fileID: 2034773692}
   - component: {fileID: 2034773691}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Cast100SpellsBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35110,7 +35110,7 @@ GameObject:
   - component: {fileID: 2070420725}
   - component: {fileID: 2070420724}
   - component: {fileID: 2070420723}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FirstWinBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35646,7 +35646,7 @@ GameObject:
   - component: {fileID: 2097606433}
   - component: {fileID: 2097606432}
   - component: {fileID: 2097606434}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: AchivmentsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36236,7 +36236,7 @@ GameObject:
   - component: {fileID: 2125769670}
   - component: {fileID: 2125769669}
   - component: {fileID: 2125769672}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ArhiMage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36478,7 +36478,7 @@ GameObject:
   - component: {fileID: 2131262089}
   - component: {fileID: 2131262091}
   - component: {fileID: 2131262092}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36606,7 +36606,7 @@ GameObject:
   - component: {fileID: 2134104182}
   - component: {fileID: 2134104184}
   - component: {fileID: 2134104183}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
