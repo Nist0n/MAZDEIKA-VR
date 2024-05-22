@@ -10,6 +10,11 @@ public class SceneChanger : MonoBehaviour
         StartCoroutine(MainMenuScene());
     }
 
+    public void LoadCastleFinal()
+    {
+        StartCoroutine(CastleFinalScene());
+    }
+
     public void LoadPrologScene()
     {
         StartCoroutine(PrologScene());
@@ -75,5 +80,12 @@ public class SceneChanger : MonoBehaviour
         FindObjectOfType<WinLoseOption>().FadeIn();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("EndGame");
+    }
+    
+    private IEnumerator CastleFinalScene()
+    {
+        FindObjectOfType<WinLoseOption>().FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("LocationCastleFinal");
     }
 }
