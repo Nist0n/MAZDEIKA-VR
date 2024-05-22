@@ -14,7 +14,7 @@ public class ButtonsManager : MonoBehaviour
     [SerializeField] private GameObject chooseGameDifficulty;
     [SerializeField] private GameObject achivmentsMenu;
     [SerializeField] private GameObject continueButton;
-    [SerializeField] public List<GameObject> achivmentButton;
+    public List<GameObject> AchievementButton;
 
     private void Start()
     {
@@ -22,6 +22,11 @@ public class ButtonsManager : MonoBehaviour
             SaveSystem.instance.thirdEnemyDefeated == true)
         {
             continueButton.SetActive(true);
+        }
+
+        foreach (var VARIABLE in AchievementButton)
+        {
+            Debug.Log(VARIABLE.name);
         }
     }
 

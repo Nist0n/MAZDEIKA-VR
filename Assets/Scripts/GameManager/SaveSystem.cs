@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
 {
+    [SerializeField] private GameObject buttons;
+    
     public static SaveSystem instance;
 
     private const string Key = "mainSave";
@@ -20,7 +22,12 @@ public class SaveSystem : MonoBehaviour
 
     private void Start()
     {
-        AchivmentComplited("Image");
+        _buttonsManager = buttons.GetComponent<ButtonsManager>();
+        AchievementCompleted("gg");
+        foreach (var VARIABLE in _buttonsManager.AchievementButton)
+        {
+            Debug.Log(VARIABLE.name);
+        }
     }
 
     private void Awake()
@@ -71,18 +78,14 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    public void AchivmentComplited(string avhivmentName)
+    public void AchievementCompleted(string achievementName)
     {
-        Conditions a = achivmentsConditions.Find(x => x.name == avhivmentName);
+        var a = achivmentsConditions.Find(x => x.name == achievementName);
         {
             if (a.condition == true)
             {
-                var b = _buttonsManager.achivmentButton.Find(x => x.name == a.name);
-                b.SetActive(true);
+                _buttonsManager.AchievementButton.Find(x => x.name == achievementName).SetActive(true);
             }
         }
-        Debug.Log(a);
-        Debug.Log(a.name);
-        Debug.Log(a.condition);
     }
 }
