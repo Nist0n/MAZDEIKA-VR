@@ -46,6 +46,7 @@ public class StunningSkill : MonoBehaviour
         else
         {
             _enemyClass.IsHealing = false;
+            _enemy.GetComponentInChildren<Animator>().SetBool("isHealing", false);
         }
         yield return new WaitForSeconds(3f);
         isAttacking = false;
