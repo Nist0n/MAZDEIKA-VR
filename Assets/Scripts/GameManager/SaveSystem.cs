@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject buttons;
-    
     public static SaveSystem instance;
 
     private const string Key = "mainSave";
@@ -16,19 +14,7 @@ public class SaveSystem : MonoBehaviour
     public bool secondEnemyDefeated;
     public bool thirdEnemyDefeated;
     public bool fourthEnemyDefeated;
-    public List<Conditions> achivmentsConditions;
-
-    private ButtonsManager _buttonsManager;
-
-    private void Start()
-    {
-        _buttonsManager = buttons.GetComponent<ButtonsManager>();
-        AchievementCompleted("gg");
-        foreach (var VARIABLE in _buttonsManager.AchievementButton)
-        {
-            Debug.Log(VARIABLE.name);
-        }
-    }
+    public List<Conditions> achievementsConditions;
 
     private void Awake()
     {
@@ -57,7 +43,7 @@ public class SaveSystem : MonoBehaviour
             secondEnemyDefeated = this.secondEnemyDefeated,
             thirdEnemyDefeated = this.thirdEnemyDefeated,
             fourthEnemyDefeated = this.fourthEnemyDefeated,
-            achivmentsConditions = this.achivmentsConditions,
+            achivmentsConditions = this.achievementsConditions,
         };
 
         return data;
@@ -74,18 +60,7 @@ public class SaveSystem : MonoBehaviour
             secondEnemyDefeated = data.secondEnemyDefeated;
             thirdEnemyDefeated = data.thirdEnemyDefeated;
             fourthEnemyDefeated = data.fourthEnemyDefeated;
-            achivmentsConditions = data.achivmentsConditions;
-        }
-    }
-
-    public void AchievementCompleted(string achievementName)
-    {
-        var a = achivmentsConditions.Find(x => x.name == achievementName);
-        {
-            if (a.condition == true)
-            {
-                _buttonsManager.AchievementButton.Find(x => x.name == achievementName).SetActive(true);
-            }
+            achievementsConditions = data.achivmentsConditions;
         }
     }
 }
