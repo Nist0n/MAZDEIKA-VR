@@ -42,7 +42,11 @@ public class StunningSkill : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
-        StartCoroutine(_enemyClass.ActivateStunEffect());
+        if (!_enemyClass.IsHealing) StartCoroutine(_enemyClass.ActivateStunEffect());
+        else
+        {
+            _enemyClass.IsHealing = false;
+        }
         yield return new WaitForSeconds(3f);
         isAttacking = false;
         Destroy(gameObject);

@@ -17,6 +17,7 @@ public class FirstEnemy : MonoBehaviour
     [SerializeField] private GameObject stunAura;
     [SerializeField] private GameObject igniteAura;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject healAura;
 
     private PlayerController _player;
 
@@ -27,8 +28,10 @@ public class FirstEnemy : MonoBehaviour
     private float _isBurningTime;
     private float _igniteTimer = 5f;
     private bool _isAttacking = false;
+    private bool _healSkillActived;
 
     private GameObject _shield;
+    private GameObject _healingAura;
 
     public bool CanTakeDamage = true;
     public float Damage;
@@ -49,6 +52,8 @@ public class FirstEnemy : MonoBehaviour
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, health);
         
         UpdateHpBar();
+        
+        CheckHealAura();
 
         if (_player.GivenDamageToEnemyTimes >= 5 && CanTakeDamage)
         {
@@ -191,5 +196,20 @@ public class FirstEnemy : MonoBehaviour
         yield return new WaitForSeconds(_igniteTimer);
         Debug.Log("Destroyed");
         Destroy(tempIgniteAura);
+    }
+
+    public void CreateHealCircle()
+    {
+        _healingAura = Instantiate(healAura, transform);
+        _healSkillActived = true;
+    }
+    
+    private void CheckHealAura()
+    {
+        if (!IsHealing && _healSkillActived)
+        {
+            _healSkillActived = false;
+            Destroy(_healingAura);
+        }
     }
 }

@@ -8,6 +8,7 @@ public class FourthEnemyScills : MonoBehaviour
     [SerializeField] private GameObject baseAttackSkill;
     [SerializeField] private GameObject poisonSkill;
     [SerializeField] private GameObject stunSkill;
+    [SerializeField] private GameObject heal;
     [SerializeField] private Image skillImage;
     [SerializeField] private float defence;
     [SerializeField] private Animator animator;
@@ -26,6 +27,9 @@ public class FourthEnemyScills : MonoBehaviour
     private bool _canUseStunSkill = true;
     private float _stunSkillCd = 6f;
     private float _stunTimer = 0;
+    private bool _canUseHealSkill = false;
+    private float _healSkillCd = 20f;
+    private float _healTimer = 0;
     private float _tempEnemyDamage;
     public bool IsIncreasedAttack = false;
 
@@ -49,6 +53,8 @@ public class FourthEnemyScills : MonoBehaviour
         CheckPoisonCd();
         
         CheckStunCd();
+        
+        CheckHealCd();
         
         if (!_enemy.IsStunned)
         {
@@ -85,6 +91,7 @@ public class FourthEnemyScills : MonoBehaviour
             functions.Add(BaseAttack());
             functions.Add(PoisonAttack());
             functions.Add(StunAttack());
+            functions.Add(Healing());
             if (functions[_randomNumOfSkill].ToString().Contains("BaseAttack"))
             {
                 StartCoroutine(functions[_randomNumOfSkill]);
@@ -116,6 +123,19 @@ public class FourthEnemyScills : MonoBehaviour
                     CastSkill();
                 }
             }
+            if (functions[_randomNumOfSkill].ToString().Contains("Healing"))
+            {
+                if (_canUseHealSkill && _enemy.CurrentHealth <= 600)
+                {
+                    StartCoroutine(functions[_randomNumOfSkill]);
+                    Debug.Log("Healing");
+                }
+                else
+                {
+                    _randomNumOfSkill = Random.Range(0, functions.Count);
+                    CastSkill();
+                }
+            }
             
             _randomNumOfSkill = Random.Range(0, functions.Count);
         }
@@ -130,6 +150,19 @@ public class FourthEnemyScills : MonoBehaviour
             {
                 _canUsePoisonSkill = true;
                 _poisonTimer = 0;
+            }
+        }
+    }
+    
+    private void CheckHealCd()
+    {
+        if (!_canUseHealSkill)
+        {
+            _healTimer += Time.deltaTime;
+            if (_healTimer >= _healSkillCd)
+            {
+                _canUseHealSkill = true;
+                _healTimer = 0;
             }
         }
     }
@@ -174,6 +207,30 @@ public class FourthEnemyScills : MonoBehaviour
             Instantiate(poisonSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
             _canUsePoisonSkill = false;
         }
+        _timer = 0;
+        _time = Random.Range(2, 3.5f);
+        _isAttacking = false;
+        skillImage.color = new Color(255f, 255f, 255f, 0f);
+    }
+    
+    IEnumerator Healing()
+    {
+        animator.SetTrigger("");
+        skillImage.sprite = heal.GetComponent<Image>().sprite;
+        skillImage.color = new Color(255f, 255f, 255f, 255f);
+        yield return new WaitForSeconds(1f);
+        if (!_enemy.IsStunned)
+        {
+            _enemy.IsHealing = true;
+            _enemy.CreateHealCircle();
+            StartCoroutine(_enemy.ActivateHealingSkill(80));
+        }
+
+        while (_enemy.IsHealing)
+        {
+            _isAttacking = true;
+        }
+
         _timer = 0;
         _time = Random.Range(2, 3.5f);
         _isAttacking = false;
