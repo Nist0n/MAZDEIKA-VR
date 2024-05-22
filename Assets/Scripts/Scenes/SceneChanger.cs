@@ -9,7 +9,7 @@ public class SceneChanger : MonoBehaviour
     {
         StartCoroutine(MainMenuScene());
     }
-    
+
     public void LoadPrologScene()
     {
         StartCoroutine(PrologScene());
@@ -28,6 +28,11 @@ public class SceneChanger : MonoBehaviour
     public void LoadHomeScene()
     {
         StartCoroutine(HomeScene());
+    }
+
+    public void LoadEndGame()
+    {
+        StartCoroutine(EndScene());
     }
 
     private IEnumerator HomeScene()
@@ -63,5 +68,12 @@ public class SceneChanger : MonoBehaviour
         FindObjectOfType<WinLoseOption>().FadeIn();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("LocationVillage");
+    }
+    
+    private IEnumerator EndScene()
+    {
+        FindObjectOfType<WinLoseOption>().FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("EndGame");
     }
 }

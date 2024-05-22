@@ -74,4 +74,9 @@ public class WinLoseOption : MonoBehaviour
     {
         animator.SetTrigger("fadeIn");
     }
+    
+    public void FadeOut()
+    {
+        animator.SetTrigger("fadeOut");
+    }
 }

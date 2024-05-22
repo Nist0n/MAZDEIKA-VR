@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private Vignette _vignetteDeath;
     private Vignette _vignetteShield;
     private TrainingManager _trainingManager;
+    private FirstEnemy _enemy;
 
     private float _lerpTimer;
     private float _chipSpeed = 2f;
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        _enemy = FindObjectOfType<FirstEnemy>();
         _trainingManager = FindObjectOfType<TrainingManager>();
         CurrentHealth = _health;
         postProcessVolumeDeath.profile.TryGetSettings<Vignette>(out _vignetteDeath);
@@ -58,6 +60,8 @@ public class PlayerController : MonoBehaviour
         {
             _gameOver = true;
             gameObject.GetComponent<Skills>().enabled = false;
+            CanTakeDamage = false;
+            ActivateCleanSkill();
         }
 
         else
@@ -75,6 +79,14 @@ public class PlayerController : MonoBehaviour
             }
         }
         
+        if (_enemy.CurrentHealth == 0 && !_gameOver)
+        {
+            _gameOver = true;
+            gameObject.GetComponent<Skills>().enabled = false;
+            CanTakeDamage = false;
+            ActivateCleanSkill();
+        }
+
         UpdateHpBar();
     }
 
