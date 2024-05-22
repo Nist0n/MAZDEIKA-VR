@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.63172466, g: 0.4998877, b: 0.7594762, a: 1}
+  m_IndirectSpecularColor: {r: 0.6294833, g: 0.49682295, b: 0.7571158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5492,6 +5492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9207f9d973918cc44b4320e87e1a8bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!114 &312876139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13255,6 +13256,7 @@ MonoBehaviour:
   chooseGameDifficulty: {fileID: 0}
   achivmentsMenu: {fileID: 0}
   continueButton: {fileID: 0}
+  animator: {fileID: 0}
   AchievementButton: []
 --- !u!1 &805579295
 GameObject:
@@ -24748,6 +24750,7 @@ MonoBehaviour:
   chooseGameDifficulty: {fileID: 1975395737}
   achivmentsMenu: {fileID: 697009875}
   continueButton: {fileID: 1159582220}
+  animator: {fileID: 1364846989}
   AchievementButton:
   - {fileID: 704049083}
   - {fileID: 155751297}
@@ -29483,6 +29486,7 @@ MonoBehaviour:
   chooseGameDifficulty: {fileID: 0}
   achivmentsMenu: {fileID: 0}
   continueButton: {fileID: 0}
+  animator: {fileID: 0}
   AchievementButton: []
 --- !u!1001 &1695564354
 PrefabInstance:

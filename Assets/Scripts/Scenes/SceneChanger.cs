@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
+    
+    public void StartBattle()
+    {
+        if (SaveSystem.instance.firstEnemyDefeated && !SaveSystem.instance.secondEnemyDefeated &&
+            !SaveSystem.instance.thirdEnemyDefeated) LoadVillageScene();
+        if (SaveSystem.instance.firstEnemyDefeated && SaveSystem.instance.secondEnemyDefeated &&
+            !SaveSystem.instance.thirdEnemyDefeated) LoadCastleScene();
+        if (SaveSystem.instance.firstEnemyDefeated && SaveSystem.instance.secondEnemyDefeated &&
+            SaveSystem.instance.thirdEnemyDefeated) LoadCastleFinal();
+    }
+    
     public void LoadMainMenuScene()
     {
         StartCoroutine(MainMenuScene());
@@ -42,50 +54,60 @@ public class SceneChanger : MonoBehaviour
 
     private IEnumerator HomeScene()
     {
-        FindObjectOfType<WinLoseOption>().FadeIn();
+        FadeIn();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("LocationHome");
     }
     
     private IEnumerator MainMenuScene()
     {
-        FindObjectOfType<WinLoseOption>().FadeIn();
+        FadeIn();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("LocationMainMenu");
     }
     
     private IEnumerator PrologScene()
     {
-        FindObjectOfType<WinLoseOption>().FadeIn();
+        FadeIn();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("LocationProlog");
     }
     
     private IEnumerator CastleScene()
     {
-        FindObjectOfType<WinLoseOption>().FadeIn();
+        FadeIn();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("LocationCastle");
     }
     
     private IEnumerator VillageScene()
     {
-        FindObjectOfType<WinLoseOption>().FadeIn();
+        FadeIn();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("LocationVillage");
     }
     
     private IEnumerator EndScene()
     {
-        FindObjectOfType<WinLoseOption>().FadeIn();
+        FadeIn();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("EndGame");
     }
     
     private IEnumerator CastleFinalScene()
     {
-        FindObjectOfType<WinLoseOption>().FadeIn();
+        FadeIn();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("LocationCastleFinal");
+    }
+    
+    private void FadeIn()
+    {
+        animator.SetTrigger("fadeIn");
+    }
+    
+    private void FadeOut()
+    {
+        animator.SetTrigger("fadeOut");
     }
 }

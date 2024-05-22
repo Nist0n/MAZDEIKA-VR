@@ -70,12 +70,12 @@ public class WinLoseOption : MonoBehaviour
         SceneManager.LoadScene("LocationHome");
     }
 
-    public void FadeIn()
+    private void FadeIn()
     {
         animator.SetTrigger("fadeIn");
     }
     
-    public void FadeOut()
+    private void FadeOut()
     {
         animator.SetTrigger("fadeOut");
     }

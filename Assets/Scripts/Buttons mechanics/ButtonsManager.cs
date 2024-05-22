@@ -14,6 +14,7 @@ public class ButtonsManager : MonoBehaviour
     [SerializeField] private GameObject chooseGameDifficulty;
     [SerializeField] private GameObject achivmentsMenu;
     [SerializeField] private GameObject continueButton;
+    [SerializeField] private Animator animator;
     public List<GameObject> AchievementButton;
 
     private void Start()
@@ -71,14 +72,14 @@ public class ButtonsManager : MonoBehaviour
 
     private IEnumerator LocationHome()
     {
-        FindObjectOfType<WinLoseOption>().FadeIn();
+        FadeIn();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("LocationHome");
     }
     
     private IEnumerator LocationHomeOnLose()
     {
-        FindObjectOfType<WinLoseOption>().FadeIn();
+        FadeIn();
         yield return new WaitForSeconds(1.5f);
         if (SaveSystem.instance.isArchimage)
         {
@@ -88,5 +89,15 @@ public class ButtonsManager : MonoBehaviour
             SaveSystem.instance.Save();
         }
         SceneManager.LoadScene("LocationHome");
+    }
+    
+    private void FadeIn()
+    {
+        animator.SetTrigger("fadeIn");
+    }
+    
+    private void FadeOut()
+    {
+        animator.SetTrigger("fadeOut");
     }
 }

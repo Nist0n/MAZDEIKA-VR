@@ -78,13 +78,16 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        
-        if (_enemy.CurrentHealth == 0 && !_gameOver)
+
+        if (_enemy != null)
         {
-            _gameOver = true;
-            gameObject.GetComponent<Skills>().enabled = false;
-            CanTakeDamage = false;
-            ActivateCleanSkill();
+            if (_enemy.CurrentHealth == 0 && !_gameOver)
+            {
+                _gameOver = true;
+                gameObject.GetComponent<Skills>().enabled = false;
+                CanTakeDamage = false;
+                ActivateCleanSkill();
+            }
         }
 
         UpdateHpBar();
