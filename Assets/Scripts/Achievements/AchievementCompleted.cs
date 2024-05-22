@@ -13,13 +13,11 @@ public class AchievementCompleted : MonoBehaviour
     {
         _buttonsManager = objectButtonManager.GetComponent<ButtonsManager>();
         
-        CompleteAchievement("gg");
-        CompleteAchievement("");
-        CompleteAchievement("");
-        CompleteAchievement("");
-        CompleteAchievement("");
-        CompleteAchievement("");
-        CompleteAchievement("");
+        CompleteAchievement("FirstPlay");
+        CompleteAchievement("SecondPlay");
+        CompleteAchievement("ThirdPlay");
+        CompleteAchievement("PrologComplited");
+        CompleteAchievement("FirstWin");
         CompleteAchievement("");
         CompleteAchievement("");
         CompleteAchievement("");
