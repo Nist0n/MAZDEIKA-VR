@@ -68,12 +68,12 @@ public class FourthEnemyScills : MonoBehaviour
         if (_enemy.CurrentHealth <= 0 || _player.CurrentHealth <= 0)
         {
             _enemy.CanTakeDamage = false;
-            gameObject.GetComponent<ThirdEnemySkills>().enabled = false;
+            gameObject.GetComponent<FourthEnemyScills>().enabled = false;
         }
         
         if (_enemy.CurrentHealth <= 0)
         {
-            SaveSystem.instance.thirdEnemyDefeated = true;
+            SaveSystem.instance.fourthEnemyDefeated = true;
             SaveSystem.instance.Save();
         }
     }
@@ -183,7 +183,7 @@ public class FourthEnemyScills : MonoBehaviour
     IEnumerator StunAttack()
     {
         animator.SetTrigger("baseAttack");
-        skillImage.sprite = poisonSkill.GetComponent<Image>().sprite;
+        skillImage.sprite = stunSkill.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
         yield return new WaitForSeconds(1f);
         if (!_enemy.IsStunned)

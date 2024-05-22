@@ -43,7 +43,8 @@ public class StunAttackEnemy : MonoBehaviour
         isAttacking = true;
         hit.SetActive(true);
         _playerController.StunPlayer();
-        FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack = true;
+        if (FindObjectOfType<ThirdEnemySkills>() != null) FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack = true;
+        if (FindObjectOfType<FourthEnemyScills>() != null) FindObjectOfType<FourthEnemyScills>().IsIncreasedAttack = true;
         yield return new WaitForSeconds(0.4f);
         isAttacking = false;
         Destroy(gameObject);

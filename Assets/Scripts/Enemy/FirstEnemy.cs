@@ -36,6 +36,7 @@ public class FirstEnemy : MonoBehaviour
     public bool IsStunned = false;
     public bool IsBurning = false;
     public float PoisonDamage;
+    public bool IsHealing;
 
     private void Start()
     {
@@ -119,11 +120,18 @@ public class FirstEnemy : MonoBehaviour
         
         CurrentHealth -= damage;
         _lerpTimer = 0f;
+    }
+    
+    public void RestoreHealth(float healValue)
+    {
+        if (!animator.GetBool("isAttacking"));
 
-        if (CurrentHealth <= 0)
-        {
-            Debug.Log("СМЭРТЬ");
-        }
+        GameObject point = Instantiate(floatingPoints, transform.position, new Quaternion(0f, 0f, 0f, 0f), canvas.transform) as GameObject;
+        point.GetComponentInChildren<TextMeshProUGUI>().text = $"{healValue}";
+        point.GetComponentInChildren<TextMeshProUGUI>().color = Color.green;
+        
+        CurrentHealth += healValue;
+        _lerpTimer = 0f;
     }
 
     private void ActivateShield()
@@ -163,6 +171,16 @@ public class FirstEnemy : MonoBehaviour
             TakeDamage(damage + _defence);
             yield return new WaitForSeconds(1f);
             StartCoroutine(ActivateTickDamage(damage));
+        }
+    }
+
+    public IEnumerator ActivateHealingSkill(float healValue)
+    {
+        if (IsHealing)
+        {
+            RestoreHealth(healValue);
+            yield return new WaitForSeconds(2f);
+            StartCoroutine(ActivateHealingSkill(healValue));
         }
     }
 

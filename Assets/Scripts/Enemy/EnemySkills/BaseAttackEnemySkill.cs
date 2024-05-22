@@ -29,7 +29,7 @@ public class BaseAttackEnemySkill : MonoBehaviour
         }
         else
         {
-            if (FindObjectOfType<ThirdEnemySkills>()!= null && FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack)
+            if ((FindObjectOfType<ThirdEnemySkills>()!= null && FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack) || (FindObjectOfType<FourthEnemyScills>()!= null && FindObjectOfType<FourthEnemyScills>().IsIncreasedAttack))
             {
                 _damage = _enemy.Damage * 2;
             }
@@ -56,6 +56,8 @@ public class BaseAttackEnemySkill : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         if (FindObjectOfType<ThirdEnemySkills>() != null && FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack)
             FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack = false;
+        if (FindObjectOfType<FourthEnemyScills>() != null && FindObjectOfType<FourthEnemyScills>().IsIncreasedAttack)
+            FindObjectOfType<FourthEnemyScills>().IsIncreasedAttack = false;
         isAttacking = false;
         Destroy(gameObject);
     }

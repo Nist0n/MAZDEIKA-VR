@@ -183,7 +183,7 @@ public class ThirdEnemySkills : MonoBehaviour
     IEnumerator StunAttack()
     {
         animator.SetTrigger("baseAttack");
-        skillImage.sprite = poisonSkill.GetComponent<Image>().sprite;
+        skillImage.sprite = stunSkill.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
         yield return new WaitForSeconds(1f);
         if (!_enemy.IsStunned)
