@@ -56,7 +56,7 @@ public class FourthEnemyScills : MonoBehaviour
         
         CheckHealCd();
         
-        if (!_enemy.IsStunned)
+        if (!_enemy.IsStunned && !_enemy.IsHealing)
         {
             _timer += Time.deltaTime;
         }
@@ -224,11 +224,6 @@ public class FourthEnemyScills : MonoBehaviour
             _enemy.IsHealing = true;
             _enemy.CreateHealCircle();
             StartCoroutine(_enemy.ActivateHealingSkill(80));
-        }
-
-        while (_enemy.IsHealing)
-        {
-            _isAttacking = true;
         }
 
         _timer = 0;
