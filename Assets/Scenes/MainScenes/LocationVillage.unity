@@ -4012,6 +4012,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8635227268392199610, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
+      propertyPath: IgniteDamage
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4516683403103782002, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
     m_RemovedGameObjects: []
