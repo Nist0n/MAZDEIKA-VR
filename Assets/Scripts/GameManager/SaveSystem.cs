@@ -18,6 +18,11 @@ public class SaveSystem : MonoBehaviour
 
     private ButtonsManager _buttonsManager;
 
+    private void Start()
+    {
+        AchivmentComplited("Image");
+    }
+
     private void Awake()
     {
         if (instance == null)
@@ -72,8 +77,12 @@ public class SaveSystem : MonoBehaviour
         {
             if (a.condition == true)
             {
-                _buttonsManager.achivmentButton.Find(x => x.name == avhivmentName).SetActive(true);
+                var b = _buttonsManager.achivmentButton.Find(x => x.name == a.name);
+                b.SetActive(true);
             }
         }
+        Debug.Log(a);
+        Debug.Log(a.name);
+        Debug.Log(a.condition);
     }
 }
