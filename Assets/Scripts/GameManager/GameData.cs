@@ -1,3 +1,4 @@
+using Achivments;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,4 +10,5 @@ public class GameData
     public bool secondEnemyDefeated;
     public bool thirdEnemyDefeated;
     public bool fourthEnemyDefeated;
+    public List<Conditions> achivmentsConditions;
 }

@@ -1,3 +1,5 @@
+using Achivments;
+using DialogueEditor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +14,7 @@ public class ButtonsManager : MonoBehaviour
     [SerializeField] private GameObject chooseGameDifficulty;
     [SerializeField] private GameObject achivmentsMenu;
     [SerializeField] private GameObject continueButton;
+    [SerializeField] public List<GameObject> achivmentButton;
 
     private void Start()
     {
