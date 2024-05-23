@@ -208,6 +208,7 @@ public class PlayerController : MonoBehaviour
         VisualiseEffects(defenceSkill);
         _defence = 25f;
         yield return new WaitForSeconds(7f);
+        AudioManager.instance.PlaySFX("DefenceSkillEnd");
         _defence = 0f;
         DeleteEffect(defenceSkill.name);
     }

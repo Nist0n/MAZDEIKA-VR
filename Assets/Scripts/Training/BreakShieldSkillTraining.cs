@@ -43,6 +43,7 @@ public class BreakShieldSkillTraining : MonoBehaviour
         _isAttacking = true;
         hit.SetActive(true);
         _enemyClass.DeActivateShield();
+        AudioManager.instance.PlaySFX("ShieldBroken");
         _trainingManager.BreakShieldCompletedTimes++;
         yield return new WaitForSeconds(0.8f);
         _isAttacking = false;
@@ -53,6 +54,7 @@ public class BreakShieldSkillTraining : MonoBehaviour
     {
         _isAttacking = true;
         hit.SetActive(true);
+        AudioManager.instance.PlaySFX("BaseAttackImpact");
         yield return new WaitForSeconds(0.8f);
         _isAttacking = false;
         Destroy(gameObject);

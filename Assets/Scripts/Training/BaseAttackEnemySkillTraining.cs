@@ -27,19 +27,34 @@ public class BaseAttackEnemySkillTraining : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !isAttacking)
         {
-            StartCoroutine(Attack());
+            if (_playerScript.CanTakeDamage)
+            {
+                StartCoroutine(Attack());
+            }
+            else
+            {
+                StartCoroutine(ShieldAttack());
+            }
         }
     }
 
+    IEnumerator ShieldAttack()
+    {
+        isAttacking = true;
+        hit.SetActive(true);
+        AudioManager.instance.PlaySFX("ShieldImpact");
+        _trainingManager.ShieldCompletedTimes++;
+        yield return new WaitForSeconds(0.4f);
+        isAttacking = false;
+        Destroy(gameObject);
+    }
+    
     IEnumerator Attack()
     {
         isAttacking = true;
         hit.SetActive(true);
-        if (!_playerScript.CanTakeDamage)
-        {
-            _trainingManager.ShieldCompletedTimes++;
-        }
-        yield return new WaitForSeconds(0.4f);
+        AudioManager.instance.PlaySFX("BaseAttackImpact");
+        yield return new WaitForSeconds(0.8f);
         isAttacking = false;
         Destroy(gameObject);
     }

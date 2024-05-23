@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.63172466, g: 0.4998877, b: 0.7594762, a: 1}
+  m_IndirectSpecularColor: {r: 0.6294833, g: 0.49682295, b: 0.7571158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -28220,7 +28220,25 @@ MonoBehaviour:
   music:
   - name: Music 1
     audio: {fileID: 8300000, guid: 83e8983c3bbbb204e8ab902e54877676, type: 3}
-  sounds: []
+  sounds:
+  - name: DefenceSkillCast
+    audio: {fileID: 8300000, guid: 34aa3ab94096c4a079f46fe32e131b19, type: 3}
+  - name: DefenceSkillEnd
+    audio: {fileID: 8300000, guid: eee79c0d7895d43a288f5a22eb4c1203, type: 3}
+  - name: HealCast
+    audio: {fileID: 8300000, guid: 22ce39173b9d14c54961b85f3442227a, type: 3}
+  - name: ShieldCast
+    audio: {fileID: 8300000, guid: 0f16336c8fe924baba189692044f622a, type: 3}
+  - name: ShieldImpact
+    audio: {fileID: 8300000, guid: 1e3f326551100413fa364fd2531df6d9, type: 3}
+  - name: ShieldBroken
+    audio: {fileID: 8300000, guid: 935e2ab55ce0d4b48bb6fc145e395537, type: 3}
+  - name: BreakShieldCast
+    audio: {fileID: 8300000, guid: 64d41a2e2d21b4f9d8ac307486680b98, type: 3}
+  - name: BaseAttackCast
+    audio: {fileID: 8300000, guid: 41a02e63b56db4edcb017528155471e9, type: 3}
+  - name: BaseAttackImpact
+    audio: {fileID: 8300000, guid: ae9dd18bb43f84bfba07455c60f2e9c8, type: 3}
 --- !u!4 &1625139033
 Transform:
   m_ObjectHideFlags: 0

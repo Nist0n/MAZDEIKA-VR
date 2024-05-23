@@ -39,6 +39,7 @@ public class BaseAttackTraining : MonoBehaviour
         hit.SetActive(true);
         if (_trainingManager.ThirdSkillTraining) _player.GivenDamageToEnemyTimes++;
         _trainingManager.BaseAttackCompletedTimes++;
+        AudioManager.instance.PlaySFX("BaseAttackImpact");
         yield return new WaitForSeconds(0.8f);
         isAttacking = false;
         Destroy(gameObject);

@@ -19,26 +19,25 @@ public class BaseAttackSkill : MonoBehaviour
         _player = FindObjectOfType<PlayerController>();
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
         _enemyClass = FindObjectOfType<FirstEnemy>();
+        _damage = _player.Damage;
     }
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, _enemy.transform.position, speed);
-
-        if (!_enemyClass.CanTakeDamage)
-        {
-            _damage = 0;
-        }
-        else
-        {
-            _damage = _player.Damage;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy") && !isAttacking)
         {
-            StartCoroutine(Attack());
+            if (!_enemyClass.CanTakeDamage)
+            {
+                StartCoroutine(ShieldAttack());
+            }
+            else
+            {
+                StartCoroutine(Attack());
+            }
         }
     }
 
@@ -48,6 +47,17 @@ public class BaseAttackSkill : MonoBehaviour
         hit.SetActive(true);
         _player.GivenDamageToEnemyTimes++;
         _enemyClass.TakeDamage(_damage);
+        AudioManager.instance.PlaySFX("BaseAttackImpact");
+        yield return new WaitForSeconds(0.8f);
+        isAttacking = false;
+        Destroy(gameObject);
+    }
+
+    IEnumerator ShieldAttack()
+    {
+        isAttacking = true;
+        hit.SetActive(true);
+        AudioManager.instance.PlaySFX("ShieldImpact");
         yield return new WaitForSeconds(0.8f);
         isAttacking = false;
         Destroy(gameObject);

@@ -143,6 +143,7 @@ public class FirstEnemy : MonoBehaviour
     {
         CanTakeDamage = false;
         _shield = Instantiate(shieldSkill, transform) as GameObject;
+        AudioManager.instance.PlaySFX("ShieldCast");
     }
 
     public void DeActivateShield()

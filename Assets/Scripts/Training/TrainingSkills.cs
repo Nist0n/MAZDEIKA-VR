@@ -39,16 +39,28 @@ public class TrainingSkills : MonoBehaviour
 
     public void BaseAttack()
     {
-        if (_trainingManager.FirstSkillTraining) Instantiate(baseAttackSpell, handPos.transform.position, Quaternion.identity, _player.transform);
+        if (_trainingManager.FirstSkillTraining)
+        {
+            AudioManager.instance.PlaySFX("BaseAttackCast");
+            Instantiate(baseAttackSpell, handPos.transform.position, Quaternion.identity, _player.transform);
+        }
     }
 
     public void BreakShield()
     {
-        if (_trainingManager.ThirdSkillTraining) Instantiate(breakShieldSkill, handPos.transform.position, Quaternion.identity, _player.transform);
+        if (_trainingManager.ThirdSkillTraining)
+        {
+            AudioManager.instance.PlaySFX("BreakShieldCast");
+            Instantiate(breakShieldSkill, handPos.transform.position, Quaternion.identity, _player.transform);
+        }
     }
 
     public void ActivateShield()
     {
-        if (_trainingManager.SecondSkillTraining) StartCoroutine(_player.ActivateShield());
+        if (_trainingManager.SecondSkillTraining)
+        {
+            AudioManager.instance.PlaySFX("ShieldCast");
+            StartCoroutine(_player.ActivateShield());
+        }
     }
 }

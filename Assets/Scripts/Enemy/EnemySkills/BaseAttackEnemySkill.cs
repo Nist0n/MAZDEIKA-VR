@@ -44,7 +44,14 @@ public class BaseAttackEnemySkill : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !isAttacking)
         {
-            StartCoroutine(Attack());
+            if (_playerController.CanTakeDamage)
+            {
+                StartCoroutine(Attack());
+            }
+            else
+            {
+                StartCoroutine(ShieldAttack());
+            }
         }
     }
 
@@ -53,6 +60,21 @@ public class BaseAttackEnemySkill : MonoBehaviour
         isAttacking = true;
         hit.SetActive(true);
         _playerController.TakeDamage(_damage);
+        AudioManager.instance.PlaySFX("BaseAttackImpact");
+        yield return new WaitForSeconds(0.4f);
+        if (FindObjectOfType<ThirdEnemySkills>() != null && FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack)
+            FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack = false;
+        if (FindObjectOfType<FourthEnemyScills>() != null && FindObjectOfType<FourthEnemyScills>().IsIncreasedAttack)
+            FindObjectOfType<FourthEnemyScills>().IsIncreasedAttack = false;
+        isAttacking = false;
+        Destroy(gameObject);
+    }
+    
+    IEnumerator ShieldAttack()
+    {
+        isAttacking = true;
+        hit.SetActive(true);
+        AudioManager.instance.PlaySFX("ShieldImpact");
         yield return new WaitForSeconds(0.4f);
         if (FindObjectOfType<ThirdEnemySkills>() != null && FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack)
             FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack = false;

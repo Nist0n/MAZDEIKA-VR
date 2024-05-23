@@ -13,13 +13,13 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private List<Sound> music, sounds;
     
-    private static AudioManager _instance;
+    public static AudioManager instance;
 
     private void Awake()
     {
-        if (_instance == null)
+        if (instance == null)
         {
-            _instance = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else

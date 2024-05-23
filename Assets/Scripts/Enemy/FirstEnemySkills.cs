@@ -75,6 +75,7 @@ public class FirstEnemySkills : MonoBehaviour
         skillImage.sprite = baseAttackSkill.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
         yield return new WaitForSeconds(1f);
+        AudioManager.instance.PlaySFX("BaseAttackCast");
         Instantiate(baseAttackSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
         _timer = 0;
         _time = Random.Range(3, 4);

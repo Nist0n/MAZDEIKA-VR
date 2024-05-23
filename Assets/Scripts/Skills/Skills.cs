@@ -120,17 +120,29 @@ public class Skills : MonoBehaviour
 
     public void BaseAttack()
     {
-        if (!_player.IsStunned) Instantiate(baseAttackSpell, handPos.transform.position, Quaternion.identity, _player.transform);
+        if (!_player.IsStunned)
+        {
+            AudioManager.instance.PlaySFX("BaseAttackCast");
+            Instantiate(baseAttackSpell, handPos.transform.position, Quaternion.identity, _player.transform);
+        }
     }
 
     public void BreakShield()
     {
-        if (!_player.IsStunned) Instantiate(breakShieldSkill, handPos.transform.position, Quaternion.identity, _player.transform);
+        if (!_player.IsStunned)
+        {
+            AudioManager.instance.PlaySFX("BreakShieldCast");
+            Instantiate(breakShieldSkill, handPos.transform.position, Quaternion.identity, _player.transform);
+        }
     }
 
     public void ActivateShield()
     {
-        if (!_player.IsStunned) StartCoroutine(_player.ActivateShield());
+        if (!_player.IsStunned)
+        {
+            AudioManager.instance.PlaySFX("ShieldCast");
+            StartCoroutine(_player.ActivateShield());
+        }
     }
 
     public void StunningAttack()
@@ -175,6 +187,7 @@ public class Skills : MonoBehaviour
         {
             if (_canUseHeal && !_player.IsStunned)
             {
+                AudioManager.instance.PlaySFX("HealCast");
                 _player.RestoreHealth(100);
                 StartCoroutine(ActivateHealCD());
             }
@@ -195,6 +208,7 @@ public class Skills : MonoBehaviour
         {
             if (_canUseDefence && !_player.IsStunned)
             {
+                AudioManager.instance.PlaySFX("DefenceSkillCast");
                 StartCoroutine(_player.ActivateDefence());
                 StartCoroutine(ActivateDefenceCD());
             }
