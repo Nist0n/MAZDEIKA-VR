@@ -27,7 +27,7 @@ public class UiUpdateHome : MonoBehaviour
     private bool _firstEnemyDefeated = false;
     private bool _secondEnemyDefeated = false;
 
-    private void Update()
+    private void Start()
     {
         DisplayChetvertFinals();
         
