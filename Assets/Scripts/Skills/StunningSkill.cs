@@ -42,7 +42,7 @@ public class StunningSkill : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
-        AudioManager.instance.PlaySFX("StunSkillImpact");
+        AudioManager.instance.PlaySFX("StunAttackImpact");
         if (!_enemyClass.IsHealing) StartCoroutine(_enemyClass.ActivateStunEffect());
         else
         {

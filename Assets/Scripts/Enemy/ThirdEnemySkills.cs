@@ -225,7 +225,7 @@ public class ThirdEnemySkills : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (!_enemy.IsStunned)
         {
-            AudioManager.instance.PlaySFX("StunSkillCast");
+            AudioManager.instance.PlaySFX("StunAttackCast");
             Instantiate(stunSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
             _timer = 0;
             _time = Random.Range(2, 3.5f);

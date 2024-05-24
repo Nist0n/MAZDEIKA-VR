@@ -80,6 +80,7 @@ public class ButtonsManager : MonoBehaviour
     {
         FadeIn();
         yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlayMusic("LocationHomeMusic");
         SceneManager.LoadScene("LocationHome");
     }
     
@@ -94,6 +95,7 @@ public class ButtonsManager : MonoBehaviour
             SaveSystem.instance.fourthEnemyDefeated = false;
             SaveSystem.instance.Save();
         }
+        AudioManager.instance.PlayMusic("LocationHomeMusic");
         SceneManager.LoadScene("LocationHome");
     }
     

@@ -56,6 +56,7 @@ public class SceneChanger : MonoBehaviour
     {
         FadeIn();
         yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlayMusic("LocationHomeMusic");
         SceneManager.LoadScene("LocationHome");
     }
     
@@ -63,7 +64,7 @@ public class SceneChanger : MonoBehaviour
     {
         FadeIn();
         yield return new WaitForSeconds(1.5f);
-        AudioManager.instance.PlayMusic("Music1");
+        AudioManager.instance.PlayMusic("Music 1");
         SceneManager.LoadScene("LocationMainMenu");
     }
     
@@ -87,7 +88,7 @@ public class SceneChanger : MonoBehaviour
     {
         FadeIn();
         yield return new WaitForSeconds(1.5f);
-        AudioManager.instance.PlayMusic("BattleMusicSkel");
+        AudioManager.instance.PlayMusic("BatlleMusicSkel");
         SceneManager.LoadScene("LocationVillage");
     }
     
