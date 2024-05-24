@@ -6,6 +6,7 @@ public class SetDIfficulty : MonoBehaviour
 {
     public void SetDifficultyArchemage()
     {
+        AudioManager.instance.PlaySFX("Click");
         SaveSystem.instance.isArchimage = true;
         SaveSystem.instance.firstEnemyDefeated = false;
         SaveSystem.instance.secondEnemyDefeated = false;
@@ -16,6 +17,7 @@ public class SetDIfficulty : MonoBehaviour
     
     public void SetDifficultyMage()
     {
+        AudioManager.instance.PlaySFX("Click");
         SaveSystem.instance.isArchimage = false;
         SaveSystem.instance.firstEnemyDefeated = false;
         SaveSystem.instance.secondEnemyDefeated = false;

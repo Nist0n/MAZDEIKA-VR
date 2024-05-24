@@ -42,6 +42,7 @@ public class MainMenu : MonoBehaviour
         _rectTransform.transform.localPosition = new Vector3(55.93f, -10f, 66.52f);
         _rectTransform.DOAnchorPos(new Vector2(55.93f, 6.29f), _fadeTime, false).SetEase(Ease.OutElastic);
         _canvasGroup.DOFade(1, _fadeTime);
+        AudioManager.instance.PlaySFX("FallingUI");
     }
     
 }

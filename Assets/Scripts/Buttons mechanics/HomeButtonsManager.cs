@@ -52,4 +52,9 @@ public class HomeButtonsManager : MonoBehaviour
         increaseDamageSkill.SetActive(true);
         healSkill.SetActive(true);
     }
+
+    public void PlaySoundClick()
+    {
+        AudioManager.instance.PlaySFX("Click");
+    }
 }

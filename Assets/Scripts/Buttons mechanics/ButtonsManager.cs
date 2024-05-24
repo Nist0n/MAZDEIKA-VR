@@ -33,17 +33,20 @@ public class ButtonsManager : MonoBehaviour
 
     public void QuitGame()
     {
+        AudioManager.instance.PlaySFX("Click");
         Application.Quit();
         Debug.Log("Quit");
     }
     public void SoundSettings()
     {
+        AudioManager.instance.PlaySFX("Click");
         Debug.Log("Settings");
         mainMenu.SetActive(false);
         settings.SetActive(true);
     }
     public void BackButton()
     {
+        AudioManager.instance.PlaySFX("Click");
         mainMenu.SetActive(true);
         settings.SetActive(false);
         chooseGameDifficulty.SetActive(false);
@@ -51,17 +54,20 @@ public class ButtonsManager : MonoBehaviour
     }
     public void ChooseDifficulty()
     {
+        AudioManager.instance.PlaySFX("Click");
         chooseGameDifficulty.SetActive(true);
         mainMenu.SetActive(false);
     }
     public void OpenAchivmentsMenu()
     {
+        AudioManager.instance.PlaySFX("Click");
         mainMenu.SetActive(false);
         achivmentsMenu.SetActive(true);
     }
 
     public void ContinueGame()
     {
+        AudioManager.instance.PlaySFX("Click");
         StartCoroutine(LocationHome());
     }
     
