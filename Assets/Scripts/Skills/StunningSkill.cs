@@ -42,6 +42,7 @@ public class StunningSkill : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
+        AudioManager.instance.PlaySFX("StunSkillImpact");
         if (!_enemyClass.IsHealing) StartCoroutine(_enemyClass.ActivateStunEffect());
         else
         {
@@ -57,6 +58,7 @@ public class StunningSkill : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
+        AudioManager.instance.PlaySFX("ShieldImpact");
         yield return new WaitForSeconds(0.7f);
         isAttacking = false;
         Destroy(gameObject);

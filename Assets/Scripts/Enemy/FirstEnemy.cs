@@ -130,6 +130,8 @@ public class FirstEnemy : MonoBehaviour
     public void RestoreHealth(float healValue)
     {
         if (!animator.GetBool("isAttacking"));
+        
+        AudioManager.instance.PlaySFX("HealTick");
 
         GameObject point = Instantiate(floatingPoints, transform.position, new Quaternion(0f, 0f, 0f, 0f), canvas.transform) as GameObject;
         point.GetComponentInChildren<TextMeshProUGUI>().text = $"{healValue}";

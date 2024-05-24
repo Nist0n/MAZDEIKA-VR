@@ -193,6 +193,7 @@ public class PlayerController : MonoBehaviour
         VisualiseEffects(increaseSkill);
         Damage += _increaseDamage;
         yield return new WaitForSeconds(10f);
+        AudioManager.instance.PlaySFX("DeactivateIncreaseDamageBuff");
         Damage -= _increaseDamage;
         DeleteEffect(increaseSkill.name);
     }

@@ -28261,6 +28261,26 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 098cc88db22f142dbbedb8b2a0c22f68, type: 3}
   - name: Win
     audio: {fileID: 8300000, guid: 3a805fb08880884408ca696e782a1f40, type: 3}
+  - name: CleanSkillCast
+    audio: {fileID: 8300000, guid: 73214b875be644b859e4aa4657c9a31f, type: 3}
+  - name: DeactivateIncreaseDamageBuff
+    audio: {fileID: 8300000, guid: aaae3dd8fc59a4e49a366067c6c58632, type: 3}
+  - name: IgniteSkillCast
+    audio: {fileID: 8300000, guid: 5f1e0a685149145c5a8cfef92dee0902, type: 3}
+  - name: IncreaseDamageCast
+    audio: {fileID: 8300000, guid: dca277650ced24835bea6a2dae0c94ec, type: 3}
+  - name: StunAttackCast
+    audio: {fileID: 8300000, guid: 548856596ba4b4af5b77ca7342ccdd02, type: 3}
+  - name: StunAttackImpact
+    audio: {fileID: 8300000, guid: 60c7853b0cfe04bbdbae798a13e08e53, type: 3}
+  - name: HealEnemyCast
+    audio: {fileID: 8300000, guid: 30a533dc87b434e4b9e1054c2834bfd5, type: 3}
+  - name: HealTick
+    audio: {fileID: 8300000, guid: 39044d675b17a43c8b895248f2baf8cc, type: 3}
+  - name: PoisonCast
+    audio: {fileID: 8300000, guid: 05f21f3247ab2476fa44f4fb7ab4eec7, type: 3}
+  - name: PoisonImpact
+    audio: {fileID: 8300000, guid: 7cce3a0936ffd46acb9868f983af44b5, type: 3}
 --- !u!4 &1625139033
 Transform:
   m_ObjectHideFlags: 0

@@ -34,6 +34,7 @@ public class IgniteSkill : MonoBehaviour
     {
         _isAttacking = true;
         _enemyClass.IsBurning = true;
+        AudioManager.instance.PlaySFX("IgniteSkillCast");
         StartCoroutine(_enemyClass.ActivateTickDamage(_damage));
         StartCoroutine(_enemyClass.ActivateIgniteAura());
         yield return new WaitForSeconds(5f);
@@ -44,6 +45,7 @@ public class IgniteSkill : MonoBehaviour
     IEnumerator ShieldAttack()
     {
         _isAttacking = true;
+        AudioManager.instance.PlaySFX("ShieldImpact");
         yield return new WaitForSeconds(2f);
         _isAttacking = false;
         Destroy(gameObject);

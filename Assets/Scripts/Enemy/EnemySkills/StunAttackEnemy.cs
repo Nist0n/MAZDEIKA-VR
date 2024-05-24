@@ -43,6 +43,7 @@ public class StunAttackEnemy : MonoBehaviour
         isAttacking = true;
         hit.SetActive(true);
         _playerController.StunPlayer();
+        AudioManager.instance.PlaySFX("StunAttackImpact");
         if (FindObjectOfType<ThirdEnemySkills>() != null) FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack = true;
         if (FindObjectOfType<FourthEnemyScills>() != null) FindObjectOfType<FourthEnemyScills>().IsIncreasedAttack = true;
         yield return new WaitForSeconds(0.4f);
@@ -54,6 +55,7 @@ public class StunAttackEnemy : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
+        AudioManager.instance.PlaySFX("ShieldImpact");
         yield return new WaitForSeconds(0.4f);
         isAttacking = false;
         Destroy(gameObject);

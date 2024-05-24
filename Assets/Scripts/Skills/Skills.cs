@@ -151,6 +151,7 @@ public class Skills : MonoBehaviour
         {
             if (_canUseStun && !_player.IsStunned)
             {
+                AudioManager.instance.PlaySFX("StunAttackCast");
                 Instantiate(stunningAttackSkill, handPos.transform.position, Quaternion.identity, _player.transform);
                 StartCoroutine(ActivateStunCD());
             }
@@ -175,6 +176,7 @@ public class Skills : MonoBehaviour
         {
             if (_canUseIncreaseDamage && !_player.IsStunned)
             {
+                AudioManager.instance.PlaySFX("IncreaseDamageCast");
                 StartCoroutine(_player.IncreaseDamage());
                 StartCoroutine(ActivateIncreaseDamageCD());
             }
@@ -198,6 +200,7 @@ public class Skills : MonoBehaviour
     {
         if (SaveSystem.instance.secondEnemyDefeated && !_player.IsStunned)
         {
+            AudioManager.instance.PlaySFX("CleanSkillCast");
             _player.ActivateCleanSkill();
         }
     }

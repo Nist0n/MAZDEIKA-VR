@@ -42,6 +42,7 @@ public class PoisonSkillEnemy : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
+        AudioManager.instance.PlaySFX("PoisonImpact");
         _playerController.PoisonPlayer(_enemy.PoisonDamage);
         yield return new WaitForSeconds(0.4f);
         isAttacking = false;
@@ -52,6 +53,7 @@ public class PoisonSkillEnemy : MonoBehaviour
     {
         isAttacking = true;
         hit.SetActive(true);
+        AudioManager.instance.PlaySFX("ShieldImpact");
         yield return new WaitForSeconds(0.4f);
         isAttacking = false;
         Destroy(gameObject);

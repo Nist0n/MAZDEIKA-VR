@@ -77,6 +77,7 @@ public class SecondEnemyScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (!_enemy.IsStunned)
         {
+            AudioManager.instance.PlaySFX("BaseAttackCast");
             Instantiate(baseAttackSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
         }
         _timer = 0;
