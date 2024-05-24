@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SetDIfficulty : MonoBehaviour
 {
-    public void SetDifficultyArchemage()
+    public void SetDifficultyArchimage()
     {
         AudioManager.instance.PlaySFX("Click");
         SaveSystem.instance.isArchimage = true;
