@@ -116,6 +116,7 @@ public class TrainingManager : MonoBehaviour
 
     public void StartBattle()
     {
+        AudioManager.instance.PlayMusic("BattleMusic");
         TrainingIsOver = true;
         FindObjectOfType<FirstEnemySkills>().enabled = true;
         FindObjectOfType<TrainingSkills>().enabled = false;

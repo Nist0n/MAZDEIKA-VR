@@ -86,6 +86,8 @@ public class FirstEnemySkills : MonoBehaviour
     IEnumerator UltimateAttack()
     {
         animator.SetTrigger("secondAttack");
+        AudioManager.instance.PlaySFX("Laught");
+        AudioManager.instance.PlaySFX("Ultimate");
         skillImage.sprite = ultimateCharge.GetComponent<Image>().sprite;
         skillImage.color = new Color(255f, 255f, 255f, 255f);
         Instantiate(ultimateCharge, gameObject.transform);

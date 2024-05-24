@@ -28220,6 +28220,18 @@ MonoBehaviour:
   music:
   - name: Music 1
     audio: {fileID: 8300000, guid: 83e8983c3bbbb204e8ab902e54877676, type: 3}
+  - name: BirdsSinging
+    audio: {fileID: 8300000, guid: edc0d04a72c3d174991bfc1952eafb61, type: 3}
+  - name: BattleMusic
+    audio: {fileID: 8300000, guid: 1843decde9018a14c979958bbf37a7a9, type: 3}
+  - name: LocationHomeMusic
+    audio: {fileID: 8300000, guid: aafe05c62c520434b927b279b17756a7, type: 3}
+  - name: BatlleMusicSkel
+    audio: {fileID: 8300000, guid: d752021944fe1d14fa40192998bc4964, type: 3}
+  - name: BattleMusicMage3
+    audio: {fileID: 8300000, guid: ec5ad1d42c7d15f4d9862f241bf51b0d, type: 3}
+  - name: Lose
+    audio: {fileID: 8300000, guid: a27abd9ceca37034db39969777aa53a6, type: 3}
   sounds:
   - name: DefenceSkillCast
     audio: {fileID: 8300000, guid: 34aa3ab94096c4a079f46fe32e131b19, type: 3}
@@ -28243,6 +28255,12 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 8a605f2e358a64402acc00c833b08c5c, type: 3}
   - name: Click
     audio: {fileID: 8300000, guid: 0309693748db29d4891eece661bbaca1, type: 3}
+  - name: Laught
+    audio: {fileID: 8300000, guid: b68374d359eec574c981b990f6937442, type: 3}
+  - name: Ultimate
+    audio: {fileID: 8300000, guid: 098cc88db22f142dbbedb8b2a0c22f68, type: 3}
+  - name: Win
+    audio: {fileID: 8300000, guid: 3a805fb08880884408ca696e782a1f40, type: 3}
 --- !u!4 &1625139033
 Transform:
   m_ObjectHideFlags: 0

@@ -56,10 +56,12 @@ public class WinLoseOption : MonoBehaviour
     private void OnWinCanvas()
     {
         winCanvas.SetActive(true);
+        AudioManager.instance.PlaySFX("Win");
     }
     
     private void OnLoseCanvas()
     {
+        AudioManager.instance.PlayMusic("Lose");
         loseCanvas.SetActive(true);
     }
     
@@ -67,6 +69,7 @@ public class WinLoseOption : MonoBehaviour
     {
         FadeIn();
         yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlayMusic("LocationHomeMusic");
         SceneManager.LoadScene("LocationHome");
     }
 

@@ -63,6 +63,7 @@ public class SceneChanger : MonoBehaviour
     {
         FadeIn();
         yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlayMusic("Music1");
         SceneManager.LoadScene("LocationMainMenu");
     }
     
@@ -70,6 +71,7 @@ public class SceneChanger : MonoBehaviour
     {
         FadeIn();
         yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlayMusic("BirdsSinging");
         SceneManager.LoadScene("LocationProlog");
     }
     
@@ -77,6 +79,7 @@ public class SceneChanger : MonoBehaviour
     {
         FadeIn();
         yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlayMusic("BattleMusicMage3");
         SceneManager.LoadScene("LocationCastle");
     }
     
@@ -84,6 +87,7 @@ public class SceneChanger : MonoBehaviour
     {
         FadeIn();
         yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlayMusic("BattleMusicSkel");
         SceneManager.LoadScene("LocationVillage");
     }
     
@@ -98,6 +102,7 @@ public class SceneChanger : MonoBehaviour
     {
         FadeIn();
         yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlayMusic("BattleMusic");
         SceneManager.LoadScene("LocationCastleFinal");
     }
     
