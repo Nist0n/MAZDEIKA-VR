@@ -1170,7 +1170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1817117737
 Transform:
   m_ObjectHideFlags: 0
@@ -1408,7 +1408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2057766359
 Transform:
   m_ObjectHideFlags: 0
@@ -1468,6 +1468,12 @@ MonoBehaviour:
   breakShieldSkill: {fileID: 6678871872237799919, guid: 70276c68bea66524582f789ce82a0b40, type: 3}
   stunningAttackSkill: {fileID: 4471872716426723547, guid: 8c72f266209ec404491be5dc4a7c4ffa, type: 3}
   igniteSkill: {fileID: 3388547718251322554, guid: a5b49d9b25f98ad46b1b8700c7ac80bf, type: 3}
+  igniteCd: {fileID: 0}
+  stunCd: {fileID: 0}
+  increaseDamageCd: {fileID: 0}
+  healCd: {fileID: 0}
+  defenceCd: {fileID: 0}
+  handPos: {fileID: 0}
 --- !u!114 &2057766362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1487,6 +1493,11 @@ MonoBehaviour:
   canvas: {fileID: 2498315989410662081}
   postProcessVolumeDeath: {fileID: 525631976}
   postProcessVolumeShield: {fileID: 2064852182}
+  effectPoses: []
+  defenceSkill: {fileID: 0}
+  increaseSkill: {fileID: 0}
+  stunSkill: {fileID: 0}
+  poisonSkill: {fileID: 0}
   CanTakeDamage: 1
   Damage: 50
   CurrentHealth: 0

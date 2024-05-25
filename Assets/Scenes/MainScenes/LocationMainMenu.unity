@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.6294833, g: 0.49682295, b: 0.7571158, a: 1}
+  m_IndirectSpecularColor: {r: 0.63162345, g: 0.4998976, b: 0.75952196, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6182,6 +6182,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5866768335352638121, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
+      propertyPath: m_EnableInputActions
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866768335352638121, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
+      propertyPath: m_EnableInputTracking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866768335352638121, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
+      propertyPath: m_PositionAction.m_Action.m_Id
+      value: 49a89df3-a04e-4b3e-8d95-dfaf333dc5df
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866768335352638121, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
+      propertyPath: m_PositionAction.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866768335352638121, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
+      propertyPath: m_PositionAction.m_Action.m_Name
+      value: Position
+      objectReference: {fileID: 0}
     - target: {fileID: 6005640465563274559, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 59.46929
@@ -7956,6 +7976,10 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_Name
       value: XR Device Simulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35813,7 +35837,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}

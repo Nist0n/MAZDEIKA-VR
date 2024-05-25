@@ -27,7 +27,7 @@ public class GestureEvents : MonoBehaviour
     {
         float trigger_right = getInputControlValue("<XRController>{RightHand}/trigger");
 
-        if (trigger_right > 0.85)
+        /*if (trigger_right > 0.85)
         {
             // Right controller trigger pressed.
             active_controller = GameObject.Find("Right Hand");
@@ -40,7 +40,7 @@ public class GestureEvents : MonoBehaviour
         {
             Destroy(GameObject.Find(star));
             stroke_index = 0;
-        }
+        }*/
     }
     public void OnGestureCompleted(GestureCompletionData gestureCompletionData)
     {
@@ -123,14 +123,13 @@ public class GestureEvents : MonoBehaviour
 
     public void addToStrokeTrail(Vector3 p)
     {
-        GameObject star_instance = Instantiate(GameObject.Find("star"));
+        GameObject star_instance = Instantiate(GameObject.Find("star"), p, Quaternion.identity, active_controller.transform);
         GameObject star = new GameObject("stroke_" + stroke_index++);
         star_instance.name = star.name + "_instance";
         star_instance.transform.SetParent(star.transform, false);
         System.Random random = new System.Random();
         star.transform.position = new Vector3((float)random.NextDouble() / 80, (float)random.NextDouble() / 80, (float)random.NextDouble() / 80) + p;
         star.transform.rotation = new Quaternion((float)random.NextDouble() - 0.5f, (float)random.NextDouble() - 0.5f, (float)random.NextDouble() - 0.5f, (float)random.NextDouble() - 0.5f).normalized;
-        //star.transform.rotation.Normalize();
         float star_scale = (float)random.NextDouble() + 0.3f;
         star.transform.localScale = new Vector3(star_scale, star_scale, star_scale);
         if (this.compensate_head_motion)
