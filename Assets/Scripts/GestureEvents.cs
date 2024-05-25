@@ -12,6 +12,7 @@ public class GestureEvents : MonoBehaviour
     private Skills _skills;
     private GestureRecognition gr;
     private GestureCombinations gc;
+    private TrainingSkills _trainingSkills;
     private List<string> stroke = new List<string>();
     private int stroke_index = 0;
     private GameObject active_controller_pointer = null;
@@ -19,15 +20,18 @@ public class GestureEvents : MonoBehaviour
 
     private void Start()
     {
+        _trainingSkills = FindObjectOfType<TrainingSkills>();
         _skills = FindObjectOfType<Skills>();
         Debug.Log(Application.streamingAssetsPath);
+       
     }
 
     private void Update()
     {
+        Debug.Log(stroke.Count);
         float trigger_right = getInputControlValue("<XRController>{RightHand}/trigger");
 
-        /*if (trigger_right > 0.85)
+        if (trigger_right > 0.85)
         {
             // Right controller trigger pressed.
             active_controller = GameObject.Find("Right Hand");
@@ -36,11 +40,16 @@ public class GestureEvents : MonoBehaviour
             return;
         }
 
-        foreach (string star in stroke)
+        if (stroke.Count > 0)
         {
-            Destroy(GameObject.Find(star));
-            stroke_index = 0;
-        }*/
+            foreach (var star in stroke)
+            {
+                Debug.Log(star);
+                Destroy(GameObject.Find(star));
+                stroke_index = 0;
+            }
+            stroke.Clear();
+        }
     }
     public void OnGestureCompleted(GestureCompletionData gestureCompletionData)
     {
@@ -56,27 +65,39 @@ public class GestureEvents : MonoBehaviour
 
         if (gestureCompletionData.gestureName == "BaseAttack")
         {
-            if(gestureCompletionData.similarity >= 0.5f)
+            if(gestureCompletionData.similarity >= 0.4f)
             {
-                _skills.BaseAttack();
+                if (_trainingSkills != null)
+                {
+                    _trainingSkills.BaseAttack();
+                }
+                else _skills.BaseAttack();
             }
         }
         
         if (gestureCompletionData.gestureName == "shield")
         {
-            if (gestureCompletionData.similarity >= 0.5f) _skills.ActivateShield();
+            if (gestureCompletionData.similarity >= 0.4f)
+            {
+                if (_trainingSkills != null) _trainingSkills.ActivateShield();
+                else _skills.ActivateShield();
+            }
         }
 
         if (gestureCompletionData.gestureName == "BreakShieldAttack")
         {
-            if (gestureCompletionData.similarity >= 0.5f) _skills.BreakShield();
+            if (gestureCompletionData.similarity >= 0.4f)
+            {
+                if (_trainingSkills != null) _trainingSkills.BreakShield();
+                else _skills.BreakShield();
+            }
         }
         
         if (gestureCompletionData.gestureName == "defence")
         {
             if (SaveSystem.instance.secondEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) _skills.DefenceSkill();
+                if (gestureCompletionData.similarity >= 0.4f) _skills.DefenceSkill();
             }
         }
         
@@ -84,7 +105,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.firstEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) _skills.IgniteSkill();
+                if (gestureCompletionData.similarity >= 0.4f) _skills.IgniteSkill();
             }
         }
         
@@ -92,7 +113,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.thirdEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) _skills.HealSkill();
+                if (gestureCompletionData.similarity >= 0.4f) _skills.HealSkill();
             }
         }
         
@@ -100,7 +121,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.firstEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) _skills.StunningAttack();
+                if (gestureCompletionData.similarity >= 0.4f) _skills.StunningAttack();
             }
         }
         
@@ -108,7 +129,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.secondEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) _skills.CleanSkill();
+                if (gestureCompletionData.similarity >= 0.4f) _skills.CleanSkill();
             }
         }
         
@@ -116,7 +137,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.thirdEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.5f) _skills.IncreaseDamageSkill();
+                if (gestureCompletionData.similarity >= 0.4f) _skills.IncreaseDamageSkill();
             }
         }
     }
@@ -130,44 +151,7 @@ public class GestureEvents : MonoBehaviour
         System.Random random = new System.Random();
         star.transform.position = new Vector3((float)random.NextDouble() / 80, (float)random.NextDouble() / 80, (float)random.NextDouble() / 80) + p;
         star.transform.rotation = new Quaternion((float)random.NextDouble() - 0.5f, (float)random.NextDouble() - 0.5f, (float)random.NextDouble() - 0.5f, (float)random.NextDouble() - 0.5f).normalized;
-        float star_scale = (float)random.NextDouble() + 0.3f;
-        star.transform.localScale = new Vector3(star_scale, star_scale, star_scale);
-        if (this.compensate_head_motion)
-        {
-            star.transform.SetParent(Camera.main.gameObject.transform);
-        }
         stroke.Add(star.name);
-    }
-
-    public bool compensate_head_motion
-    {
-        get
-        {
-            if (gr != null)
-            {
-                return gr.getUpdateHeadPositionPolicy() == GestureRecognition.UpdateHeadPositionPolicy.UseLatest;
-            }
-            if (gc != null)
-            {
-                return gc.getUpdateHeadPositionPolicy(0) == GestureRecognition.UpdateHeadPositionPolicy.UseLatest;
-            }
-            return false;
-        }
-        set
-        {
-            GestureRecognition.UpdateHeadPositionPolicy p = value ? GestureRecognition.UpdateHeadPositionPolicy.UseLatest : GestureRecognition.UpdateHeadPositionPolicy.UseInitial;
-            if (gr != null)
-            {
-                gr.setUpdateHeadPositionPolicy(p);
-            }
-            if (gc != null)
-            {
-                for (int part = gc.numberOfParts() - 1; part >= 0; part--)
-                {
-                    gc.setUpdateHeadPositionPolicy(part, p);
-                }
-            }
-        }
     }
 
     public static float getInputControlValue(string controlName)

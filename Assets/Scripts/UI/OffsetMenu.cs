@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OffsetMenu : MonoBehaviour
 {
-    void Update()
+    void FixedUpdate()
     {
         gameObject.transform.rotation = Camera.main.transform.rotation;
 

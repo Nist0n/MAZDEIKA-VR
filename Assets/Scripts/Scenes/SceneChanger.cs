@@ -22,6 +22,11 @@ public class SceneChanger : MonoBehaviour
         StartCoroutine(MainMenuScene());
     }
 
+    public void LoadGesture()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void LoadCastleFinal()
     {
         StartCoroutine(CastleFinalScene());
