@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScenes/LocationMainMenu.unity
     guid: 8dc67afdb3052ff45b0b725be038492b
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/LocationHome.unity
+    guid: fc317f12884c11e4f8d7789973744b29
   - enabled: 0
     path: "Assets/Scenes/For mechanics and \u043E\u0442\u0447\u0435\u0442\u044B/TestBattleScene.unity"
     guid: fc8f30b9d7c80e74f9be87e3047aa828
@@ -17,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScenes/LocationCastle.unity
     guid: 23d8661265deed742959416ea58475f7
-  - enabled: 1
-    path: Assets/Scenes/MainScenes/LocationHome.unity
-    guid: fc317f12884c11e4f8d7789973744b29
   - enabled: 1
     path: Assets/Scenes/MainScenes/LocationProlog.unity
     guid: c4609793d1f63e149823137719637262
