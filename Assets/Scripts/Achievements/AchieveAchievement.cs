@@ -41,7 +41,7 @@ public class AchieveAchievement : MonoBehaviour
         SaveSystem.instance.Save();
     }
 
-    private bool CompleteAchievement(string achievementName)
+    public bool CompleteAchievement(string achievementName)
     {
         var a = SaveSystem.instance.achievementsConditions.Find(x => x.name == achievementName);
         {

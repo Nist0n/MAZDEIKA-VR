@@ -68,6 +68,7 @@ public class FirstEnemy : MonoBehaviour
         
         if (CurrentHealth == 0 && !_gameOver)
         {
+            FirstWin();
             animator.SetTrigger("isDead");
             _gameOver = true;
         }
@@ -214,5 +215,15 @@ public class FirstEnemy : MonoBehaviour
             _healSkillActived = false;
             Destroy(_healingAura);
         }
+    }
+
+    private void FirstWin()
+    {
+        if (AchieveAchievement.instance.CompleteAchievement("FirstWin") == false)
+        {
+            AchieveAchievement.instance.SetBoolParamToAchievement("FirstWin");
+        }
+
+        SaveSystem.instance.Save();
     }
 }

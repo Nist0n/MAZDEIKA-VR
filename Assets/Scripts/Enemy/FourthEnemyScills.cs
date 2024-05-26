@@ -73,6 +73,7 @@ public class FourthEnemyScills : MonoBehaviour
 
         if (_enemy.CurrentHealth <= 0 || _player.CurrentHealth <= 0)
         {
+            FinalWin();
             _enemy.CanTakeDamage = false;
             gameObject.GetComponent<FourthEnemyScills>().enabled = false;
         }
@@ -309,6 +310,14 @@ public class FourthEnemyScills : MonoBehaviour
             _time = Random.Range(2, 3.5f);
             _isAttacking = false;
             skillImage.color = new Color(255f, 255f, 255f, 0f);
+        }
+    }
+
+    private void FinalWin()
+    {
+        if (AchieveAchievement.instance.CompleteAchievement("FinalWin"))
+        {
+            AchieveAchievement.instance.SetBoolParamToAchievement("FinalWin");
         }
     }
 }

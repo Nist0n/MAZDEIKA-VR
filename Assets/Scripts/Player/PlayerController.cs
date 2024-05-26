@@ -243,20 +243,12 @@ public class PlayerController : MonoBehaviour
 
     private void FirstDefeat()
     {
-        if (CompleteAchievement("FirstDefeat") == false)
+        if (AchieveAchievement.instance.CompleteAchievement("FirstDefeat") == false)
         {
             AchieveAchievement.instance.SetBoolParamToAchievement("FirstDefeat");
         }
 
         SaveSystem.instance.Save();
     }
-
-    private bool CompleteAchievement(string achievementName)
-    {
-        var a = SaveSystem.instance.achievementsConditions.Find(x => x.name == achievementName);
-        {
-            return a.condition;
-        }
-    }
-
 }
+

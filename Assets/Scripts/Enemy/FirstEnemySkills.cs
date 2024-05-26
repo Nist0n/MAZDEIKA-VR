@@ -42,6 +42,7 @@ public class FirstEnemySkills : MonoBehaviour
 
         if ((_enemy.CurrentHealth <= 300 || _player.CurrentHealth <= 300) && !_ultimateIsReady)
         {
+            PrologComplited();
             _ultimateIsReady = true;
             SaveSystem.instance.firstEnemyDefeated = true;
             SaveSystem.instance.Save();
@@ -97,5 +98,13 @@ public class FirstEnemySkills : MonoBehaviour
         _time = Random.Range(2, 4);
         _isAttacking = true;
         skillImage.color = new Color(255f, 255f, 255f, 0f);
+    }
+
+    private void PrologComplited()
+    {
+        if (AchieveAchievement.instance.CompleteAchievement("PrologComplited"))
+        {
+            AchieveAchievement.instance.SetBoolParamToAchievement("PrologComplited");
+        }
     }
 }

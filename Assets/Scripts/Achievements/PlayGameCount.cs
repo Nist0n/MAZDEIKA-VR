@@ -6,31 +6,25 @@ public class PlayGameCount : MonoBehaviour
 {
     private void Awake()
     {
+        SaveSystem.instance.Load();
+
         SaveSystem.instance.playGameCount++;
 
-        if (CompleteAchievement("FirstPlay") == false && SaveSystem.instance.playGameCount == 1)
+        if (AchieveAchievement.instance.CompleteAchievement("FirstPlay") == false && SaveSystem.instance.playGameCount == 1)
         {
             AchieveAchievement.instance.SetBoolParamToAchievement("FirstPlay");
         }
 
-        if (CompleteAchievement("SecondPlay") == false && SaveSystem.instance.playGameCount == 2)
+        if (AchieveAchievement.instance.CompleteAchievement("SecondPlay") == false && SaveSystem.instance.playGameCount == 2)
         {
             AchieveAchievement.instance.SetBoolParamToAchievement("SecondPlay");
         }
 
-        if (CompleteAchievement("ThirdPlay") == false && SaveSystem.instance.playGameCount == 3)
+        if (AchieveAchievement.instance.CompleteAchievement("ThirdPlay") == false && SaveSystem.instance.playGameCount == 3)
         {
             AchieveAchievement.instance.SetBoolParamToAchievement("ThirdPlay");
         }
 
         SaveSystem.instance.Save();
-    }
-
-    private bool CompleteAchievement(string achievementName)
-    {
-        var a = SaveSystem.instance.achievementsConditions.Find(x => x.name == achievementName);
-        {
-            return a.condition;
-        }
     }
 }
