@@ -227,17 +227,10 @@ public class ThirdEnemySkills : MonoBehaviour
         {
             AudioManager.instance.PlaySFX("StunAttackCast");
             Instantiate(stunSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
-            _timer = 0;
-            _time = Random.Range(2, 3.5f);
-            _isAttacking = false;
-            skillImage.color = new Color(255f, 255f, 255f, 0f);
         }
-        else
-        {
-            _timer = 0;
-            _time = Random.Range(2, 3.5f);
-            _isAttacking = false;
-            skillImage.color = new Color(255f, 255f, 255f, 0f);
-        }
+        _timer = 0;
+        _time = Random.Range(2, 3.5f);
+        _isAttacking = false;
+        skillImage.color = new Color(255f, 255f, 255f, 0f);
     }
 }

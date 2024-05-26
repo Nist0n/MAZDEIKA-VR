@@ -22,8 +22,6 @@ public class GestureEvents : MonoBehaviour
     {
         _trainingSkills = FindObjectOfType<TrainingSkills>();
         _skills = FindObjectOfType<Skills>();
-        Debug.Log(Application.streamingAssetsPath);
-       
     }
 
     private void Update()
@@ -33,7 +31,6 @@ public class GestureEvents : MonoBehaviour
 
         if (trigger_right > 0.85)
         {
-            // Right controller trigger pressed.
             active_controller = GameObject.Find("Right Hand");
             active_controller_pointer = GameObject.FindGameObjectWithTag("Right Pointer");
             addToStrokeTrail(active_controller_pointer.transform.position);
@@ -53,13 +50,8 @@ public class GestureEvents : MonoBehaviour
     }
     public void OnGestureCompleted(GestureCompletionData gestureCompletionData)
     {
-
-        Debug.Log(gestureCompletionData.similarity);
-        Debug.Log(gestureCompletionData.gestureName);
-
         if (gestureCompletionData.gestureID < 0) 
         {
-            Debug.Log("LOX");
             return;
         }
 
@@ -167,7 +159,6 @@ public class GestureEvents : MonoBehaviour
             case IntegerControl integerControl:
                 return integerControl.ReadValue();
             case QuaternionControl quaternionControl:
-                Debug.LogError($"Mivry.getInputControlValue : QuaternionControl '${controlName}' not supported.");
                 return 0.0f;
             case TouchControl touchControl:
                 return touchControl.ReadValue().pressure;

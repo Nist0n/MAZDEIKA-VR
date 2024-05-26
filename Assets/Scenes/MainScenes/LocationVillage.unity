@@ -7087,7 +7087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loseCanvas: {fileID: 620325098}
   winCanvas: {fileID: 1524620286}
-  animator: {fileID: 0}
+  animator: {fileID: 6521256401252838212}
 --- !u!1001 &1997005076
 PrefabInstance:
   m_ObjectHideFlags: 0
