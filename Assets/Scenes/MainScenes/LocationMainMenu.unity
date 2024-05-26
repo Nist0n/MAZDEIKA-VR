@@ -24784,7 +24784,7 @@ MonoBehaviour:
   - {fileID: 1560889298}
   - {fileID: 487473810}
   - {fileID: 1403806818}
-  - {fileID: 399387103}
+  - {fileID: 0}
   - {fileID: 977848936}
   - {fileID: 750334253}
 --- !u!4 &1428574296
@@ -32740,6 +32740,7 @@ GameObject:
   - component: {fileID: 1873005356}
   - component: {fileID: 1873005357}
   - component: {fileID: 1873005358}
+  - component: {fileID: 1873005359}
   m_Layer: 0
   m_Name: DataBase
   m_TagString: Untagged
@@ -32779,7 +32780,8 @@ MonoBehaviour:
   secondEnemyDefeated: 0
   thirdEnemyDefeated: 0
   fourthEnemyDefeated: 0
-  firstPlay: 0
+  sumBeatOffSpells: 0
+  playGameCount: 0
   achievementsConditions:
   - name: FirstPlay
     condition: 0
@@ -32790,6 +32792,8 @@ MonoBehaviour:
   - name: PrologComplited
     condition: 0
   - name: FirstWin
+    condition: 0
+  - name: FinalWin
     condition: 0
   - name: FirstDefeat
     condition: 0
@@ -32807,7 +32811,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74aae690d31f88349bc7a85834ceb455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sum: 0
+--- !u!114 &1873005359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873005354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78887d39b4ad9744291d1b6cb8b56609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1873528442
 PrefabInstance:
   m_ObjectHideFlags: 0
