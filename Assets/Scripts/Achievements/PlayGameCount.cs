@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayGameCount : MonoBehaviour
 {
-    private void Start()
+    private void Awake()
     {
         SaveSystem.instance.playGameCount++;
 

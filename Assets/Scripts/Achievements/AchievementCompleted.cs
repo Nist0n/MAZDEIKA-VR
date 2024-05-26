@@ -22,6 +22,7 @@ public class AchievementCompleted : MonoBehaviour
     private void CompleteAchievement(string achievementName)
     {
         var a = SaveSystem.instance.achievementsConditions.Find(x => x.name == achievementName);
+        Debug.Log(a);
         {
             if (a.condition == true)
             {

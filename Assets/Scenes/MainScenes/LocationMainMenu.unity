@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.63172466, g: 0.4998877, b: 0.7594762, a: 1}
+  m_IndirectSpecularColor: {r: 0.6294833, g: 0.49682295, b: 0.7571158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24784,7 +24784,7 @@ MonoBehaviour:
   - {fileID: 1560889298}
   - {fileID: 487473810}
   - {fileID: 1403806818}
-  - {fileID: 0}
+  - {fileID: 399387103}
   - {fileID: 977848936}
   - {fileID: 750334253}
 --- !u!4 &1428574296
@@ -32787,7 +32787,7 @@ MonoBehaviour:
     condition: 0
   - name: SecondPlay
     condition: 0
-  - name: Thirdplay
+  - name: ThirdPlay
     condition: 0
   - name: PrologComplited
     condition: 0

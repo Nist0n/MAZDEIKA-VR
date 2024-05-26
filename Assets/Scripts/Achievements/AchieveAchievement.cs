@@ -6,6 +6,18 @@ using UnityEngine;
 public class AchieveAchievement : MonoBehaviour
 {
     public static AchieveAchievement instance;
+    
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void SetBoolParamToAchievement(string achievementName)
     {
