@@ -75,7 +75,8 @@ public class BaseAttackEnemySkill : MonoBehaviour
         isAttacking = true;
         hit.SetActive(true);
         AudioManager.instance.PlaySFX("ShieldImpact");
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.2f);
+        AchieveAchievement.instance.SumBeatOffSpells();
         if (FindObjectOfType<ThirdEnemySkills>() != null && FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack)
             FindObjectOfType<ThirdEnemySkills>().IsIncreasedAttack = false;
         if (FindObjectOfType<FourthEnemyScills>() != null && FindObjectOfType<FourthEnemyScills>().IsIncreasedAttack)

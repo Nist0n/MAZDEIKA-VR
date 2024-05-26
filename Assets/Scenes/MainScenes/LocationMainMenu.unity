@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.6294833, g: 0.49682295, b: 0.7571158, a: 1}
+  m_IndirectSpecularColor: {r: 0.63172466, g: 0.4998877, b: 0.7594762, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5445,7 +5445,6 @@ GameObject:
   - component: {fileID: 312876139}
   - component: {fileID: 312876138}
   - component: {fileID: 312876140}
-  - component: {fileID: 312876141}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5520,19 +5519,6 @@ MonoBehaviour:
   loseCanvas: {fileID: 0}
   winCanvas: {fileID: 0}
   animator: {fileID: 1364846989}
---- !u!114 &312876141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312876135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43617f95fb41082448f8a188c41c004f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectButtonManager: {fileID: 1428574294}
 --- !u!1001 &313333454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11397,7 +11383,7 @@ GameObject:
   - component: {fileID: 697009877}
   - component: {fileID: 697009876}
   m_Layer: 0
-  m_Name: CanvasAchivmentsMenu
+  m_Name: CanvasAchievmentsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12269,7 +12255,7 @@ GameObject:
   - component: {fileID: 750334256}
   - component: {fileID: 750334255}
   m_Layer: 0
-  m_Name: Cast100Spells
+  m_Name: BeatOff100Spells
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13250,7 +13236,7 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   settings: {fileID: 0}
   chooseGameDifficulty: {fileID: 0}
-  achivmentsMenu: {fileID: 0}
+  achievmentsMenu: {fileID: 0}
   continueButton: {fileID: 0}
   animator: {fileID: 0}
   AchievementButton: []
@@ -24333,7 +24319,7 @@ GameObject:
   - component: {fileID: 1415029277}
   - component: {fileID: 1415029278}
   m_Layer: 0
-  m_Name: ListOfAchivments
+  m_Name: ListOfAchievments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24514,6 +24500,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1297775432010122652, guid: 42867ac29de59714da10c840f94b19fd, type: 3}
   m_PrefabInstance: {fileID: 1417754818}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1418067568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418067570}
+  - component: {fileID: 1418067571}
+  m_Layer: 0
+  m_Name: Achievments Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1418067570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418067568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 62.511105, y: 6.192116, z: 78.82225}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1418067571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418067568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43617f95fb41082448f8a188c41c004f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectButtonManager: {fileID: 1428574294}
 --- !u!1001 &1422261469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24744,7 +24775,7 @@ MonoBehaviour:
   mainMenu: {fileID: 1572589809}
   settings: {fileID: 1102215888}
   chooseGameDifficulty: {fileID: 1975395737}
-  achivmentsMenu: {fileID: 697009875}
+  achievmentsMenu: {fileID: 697009875}
   continueButton: {fileID: 1159582220}
   animator: {fileID: 1364846989}
   AchievementButton:
@@ -29599,7 +29630,7 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   settings: {fileID: 0}
   chooseGameDifficulty: {fileID: 0}
-  achivmentsMenu: {fileID: 0}
+  achievmentsMenu: {fileID: 0}
   continueButton: {fileID: 0}
   animator: {fileID: 0}
   AchievementButton: []
@@ -30511,7 +30542,7 @@ GameObject:
   - component: {fileID: 1730176932}
   - component: {fileID: 1730176931}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32749,7 +32780,7 @@ MonoBehaviour:
     condition: 0
   - name: FirstDefeat
     condition: 0
-  - name: Cast100Spells
+  - name: BeatOff100Spells
     condition: 0
 --- !u!114 &1873005358
 MonoBehaviour:
@@ -32763,6 +32794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74aae690d31f88349bc7a85834ceb455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sum: 0
 --- !u!1001 &1873528442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34615,7 +34647,7 @@ GameObject:
   - component: {fileID: 2034773692}
   - component: {fileID: 2034773691}
   m_Layer: 0
-  m_Name: Cast100SpellsBackground
+  m_Name: BeatOff100SpellsBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37263,3 +37295,4 @@ SceneRoots:
   - {fileID: 1873005356}
   - {fileID: 376186671}
   - {fileID: 1593269981}
+  - {fileID: 1418067570}

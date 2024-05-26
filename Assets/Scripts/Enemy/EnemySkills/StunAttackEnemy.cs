@@ -56,7 +56,8 @@ public class StunAttackEnemy : MonoBehaviour
         isAttacking = true;
         hit.SetActive(true);
         AudioManager.instance.PlaySFX("ShieldImpact");
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.2f);
+        AchieveAchievement.instance.SumBeatOffSpells();
         isAttacking = false;
         Destroy(gameObject);
     }

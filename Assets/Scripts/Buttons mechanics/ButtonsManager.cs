@@ -12,7 +12,7 @@ public class ButtonsManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject settings;
     [SerializeField] private GameObject chooseGameDifficulty;
-    [SerializeField] private GameObject achivmentsMenu;
+    [SerializeField] private GameObject achievmentsMenu;
     [SerializeField] private GameObject continueButton;
     [SerializeField] private Animator animator;
     public List<GameObject> AchievementButton;
@@ -50,7 +50,7 @@ public class ButtonsManager : MonoBehaviour
         mainMenu.SetActive(true);
         settings.SetActive(false);
         chooseGameDifficulty.SetActive(false);
-        achivmentsMenu.SetActive(false);
+        achievmentsMenu.SetActive(false);
     }
     public void ChooseDifficulty()
     {
@@ -62,7 +62,7 @@ public class ButtonsManager : MonoBehaviour
     {
         AudioManager.instance.PlaySFX("Click");
         mainMenu.SetActive(false);
-        achivmentsMenu.SetActive(true);
+        achievmentsMenu.SetActive(true);
     }
 
     public void ContinueGame()

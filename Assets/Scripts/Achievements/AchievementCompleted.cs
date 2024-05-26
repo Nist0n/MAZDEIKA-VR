@@ -6,21 +6,17 @@ using UnityEngine;
 public class AchievementCompleted : MonoBehaviour
 {
     [SerializeField] private GameObject objectButtonManager;
-    
+
     private ButtonsManager _buttonsManager;
 
     private void Start()
     {
         _buttonsManager = objectButtonManager.GetComponent<ButtonsManager>();
-        
-        CompleteAchievement("FirstPlay");
-        CompleteAchievement("SecondPlay");
-        CompleteAchievement("ThirdPlay");
-        CompleteAchievement("PrologComplited");
-        CompleteAchievement("FirstWin");
-        CompleteAchievement("");
-        CompleteAchievement("");
-        CompleteAchievement("");
+
+        foreach (var achievment in _buttonsManager.AchievementButton)
+        {
+            CompleteAchievement(achievment.name);
+        }
     }
 
     private void CompleteAchievement(string achievementName)
