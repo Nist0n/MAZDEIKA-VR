@@ -35,12 +35,10 @@ public class ButtonsManager : MonoBehaviour
     {
         AudioManager.instance.PlaySFX("Click");
         Application.Quit();
-        Debug.Log("Quit");
     }
     public void SoundSettings()
     {
         AudioManager.instance.PlaySFX("Click");
-        Debug.Log("Settings");
         mainMenu.SetActive(false);
         settings.SetActive(true);
     }
