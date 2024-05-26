@@ -2571,7 +2571,7 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   settings: {fileID: 0}
   chooseGameDifficulty: {fileID: 0}
-  achivmentsMenu: {fileID: 0}
+  achievmentsMenu: {fileID: 0}
   continueButton: {fileID: 0}
   animator: {fileID: 6521256401252838212}
   AchievementButton: []
@@ -3382,7 +3382,7 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   settings: {fileID: 0}
   chooseGameDifficulty: {fileID: 0}
-  achivmentsMenu: {fileID: 0}
+  achievmentsMenu: {fileID: 0}
   continueButton: {fileID: 0}
   animator: {fileID: 6521256401252838212}
   AchievementButton: []
@@ -6705,12 +6705,12 @@ MonoBehaviour:
   GestureDatabaseFile: myGestures.dat
   unityXrPlugin: 0
   mivryCoordinateSystem: 0
-  LeftHand: {fileID: 0}
+  LeftHand: {fileID: 8965678625884450756}
   LeftTriggerInput: LeftControllerTrigger
   LeftTriggerInputType: 1
   LeftTriggerValue: 0
   LeftTriggerThreshold: 0.9
-  RightHand: {fileID: 0}
+  RightHand: {fileID: 1387514339631417996}
   RightTriggerInput: RightControllerTrigger
   RightTriggerInputType: 1
   RightTriggerValue: 0
