@@ -1122,17 +1122,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 314053763170824514, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
-      propertyPath: isGlobal
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3650760224711019427, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
       propertyPath: m_Name
       value: XR Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5864550164231210848, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
-      propertyPath: isGlobal
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6005640465563274559, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
       propertyPath: m_LocalPosition.x

@@ -6186,6 +6186,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3746967831947699021, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746967831947699021, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5866768335352638121, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
       propertyPath: m_EnableInputActions
       value: 1
@@ -6255,7 +6263,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7774634928665315385, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
