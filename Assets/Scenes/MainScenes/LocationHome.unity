@@ -9403,7 +9403,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2029188435}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: LoadCastleScene
+        m_MethodName: LoadMainMenuScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
