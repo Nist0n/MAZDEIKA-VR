@@ -14,6 +14,8 @@ public class SaveSystem : MonoBehaviour
     public bool secondEnemyDefeated;
     public bool thirdEnemyDefeated;
     public bool fourthEnemyDefeated;
+    public int sumBeatOffSpells;
+    public int playGameCount;
     public List<Conditions> achievementsConditions;
 
     private void Awake()
@@ -44,6 +46,9 @@ public class SaveSystem : MonoBehaviour
             thirdEnemyDefeated = this.thirdEnemyDefeated,
             fourthEnemyDefeated = this.fourthEnemyDefeated,
             achivmentsConditions = this.achievementsConditions,
+            sumBeatOffSpells = this.sumBeatOffSpells,
+            playGameCount = this.playGameCount,
+
         };
 
         return data;
@@ -61,6 +66,8 @@ public class SaveSystem : MonoBehaviour
             thirdEnemyDefeated = data.thirdEnemyDefeated;
             fourthEnemyDefeated = data.fourthEnemyDefeated;
             achievementsConditions = data.achivmentsConditions;
+            sumBeatOffSpells = data.sumBeatOffSpells;
+            playGameCount = data.playGameCount;
         }
     }
 }

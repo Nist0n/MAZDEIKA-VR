@@ -13,7 +13,7 @@ public class ButtonsManager : MonoBehaviour
     [SerializeField] private GameObject settings;
     [SerializeField] private GameObject chooseGameDifficulty;
     [SerializeField] private GameObject achievmentsMenu;
-    [SerializeField] private GameObject continueButton;
+    [SerializeField] public GameObject continueButton;
     [SerializeField] private Animator animator;
     public List<GameObject> AchievementButton;
 

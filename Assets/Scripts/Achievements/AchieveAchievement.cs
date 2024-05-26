@@ -7,8 +7,6 @@ public class AchieveAchievement : MonoBehaviour
 {
     public static AchieveAchievement instance;
 
-    public int sum = 0;
-
     public void SetBoolParamToAchievement(string achievementName)
     {
         var a = SaveSystem.instance.achievementsConditions.Find(x => x.name == achievementName);
@@ -20,10 +18,22 @@ public class AchieveAchievement : MonoBehaviour
 
     public void SumBeatOffSpells()
     {
-        sum++;
-        if (sum >= 100) 
+        SaveSystem.instance.sumBeatOffSpells++;
+        if (SaveSystem.instance.sumBeatOffSpells >= 100) 
         {
-            SetBoolParamToAchievement("Cast100Spells");
+            if (CompleteAchievement("Cast100Spells") == false)
+            {
+                SetBoolParamToAchievement("Cast100Spells");
+            }
+        }
+        SaveSystem.instance.Save();
+    }
+
+    private bool CompleteAchievement(string achievementName)
+    {
+        var a = SaveSystem.instance.achievementsConditions.Find(x => x.name == achievementName);
+        {
+            return a.condition;
         }
     }
 }

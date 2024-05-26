@@ -10,5 +10,7 @@ public class GameData
     public bool secondEnemyDefeated;
     public bool thirdEnemyDefeated;
     public bool fourthEnemyDefeated;
+    public int sumBeatOffSpells;
+    public int playGameCount;
     public List<Conditions> achivmentsConditions;
 }
