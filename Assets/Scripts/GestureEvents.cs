@@ -13,6 +13,7 @@ public class GestureEvents : MonoBehaviour
     private GestureRecognition gr;
     private GestureCombinations gc;
     private TrainingSkills _trainingSkills;
+    private TrainingManager _trainingManager;
     private List<string> stroke = new List<string>();
     private int stroke_index = 0;
     private GameObject active_controller_pointer = null;
@@ -20,6 +21,7 @@ public class GestureEvents : MonoBehaviour
 
     private void Start()
     {
+        _trainingManager = FindObjectOfType<TrainingManager>();
         _trainingSkills = FindObjectOfType<TrainingSkills>();
         _skills = FindObjectOfType<Skills>();
     }
@@ -59,7 +61,7 @@ public class GestureEvents : MonoBehaviour
         {
             if(gestureCompletionData.similarity >= 0.4f)
             {
-                if (_trainingSkills != null)
+                if (_trainingSkills != null && !_trainingManager.TrainingIsOver)
                 {
                     _trainingSkills.BaseAttack();
                 }
@@ -71,7 +73,10 @@ public class GestureEvents : MonoBehaviour
         {
             if (gestureCompletionData.similarity >= 0.4f)
             {
-                if (_trainingSkills != null) _trainingSkills.ActivateShield();
+                if (_trainingSkills != null && !_trainingManager.TrainingIsOver)
+                {
+                    _trainingSkills.ActivateShield();
+                }
                 else _skills.ActivateShield();
             }
         }
@@ -80,7 +85,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (gestureCompletionData.similarity >= 0.4f)
             {
-                if (_trainingSkills != null) _trainingSkills.BreakShield();
+                if (_trainingSkills != null && !_trainingManager.TrainingIsOver) _trainingSkills.BreakShield();
                 else _skills.BreakShield();
             }
         }
