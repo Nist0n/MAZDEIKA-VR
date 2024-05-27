@@ -107,7 +107,7 @@ public class GestureEvents : MonoBehaviour
             }
         }
         
-        if (gestureCompletionData.gestureName == "heal")
+        if (gestureCompletionData.gestureName == "Heal")
         {
             if (SaveSystem.instance.thirdEnemyDefeated)
             {
@@ -123,7 +123,7 @@ public class GestureEvents : MonoBehaviour
             }
         }
         
-        if (gestureCompletionData.gestureName == "clean")
+        if (gestureCompletionData.gestureName == "clear")
         {
             if (SaveSystem.instance.secondEnemyDefeated)
             {
@@ -131,7 +131,7 @@ public class GestureEvents : MonoBehaviour
             }
         }
         
-        if (gestureCompletionData.gestureName == "increaseDamage")
+        if (gestureCompletionData.gestureName == "increasedamage")
         {
             if (SaveSystem.instance.thirdEnemyDefeated)
             {
