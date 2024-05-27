@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
         _canvasGroup = GameObject.FindWithTag("MainMenu").GetComponent<CanvasGroup>();
         _rectTransform = GameObject.FindWithTag("MainMenu").GetComponent<RectTransform>();
         _mainMenu = GameObject.FindWithTag("MainMenu");
+        SaveSystem.instance.Save();
         SaveSystem.instance.Load();
     }
 
