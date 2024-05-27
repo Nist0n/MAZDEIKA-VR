@@ -28,7 +28,6 @@ public class GestureEvents : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(stroke.Count);
         float trigger_right = getInputControlValue("<XRController>{RightHand}/trigger");
 
         if (trigger_right > 0.85)
@@ -52,6 +51,9 @@ public class GestureEvents : MonoBehaviour
     }
     public void OnGestureCompleted(GestureCompletionData gestureCompletionData)
     {
+        Debug.Log(gestureCompletionData.gestureName);
+        Debug.Log(gestureCompletionData.similarity);
+
         if (gestureCompletionData.gestureID < 0) 
         {
             return;
@@ -114,7 +116,7 @@ public class GestureEvents : MonoBehaviour
             }
         }
         
-        if (gestureCompletionData.gestureName == "stunAttack")
+        if (gestureCompletionData.gestureName == "StunnedAttack")
         {
             if (SaveSystem.instance.firstEnemyDefeated)
             {
