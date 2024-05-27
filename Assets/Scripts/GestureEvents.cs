@@ -42,7 +42,6 @@ public class GestureEvents : MonoBehaviour
         {
             foreach (var star in stroke)
             {
-                Debug.Log(star);
                 Destroy(GameObject.Find(star));
                 stroke_index = 0;
             }
@@ -104,7 +103,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.firstEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.4f) _skills.IgniteSkill();
+                if (gestureCompletionData.similarity >= 0.5f) _skills.IgniteSkill();
             }
         }
         
@@ -120,7 +119,7 @@ public class GestureEvents : MonoBehaviour
         {
             if (SaveSystem.instance.firstEnemyDefeated)
             {
-                if (gestureCompletionData.similarity >= 0.4f) _skills.StunningAttack();
+                if (gestureCompletionData.similarity >= 0.5f) _skills.StunningAttack();
             }
         }
         
