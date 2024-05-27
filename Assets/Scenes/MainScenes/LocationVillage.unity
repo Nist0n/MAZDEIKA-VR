@@ -10465,7 +10465,7 @@ MonoBehaviour:
   m_Camera: {fileID: 3746967831792170348}
   m_OriginBaseGameObject: {fileID: 3650760224488414594}
   m_CameraFloorOffsetObject: {fileID: 8780302995182013063}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 1
   m_CameraYOffset: 0
 --- !u!210 &5124434494091291200
 SortingGroup:
@@ -11305,7 +11305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3650760224488414594}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 477.95154, y: 2, z: 732.08905}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11315,7 +11315,7 @@ Transform:
   - {fileID: 7332205695530053633}
   - {fileID: 6698560179382506726}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &6019666801634708701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12892,8 +12892,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8780302995182013063}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12901,7 +12901,7 @@ Transform:
   - {fileID: 7561161781561530378}
   - {fileID: 5457364631986997145}
   m_Father: {fileID: 6005640465726774046}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &8349139238549044699
 GameObject:
   m_ObjectHideFlags: 0
