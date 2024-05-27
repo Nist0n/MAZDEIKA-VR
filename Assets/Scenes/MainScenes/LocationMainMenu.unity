@@ -33547,7 +33547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isArchimage: 0
-  firstEnemyDefeated: 1
+  firstEnemyDefeated: 0
   secondEnemyDefeated: 0
   thirdEnemyDefeated: 0
   fourthEnemyDefeated: 0
