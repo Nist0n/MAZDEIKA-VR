@@ -72,7 +72,7 @@ public class GestureEvents : MonoBehaviour
         
         if (gestureCompletionData.gestureName == "shield")
         {
-            if (gestureCompletionData.similarity >= 0.4f)
+            if (gestureCompletionData.similarity >= 0.6f)
             {
                 if (_trainingSkills != null && !_trainingManager.TrainingIsOver)
                 {
@@ -84,7 +84,7 @@ public class GestureEvents : MonoBehaviour
 
         if (gestureCompletionData.gestureName == "BreakShieldAttack")
         {
-            if (gestureCompletionData.similarity >= 0.4f)
+            if (gestureCompletionData.similarity >= 0.5f)
             {
                 if (_trainingSkills != null && !_trainingManager.TrainingIsOver) _trainingSkills.BreakShield();
                 else _skills.BreakShield();
