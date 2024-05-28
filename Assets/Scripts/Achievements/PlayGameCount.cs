@@ -6,6 +6,7 @@ public class PlayGameCount : MonoBehaviour
 {
     private void Awake()
     {
+        SaveSystem.instance.Save();
         SaveSystem.instance.Load();
 
         SaveSystem.instance.playGameCount++;
