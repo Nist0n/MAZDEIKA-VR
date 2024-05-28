@@ -6,6 +6,7 @@ using UnityEngine.InputSystem.Controls;
 using UnityEngine.InputSystem;
 using static GestureManagerVR.SampleDisplay;
 using static Mivry;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class GestureEvents : MonoBehaviour
 {
@@ -25,7 +26,6 @@ public class GestureEvents : MonoBehaviour
         _trainingSkills = FindObjectOfType<TrainingSkills>();
         _skills = FindObjectOfType<Skills>();
     }
-
     private void Update()
     {
         float trigger_right = getInputControlValue("<XRController>{RightHand}/trigger");

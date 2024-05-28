@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit;
 using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private float _defence;
     private float _increaseDamage = 35f;
     private List<GameObject> _effects;
+    private XRInteractorLineVisual _XRInteractorLineVisual;
 
     private void Start()
     {
@@ -50,11 +52,14 @@ public class PlayerController : MonoBehaviour
         CurrentHealth = _health;
         postProcessVolumeDeath.profile.TryGetSettings<Vignette>(out _vignetteDeath);
         postProcessVolumeShield.profile.TryGetSettings<Vignette>(out _vignetteShield);
+        _XRInteractorLineVisual = FindObjectOfType<XRInteractorLineVisual>();
     }
 
     private void Update()
     {
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, _health);
+
+        DisableRaycast();
 
         if (CurrentHealth == 0 && !_gameOver)
         {
@@ -249,6 +254,19 @@ public class PlayerController : MonoBehaviour
         }
 
         SaveSystem.instance.Save();
+    }
+
+    public void DisableRaycast()
+    {
+        if (!_gameOver)
+        {
+            _XRInteractorLineVisual.enabled = false;
+        }
+
+        else
+        {
+            _XRInteractorLineVisual.enabled = true;
+        }
     }
 }
 

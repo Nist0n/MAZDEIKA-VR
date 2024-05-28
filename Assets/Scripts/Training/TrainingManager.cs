@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DialogueEditor;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TrainingManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class TrainingManager : MonoBehaviour
     [SerializeField] private Animator baseAttackVideoAnimator;
     [SerializeField] private Animator shieldVideoAnimator;
     [SerializeField] private Animator breakShieldVideoAnimator;
+    [SerializeField] private XRInteractorLineVisual _XRInteractorLineVisual;
 
     public bool FirstSkillTraining = false;
     public bool SecondSkillTraining = false;
@@ -116,6 +118,8 @@ public class TrainingManager : MonoBehaviour
 
     public void StartBattle()
     {
+        _XRInteractorLineVisual.enabled = false;
+        Debug.Log(_XRInteractorLineVisual.enabled);
         AudioManager.instance.PlayMusic("BattleMusic");
         TrainingIsOver = true;
         FindObjectOfType<FirstEnemySkills>().enabled = true;
