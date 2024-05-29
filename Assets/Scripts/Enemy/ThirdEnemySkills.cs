@@ -34,7 +34,7 @@ public class ThirdEnemySkills : MonoBehaviour
         _player = FindObjectOfType<PlayerController>();
         _enemy = FindObjectOfType<FirstEnemy>();
         _randomNumOfSkill = 0;
-        _time = Random.Range(2f, 3.5f);
+        _time = Random.Range(3f, 3.5f);
         _enemy.UpdateDefence(defence);
         _tempEnemyDamage = _enemy.Damage;
     }
@@ -200,7 +200,7 @@ public class ThirdEnemySkills : MonoBehaviour
             Instantiate(baseAttackSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
         }
         _timer = 0;
-        _time = Random.Range(2, 3.5f);
+        _time = Random.Range(3, 3.5f);
         _isAttacking = false;
         skillImage.color = new Color(255f, 255f, 255f, 0f);
     }
@@ -217,7 +217,7 @@ public class ThirdEnemySkills : MonoBehaviour
             Instantiate(poisonSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
         }
         _timer = 0;
-        _time = Random.Range(2, 3.5f);
+        _time = Random.Range(3, 3.5f);
         _isAttacking = false;
         skillImage.color = new Color(255f, 255f, 255f, 0f);
     }
@@ -234,7 +234,7 @@ public class ThirdEnemySkills : MonoBehaviour
             Instantiate(stunSkill, hand.transform.position, Quaternion.identity, _enemy.transform);
         }
         _timer = 0;
-        _time = Random.Range(2, 3.5f);
+        _time = Random.Range(3, 3.5f);
         _isAttacking = false;
         skillImage.color = new Color(255f, 255f, 255f, 0f);
     }
