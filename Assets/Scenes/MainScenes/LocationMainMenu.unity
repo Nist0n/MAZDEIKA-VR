@@ -6614,6 +6614,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 314053763170824514, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 1845d7b3ff9db3748a7db7c5f3cba6a5, type: 2}
     - target: {fileID: 445189281794367883, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6654,6 +6658,10 @@ PrefabInstance:
       propertyPath: m_AttachTransform
       value: 
       objectReference: {fileID: 438363850}
+    - target: {fileID: 5864550164231210848, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 1845d7b3ff9db3748a7db7c5f3cba6a5, type: 2}
     - target: {fileID: 5866768335352638121, guid: dc197ff54117e5e4d962e2f745ac5cdb, type: 3}
       propertyPath: m_EnableInputActions
       value: 1
