@@ -12,6 +12,7 @@ public class EndGameText : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.instance.PlayMusic("WinFinal");
         StartDialog(endText);
         FadeOut();
     }
