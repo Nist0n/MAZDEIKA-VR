@@ -102,7 +102,7 @@ public class FirstEnemySkills : MonoBehaviour
 
     private void PrologComplited()
     {
-        if (AchieveAchievement.instance.CompleteAchievement("PrologComplited"))
+        if (!AchieveAchievement.instance.CompleteAchievement("PrologComplited"))
         {
             AchieveAchievement.instance.SetBoolParamToAchievement("PrologComplited");
         }

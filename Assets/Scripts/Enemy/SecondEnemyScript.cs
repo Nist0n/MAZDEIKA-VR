@@ -56,6 +56,11 @@ public class SecondEnemyScript : MonoBehaviour
             SaveSystem.instance.secondEnemyDefeated = true;
             SaveSystem.instance.Save();
         }
+        
+        if (_playerController.CurrentHealth <= 0)
+        {
+            FirstDefeat();
+        }
     }
 
     private void CastSkill()
@@ -84,5 +89,15 @@ public class SecondEnemyScript : MonoBehaviour
         _time = Random.Range(1.5f, 3);
         _isAttacking = false;
         skillImage.color = new Color(255f, 255f, 255f, 0f);
+    }
+    
+    private void FirstDefeat()
+    {
+        if (AchieveAchievement.instance.CompleteAchievement("FirstDefeat") == false)
+        {
+            AchieveAchievement.instance.SetBoolParamToAchievement("FirstDefeat");
+        }
+
+        SaveSystem.instance.Save();
     }
 }

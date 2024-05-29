@@ -83,6 +83,11 @@ public class FourthEnemyScills : MonoBehaviour
             SaveSystem.instance.fourthEnemyDefeated = true;
             SaveSystem.instance.Save();
         }
+        
+        if (_player.CurrentHealth <= 0)
+        {
+            FirstDefeat();
+        }
     }
 
     private void CastSkill()
@@ -319,5 +324,15 @@ public class FourthEnemyScills : MonoBehaviour
         {
             AchieveAchievement.instance.SetBoolParamToAchievement("FinalWin");
         }
+    }
+    
+    private void FirstDefeat()
+    {
+        if (AchieveAchievement.instance.CompleteAchievement("FirstDefeat") == false)
+        {
+            AchieveAchievement.instance.SetBoolParamToAchievement("FirstDefeat");
+        }
+
+        SaveSystem.instance.Save();
     }
 }

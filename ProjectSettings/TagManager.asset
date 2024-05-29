@@ -8,6 +8,8 @@ TagManager:
   - Weapon
   - Obstacles
   - Enemy
+  - Right Pointer
+  - Achievement
   layers:
   - Default
   - TransparentFX

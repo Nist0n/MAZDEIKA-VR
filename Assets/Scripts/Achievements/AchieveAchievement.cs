@@ -26,6 +26,16 @@ public class AchieveAchievement : MonoBehaviour
             a.condition = true;
             SaveSystem.instance.Save();
         }
+        
+        var listOfAchievements = GameObject.FindGameObjectsWithTag("Achievement");
+        foreach (var achievement in listOfAchievements)
+        {
+            if (achievement.name == achievementName)
+            {
+                AudioManager.instance.PlaySFX("AchievementCompleted");
+                achievement.GetComponent<ShowAchievement>().StartAnimAchievement();
+            }
+        }
     }
 
     public void SumBeatOffSpells()

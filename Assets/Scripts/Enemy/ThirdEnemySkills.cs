@@ -76,6 +76,11 @@ public class ThirdEnemySkills : MonoBehaviour
             SaveSystem.instance.thirdEnemyDefeated = true;
             SaveSystem.instance.Save();
         }
+        
+        if (_player.CurrentHealth <= 0)
+        {
+            FirstDefeat();
+        }
     }
 
     private void CastSkill()
@@ -232,5 +237,15 @@ public class ThirdEnemySkills : MonoBehaviour
         _time = Random.Range(2, 3.5f);
         _isAttacking = false;
         skillImage.color = new Color(255f, 255f, 255f, 0f);
+    }
+    
+    private void FirstDefeat()
+    {
+        if (AchieveAchievement.instance.CompleteAchievement("FirstDefeat") == false)
+        {
+            AchieveAchievement.instance.SetBoolParamToAchievement("FirstDefeat");
+        }
+
+        SaveSystem.instance.Save();
     }
 }

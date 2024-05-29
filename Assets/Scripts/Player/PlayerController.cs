@@ -63,7 +63,6 @@ public class PlayerController : MonoBehaviour
 
         if (CurrentHealth == 0 && !_gameOver)
         {
-            FirstDefeat();
             _gameOver = true;
             gameObject.GetComponent<Skills>().enabled = false;
             CanTakeDamage = false;
@@ -244,16 +243,6 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-    }
-
-    private void FirstDefeat()
-    {
-        if (AchieveAchievement.instance.CompleteAchievement("FirstDefeat") == false)
-        {
-            AchieveAchievement.instance.SetBoolParamToAchievement("FirstDefeat");
-        }
-
-        SaveSystem.instance.Save();
     }
 
     public void DisableRaycast()
