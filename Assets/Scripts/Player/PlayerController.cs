@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 using Random = UnityEngine.Random;
@@ -248,7 +247,7 @@ public class PlayerController : MonoBehaviour
 
     public void DisableRaycast()
     {
-        if (!_gameOver && SceneManager.GetActiveScene().name != "LocationMainMenu" && SceneManager.GetActiveScene().name != "LocationHome" && SceneManager.GetActiveScene().name != "EndGame")
+        if (!_gameOver)
         {
             _XRInteractorLineVisual.enabled = false;
         }
