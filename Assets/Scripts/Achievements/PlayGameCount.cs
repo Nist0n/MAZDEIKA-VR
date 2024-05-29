@@ -1,15 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayGameCount : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
-        SaveSystem.instance.Save();
         SaveSystem.instance.Load();
 
-        SaveSystem.instance.playGameCount++;
+        if (!SaveSystem.instance.isStarted) SaveSystem.instance.playGameCount++;
 
         if (AchieveAchievement.instance.CompleteAchievement("FirstPlay") == false && SaveSystem.instance.playGameCount == 1)
         {
@@ -27,5 +27,6 @@ public class PlayGameCount : MonoBehaviour
         }
 
         SaveSystem.instance.Save();
+        SaveSystem.instance.isStarted = true;
     }
 }

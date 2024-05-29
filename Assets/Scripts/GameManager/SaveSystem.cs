@@ -9,6 +9,7 @@ public class SaveSystem : MonoBehaviour
 
     private const string Key = "mainSave";
 
+    public bool isStarted = false;
     public bool isArchimage;
     public bool firstEnemyDefeated;
     public bool secondEnemyDefeated;
