@@ -7,6 +7,7 @@ public class PlayGameCount : MonoBehaviour
 {
     private void Start()
     {
+        SaveSystem.instance.Save();
         SaveSystem.instance.Load();
 
         if (!SaveSystem.instance.isStarted) SaveSystem.instance.playGameCount++;
