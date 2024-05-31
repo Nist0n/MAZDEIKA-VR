@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.6327925, g: 0.50138545, b: 0.76066715, a: 1}
+  m_IndirectSpecularColor: {r: 0.6294833, g: 0.49682295, b: 0.7571158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36768,6 +36768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStarted: 0
+  firstStart: 0
   isArchimage: 0
   firstEnemyDefeated: 0
   secondEnemyDefeated: 0

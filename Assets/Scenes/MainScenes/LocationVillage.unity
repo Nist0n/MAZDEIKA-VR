@@ -13099,6 +13099,7 @@ MonoBehaviour:
   increaseSkill: {fileID: 965375207726914187, guid: 96385a8e1a9f48749b0495db518deef7, type: 3}
   stunSkill: {fileID: 7748955726347365534, guid: f96741898b9c85741a0fe775fcee273a, type: 3}
   poisonSkill: {fileID: 4524238851456456925, guid: c5faf2556f356b44f9e345b9eb3f10da, type: 3}
+  _XRInteractorLineVisual: {fileID: 194279535482610765}
   CanTakeDamage: 1
   Damage: 50
   CurrentHealth: 0

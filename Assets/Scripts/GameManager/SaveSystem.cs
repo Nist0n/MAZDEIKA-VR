@@ -10,6 +10,7 @@ public class SaveSystem : MonoBehaviour
     private const string Key = "mainSave";
 
     public bool isStarted = false;
+    public bool firstStart;
     public bool isArchimage;
     public bool firstEnemyDefeated;
     public bool secondEnemyDefeated;
@@ -49,7 +50,7 @@ public class SaveSystem : MonoBehaviour
             achivmentsConditions = this.achievementsConditions,
             sumBeatOffSpells = this.sumBeatOffSpells,
             playGameCount = this.playGameCount,
-
+            firstStart = this.firstStart,
         };
 
         return data;
@@ -69,6 +70,7 @@ public class SaveSystem : MonoBehaviour
             achievementsConditions = data.achivmentsConditions;
             sumBeatOffSpells = data.sumBeatOffSpells;
             playGameCount = data.playGameCount;
+            firstStart = data.firstStart;
         }
     }
 }

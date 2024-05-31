@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject increaseSkill;
     [SerializeField] private GameObject stunSkill;
     [SerializeField] private GameObject poisonSkill;
+    [SerializeField] private XRInteractorLineVisual _XRInteractorLineVisual;
 
     public bool CanTakeDamage = true;
     public float Damage;
@@ -44,7 +45,6 @@ public class PlayerController : MonoBehaviour
     private float _defence;
     private float _increaseDamage = 35f;
     private List<GameObject> _effects;
-    private XRInteractorLineVisual _XRInteractorLineVisual;
 
     private void Start()
     {
@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
         CurrentHealth = _health;
         postProcessVolumeDeath.profile.TryGetSettings<Vignette>(out _vignetteDeath);
         postProcessVolumeShield.profile.TryGetSettings<Vignette>(out _vignetteShield);
-        _XRInteractorLineVisual = FindObjectOfType<XRInteractorLineVisual>();
     }
 
     private void Update()

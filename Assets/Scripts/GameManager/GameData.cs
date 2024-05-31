@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameData
 {
+    public bool firstStart;
     public bool isArchimage;
     public bool firstEnemyDefeated;
     public bool secondEnemyDefeated;

@@ -7,6 +7,13 @@ public class PlayGameCount : MonoBehaviour
 {
     private void Start()
     {
+        SaveSystem.instance.Load();
+        
+        if (!SaveSystem.instance.firstStart)
+        {
+            SaveSystem.instance.firstStart = true;
+            SaveSystem.instance.Save();
+        }
         SaveSystem.instance.Save();
         SaveSystem.instance.Load();
 
@@ -26,7 +33,7 @@ public class PlayGameCount : MonoBehaviour
         {
             AchieveAchievement.instance.SetBoolParamToAchievement("ThirdPlay");
         }
-
+        
         SaveSystem.instance.Save();
         SaveSystem.instance.isStarted = true;
     }
