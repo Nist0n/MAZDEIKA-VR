@@ -247,7 +247,7 @@ public class PlayerController : MonoBehaviour
 
     public void DisableRaycast()
     {
-        if (!_gameOver && SceneManager.GetActiveScene().name != "LocationMainMenu" && SceneManager.GetActiveScene().name != "LocationHome" && SceneManager.GetActiveScene().name != "EndGame")
+        if (!_gameOver && SceneManager.GetActiveScene().name != "LocationMainMenu" && SceneManager.GetActiveScene().name != "LocationHome" && SceneManager.GetActiveScene().name != "EndGame" && SceneManager.GetActiveScene().name != "LocationProlog")
         {
             _XRInteractorLineVisual.enabled = false;
         }

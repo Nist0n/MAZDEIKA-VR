@@ -60,7 +60,7 @@ public class GestureEvents : MonoBehaviour
 
         if (gestureCompletionData.gestureName == "BaseAttack")
         {
-            if(gestureCompletionData.similarity >= 0.5f)
+            if(gestureCompletionData.similarity >= 0.4f)
             {
                 if (_trainingSkills != null && !_trainingManager.TrainingIsOver)
                 {
@@ -72,7 +72,7 @@ public class GestureEvents : MonoBehaviour
         
         if (gestureCompletionData.gestureName == "shield")
         {
-            if (gestureCompletionData.similarity >= 0.5f)
+            if (gestureCompletionData.similarity >= 0.54f)
             {
                 if (_trainingSkills != null && !_trainingManager.TrainingIsOver)
                 {

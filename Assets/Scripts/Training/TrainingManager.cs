@@ -35,6 +35,7 @@ public class TrainingManager : MonoBehaviour
 
     private void Start()
     {
+        _XRInteractorLineVisual.enabled = true;
         _trainingEnemySkills = FindObjectOfType<TrainingEnemySkills>();
         StartDialog(startingDialog);
     }
